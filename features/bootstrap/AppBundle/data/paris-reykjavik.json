@@ -1,0 +1,2249 @@
+{
+  "serveTime": 745,
+  "places": [
+    {
+      "kind": "",
+      "name": "Origin",
+      "longName": "Origin",
+      "pos": "48.85801,2.29466"
+    },
+    {
+      "kind": "",
+      "name": "Destination",
+      "longName": "Destination",
+      "pos": "64.14256,-21.92785"
+    }
+  ],
+  "airports": [
+    {
+      "code": "CDG",
+      "name": "Paris CDG",
+      "pos": "49.004,2.5711",
+      "countryCode": "FR",
+      "timeZone": "Europe/Paris"
+    },
+    {
+      "code": "KEF",
+      "name": "Reykjavik Keflavik Nas",
+      "pos": "63.99644,-22.62445",
+      "countryCode": "IS",
+      "timeZone": "Atlantic/Reykjavik"
+    },
+    {
+      "code": "FRA",
+      "name": "Frankfurt",
+      "pos": "50.05143,8.5714",
+      "countryCode": "DE",
+      "timeZone": "Europe/Berlin"
+    },
+    {
+      "code": "EDI",
+      "name": "Edinburgh",
+      "pos": "55.94804,-3.36519",
+      "countryCode": "GB",
+      "timeZone": "Europe/London"
+    },
+    {
+      "code": "VIE",
+      "name": "Vienna",
+      "pos": "48.12057,16.56165",
+      "countryCode": "AT",
+      "timeZone": "Europe/Vienna"
+    },
+    {
+      "code": "ORY",
+      "name": "Paris Orly",
+      "pos": "48.72882,2.36884",
+      "countryCode": "FR",
+      "timeZone": "Europe/Paris"
+    },
+    {
+      "code": "LHR",
+      "name": "London Heathrow",
+      "pos": "51.47034,-0.45342",
+      "countryCode": "GB",
+      "timeZone": "Europe/London"
+    },
+    {
+      "code": "BCN",
+      "name": "Barcelona",
+      "pos": "41.30373,2.07315",
+      "countryCode": "ES",
+      "timeZone": "Europe/Madrid"
+    },
+    {
+      "code": "MAD",
+      "name": "Madrid",
+      "pos": "40.49109,-3.59369",
+      "countryCode": "ES",
+      "timeZone": "Europe/Madrid"
+    }
+  ],
+  "airlines": [
+    {
+      "code": "WW",
+      "name": "bmibaby",
+      "url": "http://www.bmibaby.com",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,2136"
+    },
+    {
+      "code": "W2",
+      "name": "FlexFlight",
+      "url": "http://www.flexflight.dk",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1512"
+    },
+    {
+      "code": "FI",
+      "name": "Icelandair",
+      "url": "http://www.icelandair.com",
+      "iconPath": "/images/airlines/airlinesD3.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1272"
+    },
+    {
+      "code": "LH",
+      "name": "Lufthansa",
+      "url": "http://www.lufthansa.com",
+      "iconPath": "/images/airlines/airlinesD5.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,816"
+    },
+    {
+      "code": "A3",
+      "name": "Aegean Airlines",
+      "url": "http://www.aegeanair.com",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1728"
+    },
+    {
+      "code": "NH",
+      "name": "ANA",
+      "url": "http://www.fly-ana.com",
+      "iconPath": "/images/airlines/airlinesD5.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,2208"
+    },
+    {
+      "code": "UA",
+      "name": "United",
+      "url": "http://www.united.com",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,336"
+    },
+    {
+      "code": "U2",
+      "name": "easyJet",
+      "url": "http://www.easyJet.com",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,168"
+    },
+    {
+      "code": "AF",
+      "name": "Air France",
+      "url": "http://www.airfrance.fr",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,2016"
+    },
+    {
+      "code": "DL",
+      "name": "Delta Air Lines",
+      "url": "http://www.delta.com",
+      "iconPath": "/images/airlines/airlinesD3.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,120"
+    },
+    {
+      "code": "9W",
+      "name": "Jet Airways",
+      "url": "http://www.jetairways.com",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1656"
+    },
+    {
+      "code": "CZ",
+      "name": "China Southern",
+      "url": "http://www.cs-air.com",
+      "iconPath": "/images/airlines/airlinesD2.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,2016"
+    },
+    {
+      "code": "MK",
+      "name": "Air Mauritius",
+      "url": "http://www.airmauritius.com",
+      "iconPath": "/images/airlines/airlinesD5.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1584"
+    },
+    {
+      "code": "OS",
+      "name": "Austrian",
+      "url": "http://www.aua.com",
+      "iconPath": "/images/airlines/airlinesD6.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,864"
+    },
+    {
+      "code": "BE",
+      "name": "Flybe",
+      "url": "http://www.flybe.com",
+      "iconPath": "/images/airlines/airlinesD2.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,600"
+    },
+    {
+      "code": "TO",
+      "name": "Transavia France",
+      "url": "http://www.transavia.com",
+      "iconPath": "/images/airlines/airlinesD7.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,2136"
+    },
+    {
+      "code": "BA",
+      "name": "British Airways",
+      "url": "http://www.ba.com",
+      "iconPath": "/images/airlines/airlinesD2.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,504"
+    },
+    {
+      "code": "IB",
+      "name": "Iberia",
+      "url": "http://www.iberia.com",
+      "iconPath": "/images/airlines/airlinesD4.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,912"
+    },
+    {
+      "code": "AB",
+      "name": "airberlin",
+      "url": "http://www.airberlin.com",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1896"
+    },
+    {
+      "code": "AA",
+      "name": "American Airlines",
+      "url": "http://www.aa.com",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1872"
+    },
+    {
+      "code": "VY",
+      "name": "Vueling Airlines",
+      "url": "http://www.vueling.com",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,1488"
+    },
+    {
+      "code": "LA",
+      "name": "Lan Airlines",
+      "url": "http://www.lan.com",
+      "iconPath": "/images/airlines/airlinesD5.gif?v=2015128",
+      "iconSize": "27,23",
+      "iconOffset": "0,672"
+    }
+  ],
+  "aircrafts": [
+    {
+      "code": "320",
+      "manufacturer": "Airbus",
+      "model": "A320-100/200"
+    },
+    {
+      "code": "75W",
+      "manufacturer": "Boeing",
+      "model": "757-200"
+    },
+    {
+      "code": "32A",
+      "manufacturer": "Airbus",
+      "model": "A320-200"
+    },
+    {
+      "code": "319",
+      "manufacturer": "Airbus",
+      "model": "A319"
+    },
+    {
+      "code": "73H",
+      "manufacturer": "Boeing",
+      "model": "737-800"
+    },
+    {
+      "code": "321",
+      "manufacturer": "Airbus",
+      "model": "A321-100/200"
+    },
+    {
+      "code": "32S",
+      "manufacturer": "Airbus",
+      "model": "A318/319/320/321"
+    }
+  ],
+  "agencies": [
+    {
+      "code": "FRENCHRAILWAYSSNCF",
+      "name": "French Railways (SNCF)",
+      "url": "http://www.sncf.com",
+      "iconPath": "/logos/trains/fr.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "PARISRER",
+      "name": "Paris RER",
+      "url": "http://ratp.fr/",
+      "iconPath": "/logos/trains/rer.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "REYKJAVIKEXCURSIONS",
+      "name": "Reykjavik Excursions",
+      "url": "http://www.re.is",
+      "iconPath": "/logos/Trains/Reykjavik Excursions.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "PARISORLYVAL",
+      "name": "Paris OrlyVal",
+      "url": "http://www.orlyval.com",
+      "iconPath": "/logos/trains/orlyval.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Fly from Paris CDG",
+      "distance": 2330.76,
+      "duration": 472,
+      "totalTransferDuration": 183,
+      "indicativePrice": {
+        "price": 235,
+        "currency": "EUR",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Origin",
+          "pos": "48.85801,2.29466",
+          "kind": ""
+        },
+        {
+          "name": "Paris St-Michel",
+          "pos": "48.85357,2.34436",
+          "kind": "station",
+          "code": "8704954",
+          "countryCode": "FR",
+          "regionCode": "J",
+          "timeZone": "Europe/Paris"
+        },
+        {
+          "name": "Paris CDG",
+          "pos": "49.004,2.5711",
+          "kind": "airport",
+          "code": "CDG",
+          "countryCode": "FR",
+          "timeZone": "Europe/Paris"
+        },
+        {
+          "name": "Reykjavik Keflavik Nas",
+          "pos": "63.99644,-22.62445",
+          "kind": "airport",
+          "code": "KEF",
+          "countryCode": "IS",
+          "timeZone": "Atlantic/Reykjavik"
+        },
+        {
+          "name": "Destination",
+          "pos": "64.14256,-21.92785",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "RER",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 4.61,
+          "duration": 10,
+          "transferDuration": 0,
+          "sName": "Paris Champ de Mars/TourEiffel",
+          "sPos": "48.85682,2.28976",
+          "sCode": "8703024",
+          "tName": "Paris St-Michel/Notre Dame",
+          "tPos": "48.85345,2.34573",
+          "tCode": "8704622",
+          "path": "cjeiH_f~LaB_B}V_b@m@mA_C}He@_DcAoIIaCo@yoAV}BYcHNqKn@wFfI_d@`AiEEHDIjLoi@rDuXfFcS~HyLfD{HtAqGDy@",
+          "indicativePrice": {
+            "price": 1,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Aeroport%20Paris-Charles%20de%20Gaulle%20RER\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                  "host": "ratp.fr",
+                  "hops": [
+                    {
+                      "sName": "Paris Champ de Mars/TourEiffel",
+                      "sPos": "48.85682,2.28976",
+                      "tName": "Paris St-Michel/Notre Dame",
+                      "tPos": "48.85345,2.34573",
+                      "frequency": 6258,
+                      "duration": 10,
+                      "indicativePrice": {
+                        "price": 1,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "47837, 47839, 47841, 47849",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 1012,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41247, 41249, 41253, 41257, 41261, 41269, 47201, 47229, 47233, 47237, 47241, 47253, 47279, 47287, 47295",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 946,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47637, 47647, 47649, 47651",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 540,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "43058|43059, 43060|43061, 43068|43069, 43070|43071, 43074|43075",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 538,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41446|41447, 41448|41449, 41450|41451, 41454|41455, 41456|41457, 41458|41459, 41472|41473, 41480|41481, 41488|41489, 41494|41495, 47402|47403, 47406|47407, 47426|47427, 47438|47439, 47442|47443, 47444|47445, 47446|47447, 47450|47451, 47454|47455, 47458|47459, 47466|47467, 47490|47491",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 532,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47342|47343",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 518,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "47852|47853",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 495,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "47339",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 495,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41643, 41647, 41649, 41653, 41655, 41659, 41661, 41665, 47603, 47627, 47633, 47635, 47659, 47663, 47667",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 351,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41549|41548, 41557|41556, 41561|41560, 41565|41564, 41592|41593, 47500|47501, 47504|47505, 47528|47529, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47560|47561, 47564|47565",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 336,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41102|41103, 41147|41146, 41155|41154, 41159|41158, 41163|41162, 41171|41170, 41179|41178, 41183|41182, 41190|41191, 47102|47103, 47130|47131, 47138|47139, 47142|47143, 47154|47155, 47158|47159, 47162|47163, 47178|47179, 47182|47183, 47186|47187, 47190|47191, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 321,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41163|41162, 41171|41170, 47146|47147, 47180|47181, 47184|47185, 47188|47189",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 84,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41147, 41163, 41171, 41179, 41183, 41190|41191, 47102|47103, 47138|47139, 47142|47143, 47158|47159, 47162|47163, 47180|47181, 47194|47195",
+                          "name": "City Airport Train, RER",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 58,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41102|41103, 41147|41146, 41163|41162, 41171|41170, 41179|41178, 41183|41182, 41190|41191, 47102|47103, 47138|47139, 47142|47143, 47158|47159, 47162|47163, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 57,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41203, 41247, 41249, 41643, 41647, 41659, 47201, 47287, 47291, 47603",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 56,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41147|41146, 41159|41158, 41163|41162, 41171|41170, 41179|41178, 41187|41186, 41190|41191, 47102|47103, 47186|47187, 47190|47191",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 52,
+                          "duration": 10,
+                          "days": 63
+                        },
+                        {
+                          "code": "41147|41146, 41163|41162, 41171|41170, 41174|41175, 41178|41179, 41182|41183, 47102|47103, 47138|47139, 47142|47143, 47162|47163, 47182|47183",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 51,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41549|41548, 41561|41560, 41565|41564, 41592|41593, 47500|47501, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47560|47561",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 48,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41549, 41592|41593, 47500|47501, 47536|47537, 47540|47541, 47560|47561",
+                          "name": "City Airport Train, RER",
+                          "vehicle": "RER",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 48,
+                          "duration": 10,
+                          "days": 1
+                        },
+                        {
+                          "code": "41549|41548, 41561|41560, 41565|41564, 41572|41573, 47500|47501, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47564|47565",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 46,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41643, 41647, 47603, 47675",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 39,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41203, 47287, 47291",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 18,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41549",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 16,
+                          "duration": 10,
+                          "days": 1
+                        },
+                        {
+                          "code": "47291",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 10,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47843",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 8,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41102|41103, 47102|47103, 47138|47139, 47142|47143, 47146|47147, 47154|47155, 47158|47159, 47162|47163, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 3,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41102|41103",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 2,
+                          "duration": 10,
+                          "days": 32
+                        },
+                        {
+                          "code": "41103",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 2,
+                          "duration": 10,
+                          "days": 1
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "PARISRER",
+                          "frequency": 6258,
+                          "duration": 10,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Aeroport%20Paris-Charles%20de%20Gaulle%20RER\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                              "displayUrl": "ratp.fr",
+                              "moustacheUrl": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start={fromName}\u0026end={toName}\u0026is_date_start=1\u0026date={year}-{month}-{day}\u0026time={hour}:{minute}:{second}\u0026mode=ferretram\u0026route_type=plus_rapide"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Paris Champ de Mars/TourEiffel",
+              "pos": "48.85682,2.28976",
+              "kind": "station",
+              "code": "8703024",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Pont de l\u0027Alma",
+              "pos": "48.86255,2.30109",
+              "kind": "station",
+              "code": "8704263",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Invalides",
+              "pos": "48.86271,2.31474",
+              "kind": "station",
+              "code": "8703482",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Musee d\u0027Orsay",
+              "pos": "48.86057,2.32612",
+              "kind": "station",
+              "code": "8704074",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris St-Michel/Notre Dame",
+              "pos": "48.85345,2.34573",
+              "kind": "station",
+              "code": "8704622",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "RER",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 32.26,
+          "duration": 34,
+          "transferDuration": 3,
+          "sName": "Paris St-Michel",
+          "sPos": "48.85357,2.34436",
+          "sCode": "8704954",
+          "tName": "Aeroport Paris-Charles de Gaulle RER",
+          "tPos": "49.00374,2.57125",
+          "tCode": "8705053",
+          "path": "yudiHg{hMJwIiF{GuNiJaEXgIzE_KpDsAf@sIrBkLnEwIYiF{AwIkEeXkPoMgd@}UzGX}BsKgEuHiEmRuBy[nBwNlDePjCq~@tIgQRaJ`AqLsLi\\yv@uEmQcVe|Aci@y_GiDwg@G{HaDyi@k@iQTiaBK{DLsxAWoXCetB_@m{AqAk_@gBsKmF_LoGsHmFiEgWeMyQsEqGFeMp@uMbCiB~@ow@vv@gDfCmOjI}NrG}Kf@{HqBqYkQus@{c@sJaD}OQ_VvE}RhIoMJcIaEoWcYsQkOyH_R}AwOb@ac@mBcaAcCqS_Ka]o@uFeAcVkAaG^yHc@kQ`CyKrGkElQ}@vEgCz@W",
+          "indicativePrice": {
+            "price": 10,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Aeroport%20Paris-Charles%20de%20Gaulle%20RER\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                  "host": "ratp.fr",
+                  "hops": [
+                    {
+                      "sName": "Paris St-Michel",
+                      "sPos": "48.85357,2.34436",
+                      "tName": "Aeroport Paris-Charles de Gaulle RER",
+                      "tPos": "49.00374,2.57125",
+                      "frequency": 1637,
+                      "duration": 34,
+                      "indicativePrice": {
+                        "price": 10,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "81955, 83380, 83458, 83461, 83462, 83558, 83737, 83742, 83768, 83799, 83920, 83922, 83960, 84019, 84078, 84089, 84723, 84732, 84748, 84759, 84764, 84782, 84783, 84785, 84787, 84789, 84792, 84793",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 936,
+                          "duration": 35,
+                          "days": 127
+                        },
+                        {
+                          "code": "82793, 84625, 84627",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 700,
+                          "duration": 35,
+                          "days": 127
+                        },
+                        {
+                          "code": "82815",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 2,
+                          "duration": 34,
+                          "days": 64
+                        },
+                        {
+                          "code": "84098",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 2,
+                          "duration": 35,
+                          "days": 64
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "PARISRER",
+                          "frequency": 1637,
+                          "duration": 34,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Aeroport%20Paris-Charles%20de%20Gaulle%20RER\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                              "displayUrl": "ratp.fr",
+                              "moustacheUrl": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start={fromName}\u0026end={toName}\u0026is_date_start=1\u0026date={year}-{month}-{day}\u0026time={hour}:{minute}:{second}\u0026mode=ferretram\u0026route_type=plus_rapide"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Paris St-Michel",
+              "pos": "48.85357,2.34436",
+              "kind": "station",
+              "code": "8704954",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Chatelet/Les Halles",
+              "pos": "48.86158,2.34663",
+              "kind": "station",
+              "code": "8703065",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Nord RER",
+              "pos": "48.8806,2.3541",
+              "kind": "station",
+              "code": "8703374",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Roissy Aeroport Charles de Gaulle",
+              "pos": "49.01043,2.56295",
+              "kind": "station",
+              "code": "8704377",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Aeroport Paris-Charles de Gaulle RER",
+              "pos": "49.00374,2.57125",
+              "kind": "station",
+              "code": "8705053",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            }
+          ]
+        },
+        {
+          "kind": "flight",
+          "isMajor": 1,
+          "distance": 2244.22,
+          "duration": 200,
+          "transferDuration": 120,
+          "sCode": "CDG",
+          "tCode": "KEF",
+          "indicativePrice": {
+            "price": 210,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 63,
+                  "indicativePrice": {
+                    "price": 200,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "KEF",
+                      "sTerminal": "3",
+                      "sTime": "11:45",
+                      "tTime": "14:05",
+                      "flight": "405",
+                      "airline": "WW",
+                      "duration": 200,
+                      "aircraft": "320",
+                      "codeshares": [
+                        {
+                          "airline": "W2",
+                          "flight": "3405"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 127,
+                  "indicativePrice": {
+                    "price": 440,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "KEF",
+                      "sTerminal": "1",
+                      "sTime": "13:20",
+                      "tTime": "15:50",
+                      "flight": "543",
+                      "airline": "FI",
+                      "duration": 210,
+                      "aircraft": "75W"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 2,
+                  "indicativePrice": {
+                    "price": 440,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "KEF",
+                      "sTerminal": "1",
+                      "sTime": "12:35",
+                      "tTime": "15:10",
+                      "flight": "545",
+                      "airline": "FI",
+                      "duration": 215,
+                      "aircraft": "75W"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 64,
+                  "indicativePrice": {
+                    "price": 340,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "FRA",
+                      "sTerminal": "1",
+                      "tTerminal": "1",
+                      "sTime": "08:55",
+                      "tTime": "10:10",
+                      "flight": "1027",
+                      "airline": "LH",
+                      "duration": 75,
+                      "aircraft": "32A",
+                      "codeshares": [
+                        {
+                          "airline": "A3",
+                          "flight": "1439"
+                        },
+                        {
+                          "airline": "NH",
+                          "flight": "5872"
+                        },
+                        {
+                          "airline": "UA",
+                          "flight": "9356"
+                        }
+                      ]
+                    },
+                    {
+                      "sCode": "FRA",
+                      "tCode": "KEF",
+                      "sTerminal": "1",
+                      "sTime": "11:05",
+                      "tTime": "12:55",
+                      "flight": "856",
+                      "airline": "LH",
+                      "duration": 230,
+                      "aircraft": "319",
+                      "lDuration": 55
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 1,
+                  "indicativePrice": {
+                    "price": 220,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "EDI",
+                      "sTerminal": "2D",
+                      "sTime": "10:30",
+                      "tTime": "11:10",
+                      "flight": "6954",
+                      "airline": "U2",
+                      "duration": 100,
+                      "aircraft": "319"
+                    },
+                    {
+                      "sCode": "EDI",
+                      "tCode": "KEF",
+                      "sTime": "13:25",
+                      "tTime": "15:50",
+                      "flight": "6941",
+                      "airline": "U2",
+                      "duration": 145,
+                      "aircraft": "319",
+                      "lDuration": 135
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 4,
+                  "indicativePrice": {
+                    "price": 260,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "CDG",
+                      "tCode": "VIE",
+                      "sTerminal": "2F",
+                      "sTime": "17:30",
+                      "tTime": "19:25",
+                      "flight": "1238",
+                      "airline": "AF",
+                      "duration": 115,
+                      "aircraft": "320",
+                      "codeshares": [
+                        {
+                          "airline": "DL",
+                          "flight": "8714"
+                        },
+                        {
+                          "airline": "9W",
+                          "flight": "6912"
+                        },
+                        {
+                          "airline": "CZ",
+                          "flight": "7492"
+                        },
+                        {
+                          "airline": "MK",
+                          "flight": "9498"
+                        },
+                        {
+                          "airline": "OS",
+                          "flight": "7118"
+                        },
+                        {
+                          "airline": "BE",
+                          "flight": "4174"
+                        }
+                      ]
+                    },
+                    {
+                      "sCode": "VIE",
+                      "tCode": "KEF",
+                      "sTime": "20:25",
+                      "tTime": "22:50",
+                      "flight": "9761",
+                      "airline": "OS",
+                      "duration": 265,
+                      "aircraft": "320",
+                      "lDuration": 60
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 49.67,
+          "duration": 45,
+          "transferDuration": 60,
+          "sName": "Reykjavik Keflavik Nas",
+          "sPos": "63.99605,-22.6238",
+          "tName": "Reykjavik",
+          "tPos": "64.13734,-21.93467",
+          "path": "ifreKtuaiCe@yG_Il@{@fZmK|BgDeN_Je}A?kp@bQio@tLy[dQu_@d|@cuAjQo_@|Pid@b\\qi@hHaXfByOjGuiAn`@skI`WwjDbBwi@MmpAUoPmJi}CwCmk@aTivB}Hke@m[esAgHq^{`CyjOgIoy@}Nc~BwJghAyw@skGgD}PaEmLqMiV{Hy`@yAeT}MccDuFwn@aJig@}L_h@gEmc@cGkiA_Fqb@oQks@iFa[uI{n@}Mwc@aD{VcJswBmBeXgEc`@_DwRse@kcCyJyt@co@uyHeG{g@aEcq@uJsQcc@{I{@jAi`Bn^gEnBaKs\\oOuZoOqi@sC_Fq`@sd@eMc[yN_z@wNmOkKjEqW`T_MwJgKqb@mJmLwBUub@hEyPu@gHtv@}FpTuInQgMle@oN|PqJDwH`bAvEfD",
+          "indicativePrice": {
+            "price": 14,
+            "currency": "EUR",
+            "isFreeTransfer": 0,
+            "nativePrice": 1950,
+            "nativeCurrency": "ISK"
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "https://www.re.is/flybus/#Book-now",
+                  "host": "re.is",
+                  "hops": [
+                    {
+                      "sName": "Reykjavik Keflavik Nas",
+                      "sPos": "63.99605,-22.6238",
+                      "tName": "Reykjavik",
+                      "tPos": "64.13734,-21.93467",
+                      "frequency": 84,
+                      "duration": 45,
+                      "indicativePrice": {
+                        "price": 14,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0,
+                        "nativePrice": 1950,
+                        "nativeCurrency": "ISK"
+                      },
+                      "lines": [
+                        {
+                          "name": "",
+                          "vehicle": "bus",
+                          "agency": "REYKJAVIKEXCURSIONS",
+                          "frequency": 84,
+                          "duration": 45
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "REYKJAVIKEXCURSIONS",
+                          "frequency": 84,
+                          "duration": 45,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "https://www.re.is/flybus/#Book-now",
+                              "displayUrl": "re.is"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Reykjavik Keflavik Nas",
+              "pos": "63.99605,-22.6238",
+              "kind": "station",
+              "countryCode": "IS",
+              "regionCode": "1",
+              "timeZone": "Atlantic/Reykjavik"
+            },
+            {
+              "name": "Reykjavik",
+              "pos": "64.13734,-21.93467",
+              "kind": "station",
+              "countryCode": "IS",
+              "regionCode": "1",
+              "timeZone": "Atlantic/Reykjavik"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fly from Paris Orly",
+      "distance": 2335.33,
+      "duration": 498,
+      "totalTransferDuration": 188,
+      "indicativePrice": {
+        "price": 335,
+        "currency": "EUR",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Origin",
+          "pos": "48.85801,2.29466",
+          "kind": ""
+        },
+        {
+          "name": "Paris St-Michel",
+          "pos": "48.85357,2.34436",
+          "kind": "station",
+          "code": "8704954",
+          "countryCode": "FR",
+          "regionCode": "J",
+          "timeZone": "Europe/Paris"
+        },
+        {
+          "name": "Antony Ratp",
+          "pos": "48.75486,2.30107",
+          "kind": "station",
+          "countryCode": "FR",
+          "regionCode": "J",
+          "timeZone": "Europe/Paris"
+        },
+        {
+          "name": "Paris Orly",
+          "pos": "48.72882,2.36884",
+          "kind": "airport",
+          "code": "ORY",
+          "countryCode": "FR",
+          "timeZone": "Europe/Paris"
+        },
+        {
+          "name": "Reykjavik Keflavik Nas",
+          "pos": "63.99644,-22.62445",
+          "kind": "airport",
+          "code": "KEF",
+          "countryCode": "IS",
+          "timeZone": "Atlantic/Reykjavik"
+        },
+        {
+          "name": "Destination",
+          "pos": "64.14256,-21.92785",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "RER",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 4.61,
+          "duration": 10,
+          "transferDuration": 0,
+          "sName": "Paris Champ de Mars/TourEiffel",
+          "sPos": "48.85682,2.28976",
+          "sCode": "8703024",
+          "tName": "Paris St-Michel/Notre Dame",
+          "tPos": "48.85345,2.34573",
+          "tCode": "8704622",
+          "path": "cjeiH_f~LaB_B}V_b@m@mA_C}He@_DcAoIIaCo@yoAV}BYcHNqKn@wFfI_d@`AiEEHDIjLoi@rDuXfFcS~HyLfD{HtAqGDy@",
+          "indicativePrice": {
+            "price": 1,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Antony%20Ratp\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                  "host": "ratp.fr",
+                  "hops": [
+                    {
+                      "sName": "Paris Champ de Mars/TourEiffel",
+                      "sPos": "48.85682,2.28976",
+                      "tName": "Paris St-Michel/Notre Dame",
+                      "tPos": "48.85345,2.34573",
+                      "frequency": 6258,
+                      "duration": 10,
+                      "indicativePrice": {
+                        "price": 1,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "47837, 47839, 47841, 47849",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 1012,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41247, 41249, 41253, 41257, 41261, 41269, 47201, 47229, 47233, 47237, 47241, 47253, 47279, 47287, 47295",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 946,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47637, 47647, 47649, 47651",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 540,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "43058|43059, 43060|43061, 43068|43069, 43070|43071, 43074|43075",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 538,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41446|41447, 41448|41449, 41450|41451, 41454|41455, 41456|41457, 41458|41459, 41472|41473, 41480|41481, 41488|41489, 41494|41495, 47402|47403, 47406|47407, 47426|47427, 47438|47439, 47442|47443, 47444|47445, 47446|47447, 47450|47451, 47454|47455, 47458|47459, 47466|47467, 47490|47491",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 532,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47342|47343",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 518,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "47852|47853",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 495,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "47339",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 495,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41643, 41647, 41649, 41653, 41655, 41659, 41661, 41665, 47603, 47627, 47633, 47635, 47659, 47663, 47667",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 351,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41549|41548, 41557|41556, 41561|41560, 41565|41564, 41592|41593, 47500|47501, 47504|47505, 47528|47529, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47560|47561, 47564|47565",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 336,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41102|41103, 41147|41146, 41155|41154, 41159|41158, 41163|41162, 41171|41170, 41179|41178, 41183|41182, 41190|41191, 47102|47103, 47130|47131, 47138|47139, 47142|47143, 47154|47155, 47158|47159, 47162|47163, 47178|47179, 47182|47183, 47186|47187, 47190|47191, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 321,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41163|41162, 41171|41170, 47146|47147, 47180|47181, 47184|47185, 47188|47189",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 84,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41147, 41163, 41171, 41179, 41183, 41190|41191, 47102|47103, 47138|47139, 47142|47143, 47158|47159, 47162|47163, 47180|47181, 47194|47195",
+                          "name": "City Airport Train, RER",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 58,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41102|41103, 41147|41146, 41163|41162, 41171|41170, 41179|41178, 41183|41182, 41190|41191, 47102|47103, 47138|47139, 47142|47143, 47158|47159, 47162|47163, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 57,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41203, 41247, 41249, 41643, 41647, 41659, 47201, 47287, 47291, 47603",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 56,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "41147|41146, 41159|41158, 41163|41162, 41171|41170, 41179|41178, 41187|41186, 41190|41191, 47102|47103, 47186|47187, 47190|47191",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 52,
+                          "duration": 10,
+                          "days": 63
+                        },
+                        {
+                          "code": "41147|41146, 41163|41162, 41171|41170, 41174|41175, 41178|41179, 41182|41183, 47102|47103, 47138|47139, 47142|47143, 47162|47163, 47182|47183",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 51,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41549|41548, 41561|41560, 41565|41564, 41592|41593, 47500|47501, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47560|47561",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 48,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41549, 41592|41593, 47500|47501, 47536|47537, 47540|47541, 47560|47561",
+                          "name": "City Airport Train, RER",
+                          "vehicle": "RER",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 48,
+                          "duration": 10,
+                          "days": 1
+                        },
+                        {
+                          "code": "41549|41548, 41561|41560, 41565|41564, 41572|41573, 47500|47501, 47536|47537, 47540|47541, 47548|47549, 47552|47553, 47564|47565",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 46,
+                          "duration": 10,
+                          "days": 64
+                        },
+                        {
+                          "code": "41643, 41647, 47603, 47675",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 39,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41203, 47287, 47291",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 18,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41549",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 16,
+                          "duration": 10,
+                          "days": 1
+                        },
+                        {
+                          "code": "47291",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 10,
+                          "duration": 10,
+                          "days": 127
+                        },
+                        {
+                          "code": "47843",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 8,
+                          "duration": 10,
+                          "days": 62
+                        },
+                        {
+                          "code": "41102|41103, 47102|47103, 47138|47139, 47142|47143, 47146|47147, 47154|47155, 47158|47159, 47162|47163, 47194|47195",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 3,
+                          "duration": 10,
+                          "days": 65
+                        },
+                        {
+                          "code": "41102|41103",
+                          "name": "City Airport Train",
+                          "vehicle": "train",
+                          "agency": "FRENCHRAILWAYSSNCF",
+                          "frequency": 2,
+                          "duration": 10,
+                          "days": 32
+                        },
+                        {
+                          "code": "41103",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 2,
+                          "duration": 10,
+                          "days": 1
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "PARISRER",
+                          "frequency": 6258,
+                          "duration": 10,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Antony%20Ratp\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                              "displayUrl": "ratp.fr",
+                              "moustacheUrl": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start={fromName}\u0026end={toName}\u0026is_date_start=1\u0026date={year}-{month}-{day}\u0026time={hour}:{minute}:{second}\u0026mode=ferretram\u0026route_type=plus_rapide"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Paris Champ de Mars/TourEiffel",
+              "pos": "48.85682,2.28976",
+              "kind": "station",
+              "code": "8703024",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Pont de l\u0027Alma",
+              "pos": "48.86255,2.30109",
+              "kind": "station",
+              "code": "8704263",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Invalides",
+              "pos": "48.86271,2.31474",
+              "kind": "station",
+              "code": "8703482",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Musee d\u0027Orsay",
+              "pos": "48.86057,2.32612",
+              "kind": "station",
+              "code": "8704074",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris St-Michel/Notre Dame",
+              "pos": "48.85345,2.34573",
+              "kind": "station",
+              "code": "8704622",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "RER",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 12.35,
+          "duration": 17,
+          "transferDuration": 3,
+          "sName": "Paris St-Michel",
+          "sPos": "48.85357,2.34436",
+          "sCode": "8704954",
+          "tName": "Antony Ratp",
+          "tPos": "48.75486,2.30107",
+          "tCode": "8702672",
+          "path": "yudiHg{hMn@lDfE_AjB|BjBx@~GbBzPdJpB|@dd@hRdBRzFz@hXnWfCBdD{@bGyA`EoCrCiDxBuAff@kLtHgErEs@vCOzZ}IdG?~E`CnExEjK~OrBfCfHdKhOpS|EjEnDpA`\\xDxL~AhHjElDjGzBvL`AnTrBrHvCpDnm@x[bGb@`J_AnDj@lX|L~GjAjCGrMiAxGX`IvBrFbDzX|TxFtCFQzOpGlAp@hYpK",
+          "indicativePrice": {
+            "price": 1,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Antony%20Ratp\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                  "host": "ratp.fr",
+                  "hops": [
+                    {
+                      "sName": "Paris St-Michel",
+                      "sPos": "48.85357,2.34436",
+                      "tName": "Antony Ratp",
+                      "tPos": "48.75486,2.30107",
+                      "frequency": 1690,
+                      "duration": 17,
+                      "indicativePrice": {
+                        "price": 1,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "80769, 80776, 80779, 80782, 80791, 80792, 80793, 80794, 80795, 80814, 80822, 80823, 80830, 80831, 80832, 80833, 80838, 80862, 80892, 80897, 80903, 80904, 80905, 80909, 80911, 81052, 81067, 81068, 81074, 81083, 81084, 81089, 81094, 81097, 81100, 81105, 81111, 81119, 81120, 81143, 82615, 82701, 82714, 82722, 82933, 82937",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 848,
+                          "duration": 18,
+                          "days": 127
+                        },
+                        {
+                          "code": "81221, 81236",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 510,
+                          "duration": 18,
+                          "days": 62
+                        },
+                        {
+                          "code": "81067, 81185, 81191, 81192, 81206, 81209, 81214, 82929, 83071, 83084",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 264,
+                          "duration": 18,
+                          "days": 127
+                        },
+                        {
+                          "code": "80509, 84997",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 52,
+                          "duration": 18,
+                          "days": 127
+                        },
+                        {
+                          "code": "81217, 81219, 81220",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 52,
+                          "duration": 18,
+                          "days": 127
+                        },
+                        {
+                          "code": "80509, 80520",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 15,
+                          "duration": 18,
+                          "days": 62
+                        },
+                        {
+                          "code": "81219",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 8,
+                          "duration": 18,
+                          "days": 62
+                        },
+                        {
+                          "code": "80767, 80768",
+                          "name": "RER",
+                          "vehicle": "RER",
+                          "agency": "PARISRER",
+                          "frequency": 3,
+                          "duration": 17,
+                          "days": 64
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "PARISRER",
+                          "frequency": 1690,
+                          "duration": 17,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start=Paris%20Champ%20de%20Mars%2FTourEiffel\u0026end=Antony%20Ratp\u0026is_date_start=1\u0026date=2016-03-01\u0026time=09:55:00\u0026mode=ferretram\u0026route_type=plus_rapide",
+                              "displayUrl": "ratp.fr",
+                              "moustacheUrl": "http://www.ratp.fr/itineraires/en/ratp/recherche-avancee?start={fromName}\u0026end={toName}\u0026is_date_start=1\u0026date={year}-{month}-{day}\u0026time={hour}:{minute}:{second}\u0026mode=ferretram\u0026route_type=plus_rapide"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Paris St-Michel",
+              "pos": "48.85357,2.34436",
+              "kind": "station",
+              "code": "8704954",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Luxembourg",
+              "pos": "48.84671,2.34047",
+              "kind": "station",
+              "code": "8703865",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Port Royal",
+              "pos": "48.83988,2.33704",
+              "kind": "station",
+              "code": "8704293",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Denfert Rochereau",
+              "pos": "48.83309,2.33318",
+              "kind": "station",
+              "code": "8703207",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Paris Cite Universitaire",
+              "pos": "48.82058,2.33906",
+              "kind": "station",
+              "code": "8703109",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Bourg la Reine Ratp",
+              "pos": "48.78124,2.31276",
+              "kind": "station",
+              "code": "8702886",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Croix de Berny",
+              "pos": "48.76214,2.30456",
+              "kind": "station",
+              "code": "8703189",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Antony Ratp",
+              "pos": "48.75486,2.30107",
+              "kind": "station",
+              "code": "8702672",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "train",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 6.61,
+          "duration": 8,
+          "transferDuration": 5,
+          "sName": "Antony Ratp",
+          "sPos": "48.75486,2.30107",
+          "tName": "Orly Sud",
+          "tPos": "48.72903,2.36989",
+          "path": "{lqhHul`MtEdBhKZpBm@hBwCvNec@hAsGEyGw@iLA_Ef@qHzAmHr[i`A|@mE\\{C`AqLv@gFfA}DhMk`@`AgIGiFgCoQK}DXkGPy@bGgRn@sEnAkY~o@c`@eAuJZ}E|AmD`C_C~@{BPkDiCqW",
+          "indicativePrice": {
+            "price": 9,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.orlyval.com",
+                  "host": "orlyval.com",
+                  "hops": [
+                    {
+                      "sName": "Antony Ratp",
+                      "sPos": "48.75486,2.30107",
+                      "tName": "Orly Sud",
+                      "tPos": "48.72903,2.36989",
+                      "frequency": 1008,
+                      "duration": 8,
+                      "indicativePrice": {
+                        "price": 9,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "name": "OrlyVal",
+                          "vehicle": "train",
+                          "agency": "PARISORLYVAL",
+                          "frequency": 1008,
+                          "duration": 8,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "PARISORLYVAL",
+                          "frequency": 1008,
+                          "duration": 8,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.orlyval.com",
+                              "displayUrl": "orlyval.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Antony Ratp",
+              "pos": "48.75486,2.30107",
+              "kind": "station",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Orly Ouest",
+              "pos": "48.72964,2.36001",
+              "kind": "station",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            },
+            {
+              "name": "Orly Sud",
+              "pos": "48.72903,2.36989",
+              "kind": "station",
+              "countryCode": "FR",
+              "regionCode": "J",
+              "timeZone": "Europe/Paris"
+            }
+          ]
+        },
+        {
+          "kind": "flight",
+          "isMajor": 1,
+          "distance": 2262.09,
+          "duration": 230,
+          "transferDuration": 120,
+          "sCode": "ORY",
+          "tCode": "KEF",
+          "indicativePrice": {
+            "price": 310,
+            "currency": "EUR",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 62,
+                  "indicativePrice": {
+                    "price": 260,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "ORY",
+                      "tCode": "KEF",
+                      "sTerminal": "S",
+                      "sTime": "22:00",
+                      "tTime": "23:50",
+                      "flight": "3850",
+                      "airline": "TO",
+                      "duration": 230,
+                      "aircraft": "73H"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 41,
+                  "indicativePrice": {
+                    "price": 1000,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "ORY",
+                      "tCode": "LHR",
+                      "sTerminal": "W",
+                      "tTerminal": "5",
+                      "sTime": "07:35",
+                      "tTime": "07:55",
+                      "flight": "331",
+                      "airline": "BA",
+                      "duration": 80,
+                      "aircraft": "319",
+                      "codeshares": [
+                        {
+                          "airline": "IB",
+                          "flight": "7670"
+                        },
+                        {
+                          "airline": "AB",
+                          "flight": "5081"
+                        },
+                        {
+                          "airline": "AA",
+                          "flight": "6401"
+                        }
+                      ]
+                    },
+                    {
+                      "sCode": "LHR",
+                      "tCode": "KEF",
+                      "sTerminal": "5",
+                      "sTime": "11:20",
+                      "tTime": "14:35",
+                      "flight": "800",
+                      "airline": "BA",
+                      "duration": 195,
+                      "aircraft": "32A",
+                      "lDuration": 205,
+                      "codeshares": [
+                        {
+                          "airline": "AA",
+                          "flight": "6570"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 64,
+                  "indicativePrice": {
+                    "price": 350,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "ORY",
+                      "tCode": "BCN",
+                      "sTerminal": "W",
+                      "tTerminal": "1",
+                      "sTime": "17:25",
+                      "tTime": "19:00",
+                      "flight": "8009 8019 8019",
+                      "airline": "VY",
+                      "duration": 95,
+                      "aircraft": "32A"
+                    },
+                    {
+                      "sCode": "BCN",
+                      "tCode": "KEF",
+                      "sTerminal": "1",
+                      "sTime": "21:20",
+                      "tTime": "00:30",
+                      "flight": "8560",
+                      "airline": "VY",
+                      "duration": 250,
+                      "aircraft": "320",
+                      "dayChange": 1,
+                      "lDuration": 140
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 68,
+                  "indicativePrice": {
+                    "price": 410,
+                    "currency": "EUR",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "ORY",
+                      "tCode": "MAD",
+                      "sTerminal": "W",
+                      "tTerminal": "4",
+                      "sTime": "18:45",
+                      "tTime": "20:45",
+                      "flight": "3445",
+                      "airline": "IB",
+                      "duration": 120,
+                      "aircraft": "321",
+                      "codeshares": [
+                        {
+                          "airline": "LA",
+                          "flight": "8007"
+                        }
+                      ]
+                    },
+                    {
+                      "sCode": "MAD",
+                      "tCode": "KEF",
+                      "sTerminal": "4",
+                      "sTime": "22:30",
+                      "tTime": "01:00",
+                      "flight": "3660",
+                      "airline": "IB",
+                      "duration": 270,
+                      "aircraft": "32S",
+                      "dayChange": 1,
+                      "lDuration": 105
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 0,
+          "isImperial": 0,
+          "distance": 49.67,
+          "duration": 45,
+          "transferDuration": 60,
+          "sName": "Reykjavik Keflavik Nas",
+          "sPos": "63.99605,-22.6238",
+          "tName": "Reykjavik",
+          "tPos": "64.13734,-21.93467",
+          "path": "ifreKtuaiCe@yG_Il@{@fZmK|BgDeN_Je}A?kp@bQio@tLy[dQu_@d|@cuAjQo_@|Pid@b\\qi@hHaXfByOjGuiAn`@skI`WwjDbBwi@MmpAUoPmJi}CwCmk@aTivB}Hke@m[esAgHq^{`CyjOgIoy@}Nc~BwJghAyw@skGgD}PaEmLqMiV{Hy`@yAeT}MccDuFwn@aJig@}L_h@gEmc@cGkiA_Fqb@oQks@iFa[uI{n@}Mwc@aD{VcJswBmBeXgEc`@_DwRse@kcCyJyt@co@uyHeG{g@aEcq@uJsQcc@{I{@jAi`Bn^gEnBaKs\\oOuZoOqi@sC_Fq`@sd@eMc[yN_z@wNmOkKjEqW`T_MwJgKqb@mJmLwBUub@hEyPu@gHtv@}FpTuInQgMle@oN|PqJDwH`bAvEfD",
+          "indicativePrice": {
+            "price": 14,
+            "currency": "EUR",
+            "isFreeTransfer": 0,
+            "nativePrice": 1950,
+            "nativeCurrency": "ISK"
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "https://www.re.is/flybus/#Book-now",
+                  "host": "re.is",
+                  "hops": [
+                    {
+                      "sName": "Reykjavik Keflavik Nas",
+                      "sPos": "63.99605,-22.6238",
+                      "tName": "Reykjavik",
+                      "tPos": "64.13734,-21.93467",
+                      "frequency": 84,
+                      "duration": 45,
+                      "indicativePrice": {
+                        "price": 14,
+                        "currency": "EUR",
+                        "isFreeTransfer": 0,
+                        "nativePrice": 1950,
+                        "nativeCurrency": "ISK"
+                      },
+                      "lines": [
+                        {
+                          "name": "",
+                          "vehicle": "bus",
+                          "agency": "REYKJAVIKEXCURSIONS",
+                          "frequency": 84,
+                          "duration": 45
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "REYKJAVIKEXCURSIONS",
+                          "frequency": 84,
+                          "duration": 45,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "https://www.re.is/flybus/#Book-now",
+                              "displayUrl": "re.is"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Reykjavik Keflavik Nas",
+              "pos": "63.99605,-22.6238",
+              "kind": "station",
+              "countryCode": "IS",
+              "regionCode": "1",
+              "timeZone": "Atlantic/Reykjavik"
+            },
+            {
+              "name": "Reykjavik",
+              "pos": "64.13734,-21.93467",
+              "kind": "station",
+              "countryCode": "IS",
+              "regionCode": "1",
+              "timeZone": "Atlantic/Reykjavik"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

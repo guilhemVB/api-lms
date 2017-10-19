@@ -1,0 +1,17 @@
+default:
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                env: dev
+    suites:
+        backend_calculator:
+            type: symfony_bundle
+            bundle: 'AppBundle'
+            paths:
+                - src/AppBundle/Fixtures/
+            contexts :
+                - AppBundle\Features\Context\CommonGivenContext:
+                    container: '@service_container'
+                - AppBundle\Features\Context\UserContext:
+                    container: '@service_container'
+

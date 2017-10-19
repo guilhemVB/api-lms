@@ -1,0 +1,10 @@
+imports:
+    - { resource: services.yml }
+
+services:
+    google_url_shortener_api:
+        class : AppBundle\Service\GoogleUrlShortener\GoogleUrlShortenerApiMock
+
+    journey_fetcher:
+        class: AppBundle\Service\Journey\JourneyFetcherMock
+

@@ -1,0 +1,2959 @@
+{
+  "serveTime": 218,
+  "places": [
+    {
+      "kind": "",
+      "name": "Origin",
+      "longName": "Origin",
+      "pos": "37.76853,-122.4753"
+    },
+    {
+      "kind": "",
+      "name": "Destination",
+      "longName": "Destination",
+      "pos": "37.8651,-119.5383"
+    }
+  ],
+  "airports": [
+    {
+      "code": "SFO",
+      "name": "San Francisco",
+      "pos": "37.61522,-122.39",
+      "countryCode": "US",
+      "timeZone": "America/Los_Angeles"
+    },
+    {
+      "code": "FAT",
+      "name": "Fresno",
+      "pos": "36.76962,-119.7201",
+      "countryCode": "US",
+      "timeZone": "America/Los_Angeles"
+    }
+  ],
+  "airlines": [
+    {
+      "code": "UA",
+      "name": "United",
+      "url": "http://www.united.com",
+      "iconPath": "/images/airlines/airlinesD8.gif?v=201638",
+      "iconSize": "27,23",
+      "iconOffset": "0,360"
+    },
+    {
+      "code": "AC",
+      "name": "Air Canada",
+      "url": "http://www.aircanada.ca",
+      "iconPath": "/images/airlines/airlinesD1.gif?v=201638",
+      "iconSize": "27,23",
+      "iconOffset": "0,1944"
+    },
+    {
+      "code": "CM",
+      "name": "COPA",
+      "url": "http://www.copaair.com",
+      "iconPath": "/images/airlines/airlinesD2.gif?v=201638",
+      "iconSize": "27,23",
+      "iconOffset": "0,1632"
+    },
+    {
+      "code": "AV",
+      "name": "AVIANCA",
+      "url": "http://www.avianca.com",
+      "iconPath": "/images/airlines/airlinesD2.gif?v=201638",
+      "iconSize": "27,23",
+      "iconOffset": "0,168"
+    },
+    {
+      "code": "LH",
+      "name": "Lufthansa",
+      "url": "http://www.lufthansa.com",
+      "iconPath": "/images/airlines/airlinesD5.gif?v=201638",
+      "iconSize": "27,23",
+      "iconOffset": "0,816"
+    }
+  ],
+  "aircrafts": [
+    {
+      "code": "CRJ",
+      "manufacturer": "Canadair",
+      "model": "CRJ"
+    }
+  ],
+  "agencies": [
+    {
+      "code": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+      "name": "San Francisco Municipal Transportation Agency",
+      "url": "http://www.sfmta.com",
+      "iconPath": "/logos/trains/SanFranciscoMunicipalTransportationAgency.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "BUNDUBUS",
+      "name": "Bundu Bus",
+      "url": "http://www.bundubus.com",
+      "iconPath": "/logos/trains/BunduBus.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "BART",
+      "name": "BART",
+      "url": "http://www.bart.gov",
+      "iconPath": "/logos/trains/bart.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "AMTRAK",
+      "name": "Amtrak",
+      "url": "http://www.amtrak.com",
+      "iconPath": "/logos/trains/Amtrak.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "YOSEMITEAREAREGIONALTRANSPORTATION",
+      "name": "Yosemite Area Regional Transportation",
+      "url": "http://www.yarts.com",
+      "iconPath": "/logos/trains/yarts.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    },
+    {
+      "code": "GREYHOUNDUSA",
+      "name": "Greyhound USA",
+      "url": "http://www.greyhound.com",
+      "iconPath": "/logos/trains/Greyhound.png",
+      "iconSize": "27,23",
+      "iconOffset": "0,0"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Bus",
+      "distance": 371.8,
+      "duration": 500,
+      "totalTransferDuration": 60,
+      "indicativePrice": {
+        "price": 287,
+        "currency": "USD",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Cross Over Dr\u0026Lincoln St",
+          "pos": "37.76554,-122.4772",
+          "kind": "station",
+          "code": "7758",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "San Francisco",
+          "pos": "37.80896,-122.4145",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Yosemite National Park",
+          "pos": "37.74493,-119.5979",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Destination",
+          "pos": "37.8651,-119.5383",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 11.4,
+          "duration": 20,
+          "transferDuration": 0,
+          "sName": "Cross Over Dr\u0026Lincoln St",
+          "sPos": "37.76554,-122.4772",
+          "sCode": "7758",
+          "tName": "Columbus Ave \u0026 Taylor St",
+          "tPos": "37.80328,-122.4146",
+          "tCode": "4118",
+          "path": "uaoeFvipjV}Df@mFjCgIv@kKfEqCgAg@sBq@wW^kMmBgBcAGiV~@sVr@IGgV~@iJFh@^jIKw@cd@_TocDeJnAkx@rJh@bJa@zBsGnKCjAFk@zHoML{Am@gJLNMOuAsSPNQOsAsSPNQOqBg]eDcf@U_BsEj@i@GuNnB]wIq@gH[sHcA_LzAkB|L_S",
+          "indicativePrice": {
+            "price": 2,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.sfmta.com",
+                  "host": "sfmta.com",
+                  "hops": [
+                    {
+                      "sName": "Cross Over Dr\u0026Lincoln St",
+                      "sPos": "37.76554,-122.4772",
+                      "tName": "Columbus Ave \u0026 Taylor St",
+                      "tPos": "37.80328,-122.4146",
+                      "frequency": 113,
+                      "duration": 20,
+                      "indicativePrice": {
+                        "price": 2,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "10924",
+                          "name": "91",
+                          "vehicle": "bus",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 113,
+                          "duration": 20,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 113,
+                          "duration": 20,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.sfmta.com",
+                              "displayUrl": "sfmta.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Cross Over Dr\u0026Lincoln St",
+              "pos": "37.76554,-122.4772",
+              "kind": "station",
+              "code": "7758",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Park Presidio Blvd \u0026 Fulton St",
+              "pos": "37.77322,-122.4717",
+              "kind": "station",
+              "code": "5950",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Park Presidio Blvd \u0026 Balboa St",
+              "pos": "37.77695,-122.472",
+              "kind": "station",
+              "code": "5946",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Park Presidio Blvd \u0026 Geary Blvd",
+              "pos": "37.78078,-122.4722",
+              "kind": "station",
+              "code": "5953",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "PARK PRESIDIO BLVD \u0026 California ST",
+              "pos": "37.7845,-122.4725",
+              "kind": "station",
+              "code": "5949",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Richardson Ave \u0026 Francisco St",
+              "pos": "37.80041,-122.4474",
+              "kind": "station",
+              "code": "6181",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lombard St \u0026 Divisadero St",
+              "pos": "37.79888,-122.4427",
+              "kind": "station",
+              "code": "5272",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lombard St \u0026 Pierce St",
+              "pos": "37.79929,-122.4394",
+              "kind": "station",
+              "code": "5284",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lombard St \u0026 Fillmore St",
+              "pos": "37.79971,-122.4361",
+              "kind": "station",
+              "code": "5274",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lombard St \u0026 Laguna St",
+              "pos": "37.80037,-122.4312",
+              "kind": "station",
+              "code": "5281",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Van Ness Ave \u0026 Chestnut St",
+              "pos": "37.80258,-122.4246",
+              "kind": "station",
+              "code": "6800",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Point St \u0026 Polk St",
+              "pos": "37.80524,-122.4235",
+              "kind": "station",
+              "code": "5469",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Point St \u0026 Polk St",
+              "pos": "37.80524,-122.4235",
+              "kind": "station",
+              "code": "5469",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Point St \u0026 Polk St",
+              "pos": "37.80524,-122.4235",
+              "kind": "station",
+              "code": "5469",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Point St \u0026 Hyde St",
+              "pos": "37.80563,-122.4205",
+              "kind": "station",
+              "code": "5459",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Point St \u0026 Hyde St",
+              "pos": "37.80563,-122.4205",
+              "kind": "station",
+              "code": "5459",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Columbus Ave \u0026 Bay St",
+              "pos": "37.80551,-122.4178",
+              "kind": "station",
+              "code": "4100",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Columbus Ave \u0026 Taylor St",
+              "pos": "37.80328,-122.4146",
+              "kind": "station",
+              "code": "4118",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 303.74,
+          "duration": 360,
+          "transferDuration": 60,
+          "sName": "San Francisco",
+          "sPos": "37.80896,-122.4145",
+          "tName": "Yosemite National Park",
+          "tPos": "37.74493,-119.5979",
+          "path": "aqweFzadjV|@fGnMsAzFzItz@suAbBsQlVoDfc@wp@wDcFqzCgeD}N{Rw\\oz@uQgbCuC_p@a_@guD`Ewe@gCkd@b\\k{B|_@ou@zi@{T~Mgo@fUgl@hV{a@vYomBvUsg@zYo[dYw`ApGojA`IwN~t@ohBjNwNzbAkj@nR~D~b@bPbg@sW~n@km@plAcStgAop@bN_[lR_Z~JoXx^kp@nu@sr@dFg\\eB{d@_@wkBsCg`@yLsw@sAk|@mKoUma@{n@{@kd@jCsx@iIkc@oBobBrFsb@vN{i@dMg|A]cx@eDsb@@coCuTcgBnEc~VrFcr@uDo_A_M{vAg@kP`BknB{Eo]opAo`Ee`@ozCvFwk@nN{w@{t@kkDkf@{p@sCwPsFobBsOo_AoUszBuMgyDD_I~QkkH_Fsm@i}B{tHeE__@e@_eBsIgjAi@o`JqM{kCuQ_c@k^_^ml@g}@gf@wdA{Dg}@bg@{yCx@oSo@gjL~Asb@_rAjSoHs@cEgjd@zKsi@xLgSnCgfLnAgwA|H_jBpC_gCnJkWfr@wx@tp@sWre@_YmNcj@o_@krAuK_gAu@gtFm@{IocAwxGud@_YcOoFsf@w]{Wkh@tLgr@wRkcAfHsu@rQ_o@_CgNkYon@q`@gl@gSob@oY_d@mOos@i|@{fAkf@wTmG_JoYc{@{J{hAwOsi@J{c@pOgrAQkRtD{u@rA{_A`QktAkAwf@pMgnBsRkp@aP{@wjAr^us@{DusAoa@kMsVy[_d@iSgn@x^oUd]wl@vKw{ApEwTkJwRtM{l@vH_{@nIg]pVcQzKBzs@{n@zs@wiArH_lAk@{c@pIk\\n{@onAuAcs@fp@gyAnD{^xd@coAlz@ocCbH{|@w^c~Br\\clAsh@cu@qy@{`B_]oe@g_@{`BfZ_h@oA_b@wN{g@v[_Wpb@{x@d@{XmCca@fWciAzJ_ZzMkgAyAgs@~EowAtQ_[rTox@cAgNcRoq@_n@sfAlCks@nUk[|Fg~@~Yk\\j@cd@gL{VaUwgAc@gZ{Isj@bE_c@yVspA|Ig[yJgXvR{_BwKcPyJk]eUw^`I_XzCcWdYkr@vGgo@r^cfAuA{fBh@kHka@gvA|k@of@dVkm@uRoTrBwh@oF_bBv_AgL|j@~J~h@cD~MvKnv@w~@vLgGrK_Tbe@Bt`@_v@iDsPjPwdBtNgJbGcXnd@kSkQcr@jIo_@z_@{ZaWs_@iBo^~Jg_@{Dsi@`b@_o@`f@k[uKszAdz@nNzQoc@|@kNrmAcmAbOsq@kXon@kt@we@mJ{f@r[ogAvG{{@rQgs@fDkcAzSwk@qRwdAsWc{@bKk|@oSooAoU{}@ud@wc@_m@o_Aag@{e@hIvcA",
+          "indicativePrice": {
+            "price": 75,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.bundubus.com/grand_canyon_transportation_schedule.php",
+                  "host": "bundubus.com",
+                  "hops": [
+                    {
+                      "sName": "San Francisco",
+                      "sPos": "37.80896,-122.4145",
+                      "tName": "Yosemite National Park",
+                      "tPos": "37.74493,-119.5979",
+                      "frequency": 7,
+                      "duration": 360,
+                      "indicativePrice": {
+                        "price": 75,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "name": "",
+                          "vehicle": "bus",
+                          "agency": "BUNDUBUS",
+                          "frequency": 7,
+                          "duration": 360,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "BUNDUBUS",
+                          "frequency": 7,
+                          "duration": 360,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.bundubus.com/grand_canyon_transportation_schedule.php",
+                              "displayUrl": "bundubus.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "San Francisco",
+              "pos": "37.80896,-122.4145",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite National Park",
+              "pos": "37.74493,-119.5979",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "car",
+          "subkind": "taxi",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 56.66,
+          "duration": 60,
+          "transferDuration": 0,
+          "sName": "Yosemite National Park",
+          "sPos": "37.74493,-119.5979",
+          "tName": "Destination",
+          "tPos": "37.8651,-119.5383",
+          "vehicle": "taxi",
+          "path": "q`keFzz}xUtMbGzEfRtPj_@hHjHjHvD`MrKhK~@dNfF~KfNkAr_@NzOw@bKbC~]rKnHjB~Jc@bj@~Cj\\nKje@vAbMhM~SoAzQdM~Nv@zQeHra@d@~QcDzQ}@v_@uKj\\aD~R|@~KeIf\\iBvUiHfQ[bKsMnVt@~`@pNfTxKjCvd@b^dGnKnKfMXrUaDfZyOfX{KvIce@nh@sKfMmMrIbC~R}DnCwPb@dBbVmFv@sF_FsVoEuJfAaNkKqE~M~EbRtQzUMjKx@fF_BrW}g@nYyBnJ}J~OqEfBgKrTp@fHzGj\\gMn^sD~EcNr[uObM_HcHgFoSnHwP~CwStH{F\\oLmHgIrHoXwMoa@pBwEhMsGfGsWuA_GqMcKgL~I_FnR_HjBoTkEgMkLiDsEaC{Ot@g[eN{O{Oga@]kNeOkV}SgGuGwJ{Ngc@wL{LuKwQuAkZhCoUqFcQiv@w`@uXoF_TwH__@kQk^_CsNbJmFoKeEog@gEcIgKkJiMcCoXjA_FsE{C_QuN_YyKgOyHsGoFkTaNgP}[wj@{R{`@k@_GG{[{G_U~AoNhGgWkDoRuOoLmLcMsLsR?_JjDkPnFsL~IoOlE{J|Nof@fF_e@cBsRwDwPpIk[oG_Xd@_MpHoO}@g]rN{KvRWnV_Jb@wFcE{McXwCoPgNuCoIsFkHiIgQ{IgMfDs[nD{D",
+          "indicativePrice": {
+            "price": 210,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Train, bus",
+      "distance": 447.55,
+      "duration": 571,
+      "totalTransferDuration": 135,
+      "indicativePrice": {
+        "price": 292,
+        "currency": "USD",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Judah St \u0026 15th Ave",
+          "pos": "37.76185,-122.4728",
+          "kind": "station",
+          "code": "5197",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Civic Center/UN Plaza",
+          "pos": "37.77953,-122.4138",
+          "kind": "station",
+          "code": "CIVC",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Richmond, CA",
+          "pos": "37.93679,-122.3531",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Merced, CA - AMTRAK",
+          "pos": "37.3073,-120.4768",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Curry Village - by request",
+          "pos": "37.73786,-119.5723",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Destination",
+          "pos": "37.8651,-119.5383",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "train",
+          "subkind": "tram",
+          "vehicle": "tram",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 5.86,
+          "duration": 21,
+          "transferDuration": 0,
+          "sName": "Judah St \u0026 15th Ave",
+          "sPos": "37.76185,-122.4728",
+          "sCode": "5197",
+          "tName": "Metro Civic Center Station/Downtn",
+          "tPos": "37.77854,-122.4148",
+          "tCode": "5727",
+          "path": "qjneFzmojVEk@SgMDv@GoE[{OGkBe@SuHRW_@s@ca@S{K?oBwBoIcBkWgAcPM{@}AcCqP{uAO{EHkCB_Ak@gTIgCQw@Q{HF{AaNcRu@{@mJsM{D_GJKKJYSk@gAsFsHsDkEsFoHj@C",
+          "indicativePrice": {
+            "price": 2,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.sfmta.com",
+                  "host": "sfmta.com",
+                  "hops": [
+                    {
+                      "sName": "Judah St \u0026 15th Ave",
+                      "sPos": "37.76185,-122.4728",
+                      "tName": "Metro Civic Center Station/Downtn",
+                      "tPos": "37.77854,-122.4148",
+                      "frequency": 843,
+                      "duration": 21,
+                      "indicativePrice": {
+                        "price": 2,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "1093",
+                          "name": "N",
+                          "vehicle": "tram",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 843,
+                          "duration": 22,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 843,
+                          "duration": 21,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.sfmta.com",
+                              "displayUrl": "sfmta.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Judah St \u0026 15th Ave",
+              "pos": "37.76185,-122.4728",
+              "kind": "station",
+              "code": "5197",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Judah St \u0026 Funston Ave",
+              "pos": "37.76195,-122.4706",
+              "kind": "station",
+              "code": "5220",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Judah St \u0026 12th Ave",
+              "pos": "37.76199,-122.4695",
+              "kind": "station",
+              "code": "5196",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Judah St \u0026 9th Ave",
+              "pos": "37.76214,-122.4663",
+              "kind": "station",
+              "code": "5194",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "9th Ave \u0026 Irving St",
+              "pos": "37.76391,-122.4662",
+              "kind": "station",
+              "code": "3212",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "9th Ave \u0026 Irving St",
+              "pos": "37.76391,-122.4662",
+              "kind": "station",
+              "code": "3212",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Irving St \u0026 4th Ave",
+              "pos": "37.76423,-122.4611",
+              "kind": "station",
+              "code": "5120",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Irving St \u0026 Arguello Blvd",
+              "pos": "37.76437,-122.458",
+              "kind": "station",
+              "code": "5124",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Carl St \u0026 Hillway Ave",
+              "pos": "37.76493,-122.4565",
+              "kind": "station",
+              "code": "3913",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Carl St \u0026 Stanyan St",
+              "pos": "37.76537,-122.4529",
+              "kind": "station",
+              "code": "3915",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Carl St \u0026 Cole St",
+              "pos": "37.76574,-122.4501",
+              "kind": "station",
+              "code": "3911",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Sunset Tunnel East Portal",
+              "pos": "37.76913,-122.4331",
+              "kind": "station",
+              "code": "7318",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Duboce Ave \u0026 Church St",
+              "pos": "37.76941,-122.4294",
+              "kind": "station",
+              "code": "4448",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Metro Van Ness Station",
+              "pos": "37.77507,-122.4192",
+              "kind": "station",
+              "code": "5419",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Metro Civic Center Station/Downtn",
+              "pos": "37.77854,-122.4148",
+              "kind": "station",
+              "code": "5727",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "subway",
+          "vehicle": "BART",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 33.83,
+          "duration": 39,
+          "transferDuration": 15,
+          "sName": "Civic Center/UN Plaza",
+          "sPos": "37.77953,-122.4138",
+          "sCode": "CIVC",
+          "tName": "Richmond",
+          "tPos": "37.93689,-122.3532",
+          "tCode": "RICH",
+          "path": "ayqeF~|cjV}a@wk@^bAFNqYw`@eVk\\{GkJsq@_qByDgScd@_vEaB{^[wUDgLjKgdC~@cKbHgh@zC_MxDwLxH_YhF__@fCkJpMo]XgK}CsKmSoJmC{AmYsO{Aw@PBQCoJsEoGfBqJnKwJrBqAGefAoScFs@g`@_EkKfBkRvMsCv@oq@vIqOk@gM_EuCw@qF{A{e@gM{BG}q@~DaJv@aJjAiFvGWnElEzr@qAbL_BrFeC~HkGbO_IfFkJnD{e@fPwmAnXwHvC{EvCcQjM}kCjoBgTbQaFrJwB~LSfEg@jvB_BfNwBfFiMzPeKfK[R",
+          "indicativePrice": {
+            "price": 5,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.bart.gov",
+                  "host": "bart.gov",
+                  "hops": [
+                    {
+                      "sName": "Civic Center/UN Plaza",
+                      "sPos": "37.77953,-122.4138",
+                      "tName": "Richmond",
+                      "tPos": "37.93689,-122.3532",
+                      "frequency": 337,
+                      "duration": 39,
+                      "indicativePrice": {
+                        "price": 5,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "07",
+                          "name": "Richmond - Daly City/Millbrae",
+                          "vehicle": "BART",
+                          "agency": "BART",
+                          "frequency": 337,
+                          "duration": 39,
+                          "days": 126
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "BART",
+                          "frequency": 337,
+                          "duration": 39,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.bart.gov",
+                              "displayUrl": "bart.gov"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Civic Center/UN Plaza",
+              "pos": "37.77953,-122.4138",
+              "kind": "station",
+              "code": "CIVC",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Powell St.",
+              "pos": "37.78499,-122.4069",
+              "kind": "station",
+              "code": "POWL",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Montgomery St.",
+              "pos": "37.78926,-122.4014",
+              "kind": "station",
+              "code": "MONT",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Embarcadero",
+              "pos": "37.79298,-122.3967",
+              "kind": "station",
+              "code": "EMBR",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "West Oakland",
+              "pos": "37.80468,-122.2946",
+              "kind": "station",
+              "code": "WOAK",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "12th St. Oakland City Center",
+              "pos": "37.80367,-122.2716",
+              "kind": "station",
+              "code": "12TH",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th St. Oakland",
+              "pos": "37.80787,-122.269",
+              "kind": "station",
+              "code": "19TH_N",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "MacArthur",
+              "pos": "37.82841,-122.2672",
+              "kind": "station",
+              "code": "MCAR",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Ashby",
+              "pos": "37.85302,-122.2698",
+              "kind": "station",
+              "code": "ASHB",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Downtown Berkeley",
+              "pos": "37.86987,-122.268",
+              "kind": "station",
+              "code": "DBRK",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Berkeley",
+              "pos": "37.87404,-122.2834",
+              "kind": "station",
+              "code": "NBRK",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "El Cerrito Plaza",
+              "pos": "37.90306,-122.2993",
+              "kind": "station",
+              "code": "PLZA",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "El Cerrito del Norte",
+              "pos": "37.92566,-122.3173",
+              "kind": "station",
+              "code": "DELN",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Richmond",
+              "pos": "37.93689,-122.3532",
+              "kind": "station",
+              "code": "RICH",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "train",
+          "vehicle": "train",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 217.17,
+          "duration": 165,
+          "transferDuration": 60,
+          "sName": "Richmond, CA",
+          "sPos": "37.93679,-122.3531",
+          "tName": "Merced, CA",
+          "tPos": "37.30741,-120.4766",
+          "path": "}opfFbbxiVkCjCsQfOaj@bRwf@vBceGsVo\\_SqK{j@xJ_fAoGca@mx@ctApF_m@eBoU}@gk@sY{[ma@_`@{O_f@wWgOgN{Oak@oNgDgHuQks@gKcF{o@{KiOwjA_P{OcNsg@|CcP`Ho{AiFwc@bXcqBpDgo@vRs_@b^ge@nb@{U`]oIpXc[~Ton@bh@cpBOoW}Hcf@cNk\\wMwmAaD_eBgB{RouBwcL}Cw\\}Mk}@bAoSr[wqB{Gcl@rA{KxUwbArtAsrItFo_ATg}Cb@gFlh@syDbB_Vr@_}B`FkmAbA_Qhe@wtDhAouBxS_lCr@gEvrAgyFjMsXtzH_~LvEoVh@swQnb@_sR?wmLo@gSgJwjAcv@goIaJg`Ae}@vOcAfAbAgAjw@wO`@g\\mQoaBdCsf@ra@wmA~|Wguh@juI_dM~d@cZluBcc@teL_oDfWoHrsGkhA~JwG|jCgoDtfBgjBn~HseI|IgJrlGsrGhKkNb}GchMtYgQn|@cWhIkJd}Rs`_@hGsPx{@ocD",
+          "indicativePrice": {
+            "price": 40,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "https://free.rome2rio.com/amtrak?oName=Richmond%2C%20CA\u0026dName=Merced%2C%20CA\u0026oPos=37.9367867,-122.353149\u0026dPos=37.30741,-120.476631\u0026queryDest=Merced%2C%20CA\u0026outDate={outDate}\u0026adults={adults}",
+                  "host": "amtrak.com",
+                  "hops": [
+                    {
+                      "sName": "Richmond, CA",
+                      "sPos": "37.93679,-122.3531",
+                      "tName": "Merced, CA",
+                      "tPos": "37.30741,-120.4766",
+                      "frequency": 28,
+                      "duration": 165,
+                      "indicativePrice": {
+                        "price": 40,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "name": "San Joaquin",
+                          "vehicle": "train",
+                          "agency": "AMTRAK",
+                          "frequency": 28,
+                          "duration": 165
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "AMTRAK",
+                          "frequency": 28,
+                          "duration": 165,
+                          "actions": [
+                            {
+                              "text": "Book at",
+                              "url": "https://free.rome2rio.com/amtrak?oName=Richmond%2C%20CA\u0026dName=Merced%2C%20CA\u0026oPos=37.9367867,-122.353149\u0026dPos=37.30741,-120.476631\u0026queryDest=Merced%2C%20CA\u0026outDate={outDate}\u0026adults={adults}",
+                              "displayUrl": "amtrak.com",
+                              "moustacheUrl": "https://{r2rHostname}/amtrak?oName={fromName}\u0026dName={toName}\u0026oPos={fromLat},{fromLng}\u0026dPos={toLat},{toLng}\u0026queryDest={toName}\u0026outDate={outDate}\u0026adults={adults}"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Richmond, CA",
+              "pos": "37.93679,-122.3531",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Martinez, CA",
+              "pos": "38.01926,-122.139",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Antioch",
+              "pos": "38.01776,-121.8149",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Stockton, CA",
+              "pos": "37.95709,-121.2791",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Modesto, CA",
+              "pos": "37.66911,-120.9124",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Denair, CA",
+              "pos": "37.52831,-120.7991",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Merced, CA",
+              "pos": "37.30741,-120.4766",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 131.21,
+          "duration": 147,
+          "transferDuration": 60,
+          "sName": "Merced, CA - AMTRAK",
+          "sPos": "37.3073,-120.4768",
+          "tName": "Curry Village - by request",
+          "tPos": "37.73786,-119.5723",
+          "path": "squbF~ri~UzAk@`n@bZbLw`@lFcLdJs]cEkFYol[sBoM_cIswT_J_i@uWke@uK{LuUoe@wDsk@kEkEeq@g[cHwG_T_Y_VgHgRkb@{R{T{dAcdAyLw_@eGg[wf@_o@if@cb@yQsa@aZ{Wi`AwhAwYwd@_CwCkXst@mPsTcb@_~@kVsAwYwKeh@{Fgm@j_@mh@vAqD_FuFsXkJk[\\{XtQwu@sC{a@bDkb@uBw^eTcn@gDkPuGsPxJg`AkQok@sH{MsJcd@vA_Inj@sgAtE{[fDw]`_@o_@tA{c@uS{Tu[bHaXnN_VrUuFcCtFbC_OnQ_SrL{l@rA{G_]q^sMoIO_FsJ}SgLwO{V_MgMc@kJcJ{[Swb@cJkb@rAoYwIgs@mPsd@yToGyPbL_c@cD{UkI}LvMo[bH{ObKu\\z_@eMzVaWfXm[j_@{i@zGoQnWgJj[_@zNct@f_A}]rA}DwSwNgWs[fK{OfY_SnKsP_P}[{c@ob@_Bo[cRqVw^eYsUmAsK`Ag\\sDwJ}f@o`@_K{\\wO{K_J_Q_RwK{ToV}PkAkMfGy_@~LqKbYgN~J}F{EoCoa@uSws@lNkRx@wa@xOb@bf@_BvXoItAcQeD{SnO{O}Jc^aIw]ca@sj@}Fo`@nE_PlR{Wr@cZuDcYkFkYgD_b@g[{NuQoYyWoTlPoS|Hkd@hBwf@pVsy@iDoK_WKwEsn@_CsImIgfAiWo_AqD_s@uGkZ`FokAbNgm@wFo`@yVsOeWkKui@_[u~@ga@a_@KkXkEuh@cUiOcMkOcGoCoe@`F{KbBcSrC_KrGgcA_BgP~EkUbB{n@rCgPa@cRzTwf@uC{S{N{t@oRo\\cDs]pKox@wQcoAkNw_@iHka@cJwOkXoQg\\se@}PkZoQoRrH{l@tOsb@oC_WbJ_D",
+          "indicativePrice": {
+            "price": 25,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.yarts.com/schedules.html",
+                  "host": "yarts.com",
+                  "hops": [
+                    {
+                      "sName": "Merced, CA - AMTRAK",
+                      "sPos": "37.3073,-120.4768",
+                      "tName": "Curry Village - by request",
+                      "tPos": "37.73786,-119.5723",
+                      "frequency": 18,
+                      "duration": 147,
+                      "indicativePrice": {
+                        "price": 25,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "name": "Hwy 140",
+                          "vehicle": "bus",
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 28,
+                          "duration": 146,
+                          "days": 127
+                        },
+                        {
+                          "code": "580",
+                          "name": "Merced HWY 140",
+                          "vehicle": "bus",
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 18,
+                          "duration": 151,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 18,
+                          "duration": 147,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.yarts.com/schedules.html",
+                              "displayUrl": "yarts.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Merced, CA - AMTRAK",
+              "pos": "37.3073,-120.4768",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Catheys Valley",
+              "pos": "37.43328,-120.0964",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Midtown Mariposa",
+              "pos": "37.48836,-119.967",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Roadside Rest Stop",
+              "pos": "37.48969,-119.9706",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Mariposa Park and Ride",
+              "pos": "37.49289,-119.9728",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Midpines KOA Campground",
+              "pos": "37.54369,-119.9201",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite Bug Resort",
+              "pos": "37.57815,-119.9542",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite Cedar Lodge",
+              "pos": "37.6603,-119.8528",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite View Lodge, El Portal",
+              "pos": "37.67798,-119.7663",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Curry Village - by request",
+              "pos": "37.73786,-119.5723",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "car",
+          "subkind": "taxi",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 59.48,
+          "duration": 64,
+          "transferDuration": 0,
+          "sName": "Curry Village - by request",
+          "sPos": "37.73786,-119.5723",
+          "tName": "Destination",
+          "tPos": "37.8651,-119.5383",
+          "vehicle": "taxi",
+          "path": "ktieFr}xxUgBkBqJbKuWbUwEjV_@rX}GnQ|AzT|E~ToAvOhGzJxKjF~IfOvJnUhHjHjHvD`MrKhK~@dNfF~KfNkAr_@NzOw@bKbC~]rKnHjB~Jc@bj@~Cj\\nKje@vAbMhM~SoAzQdM~Nv@zQeHra@d@~QcDzQ}@v_@uKj\\aD~R|@~KeIf\\iBvUiHfQ[bKsMnVt@~`@pNfTxKjCvd@b^dGnKnKfMRnV{CjYyOfX{KvIce@nh@sKfMmMrIbC~R}DnCwPb@dBbVmFv@sF_FsVoEuJfAiO_KiDrM~EbRtQzUMjKx@fF_BrW}g@nYyBnJ}J~OqEfBgKrTp@fHzGj\\gMn^sD~EcNr[uObM_HcHgFoSnHwP~CwStH{FMcNaGsGrHoXwMoa@pBwEhMsGfGsWuA_GqMcKgL~I_FnR_HjBoTkEgMkLiDsEaC{Ot@g[eN{O{Oga@]kNeOkV}U_IuE_I{Ngc@wL{LuKwQuAkZhCoUqFcQiv@w`@uXoF_TwH__@kQk^_CsNbJsIw^qC_X}OwPiMcCoXjA_FsE{C_QuN_YyKgOyHsGoFkTaNgP}[wj@{R{`@k@_GG{[{G_U~AoNhGgWkDoRuOoLmLcMsLsR?_JjDkPnFsL~IoOlE{J|Nof@fF_e@cBsRwDwPpIk[oG_Xd@_MpHoO}@g]rN{KvRWnV_Jb@wFcE{McXwCoPgNuCoIsFkHiIgQ{IgMfDs[nD{D",
+          "indicativePrice": {
+            "price": 220,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Line 6825 bus, bus",
+      "distance": 416.37,
+      "duration": 602,
+      "totalTransferDuration": 120,
+      "indicativePrice": {
+        "price": 280,
+        "currency": "USD",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Lincoln Way \u0026 19TH AVE",
+          "pos": "37.76538,-122.4772",
+          "kind": "station",
+          "code": "7186",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "San Francisco, CA",
+          "pos": "37.78918,-122.3926",
+          "kind": "station",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Merced Transpo",
+          "pos": "37.30151,-120.4872",
+          "kind": "station",
+          "code": "111",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Yosemite Valley Visitors Center",
+          "pos": "37.74997,-119.5887",
+          "kind": "station",
+          "code": "17864",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Destination",
+          "pos": "37.8651,-119.5383",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 10.13,
+          "duration": 43,
+          "transferDuration": 0,
+          "sName": "Lincoln Way \u0026 19TH AVE",
+          "sPos": "37.76538,-122.4772",
+          "sCode": "7186",
+          "tName": "Beale St. \u0026 Howard St.",
+          "tPos": "37.78971,-122.3942",
+          "tCode": "7619",
+          "path": "u`oeFjipjVa@{XQsLSoLi@k\\QgLM{IM_Ih@wBJsG{AoUMK?R_PnB?cBaBkTKcE_BsSDk@}AoRUgHgB_UFw@s@oGWsHcBcTFs@q@wGWgHO_@yDf@}B{]fEWlCbAcPwSH?zLgC_CwBgDwD}J_NaDjEiAvBeCwCiBwCUKyE{HwG{HOw@}J{Lg@{AqQgUm@cBuEcFGo@{SgX\\C`F{HiCoD}FbIcCwD~BgClJcNf@W",
+          "indicativePrice": {
+            "price": 2,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.sfmta.com",
+                  "host": "sfmta.com",
+                  "hops": [
+                    {
+                      "sName": "Lincoln Way \u0026 19TH AVE",
+                      "sPos": "37.76538,-122.4772",
+                      "tName": "Beale St. \u0026 Howard St.",
+                      "tPos": "37.78971,-122.3942",
+                      "frequency": 568,
+                      "duration": 43,
+                      "indicativePrice": {
+                        "price": 2,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "1071",
+                          "name": "7",
+                          "vehicle": "bus",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 513,
+                          "duration": 44,
+                          "days": 127
+                        },
+                        {
+                          "code": "1072",
+                          "name": "7R",
+                          "vehicle": "bus",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 55,
+                          "duration": 43,
+                          "days": 62
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 568,
+                          "duration": 43,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.sfmta.com",
+                              "displayUrl": "sfmta.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Lincoln Way \u0026 19TH AVE",
+              "pos": "37.76538,-122.4772",
+              "kind": "station",
+              "code": "7186",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 19TH AVE",
+              "pos": "37.76538,-122.4772",
+              "kind": "station",
+              "code": "7186",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 15th Ave",
+              "pos": "37.76556,-122.4731",
+              "kind": "station",
+              "code": "5305",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 Funston Ave",
+              "pos": "37.76565,-122.4709",
+              "kind": "station",
+              "code": "5327",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 11th Ave",
+              "pos": "37.76575,-122.4687",
+              "kind": "station",
+              "code": "5303",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 11th Ave",
+              "pos": "37.76575,-122.4687",
+              "kind": "station",
+              "code": "5303",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 7th Ave",
+              "pos": "37.76596,-122.464",
+              "kind": "station",
+              "code": "5299",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 5th Ave",
+              "pos": "37.76605,-122.4619",
+              "kind": "station",
+              "code": "5297",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 3rd Ave",
+              "pos": "37.76612,-122.4601",
+              "kind": "station",
+              "code": "5295",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Lincoln Way \u0026 Arguello Blvd",
+              "pos": "37.76598,-122.458",
+              "kind": "station",
+              "code": "5325",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Stanyan St \u0026 Frederick St",
+              "pos": "37.76645,-122.4529",
+              "kind": "station",
+              "code": "6478",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Stanyan St \u0026 Frederick St",
+              "pos": "37.76645,-122.4529",
+              "kind": "station",
+              "code": "6478",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Stanyan St",
+              "pos": "37.76917,-122.4531",
+              "kind": "station",
+              "code": "4963",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Clayton St",
+              "pos": "37.76971,-122.4487",
+              "kind": "station",
+              "code": "4947",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Masonic Ave",
+              "pos": "37.77017,-122.4452",
+              "kind": "station",
+              "code": "4958",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Buena Vista East Ave",
+              "pos": "37.77075,-122.4406",
+              "kind": "station",
+              "code": "4943",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Divisadero St",
+              "pos": "37.77123,-122.4367",
+              "kind": "station",
+              "code": "4951",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Pierce St",
+              "pos": "37.77161,-122.4339",
+              "kind": "station",
+              "code": "4961",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Fillmore St",
+              "pos": "37.77207,-122.4302",
+              "kind": "station",
+              "code": "4953",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Buchanan St",
+              "pos": "37.77243,-122.4273",
+              "kind": "station",
+              "code": "4942",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Haight St \u0026 Gough St",
+              "pos": "37.77308,-122.4223",
+              "kind": "station",
+              "code": "7757",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 South Van Ness Ave",
+              "pos": "37.77505,-122.4193",
+              "kind": "station",
+              "code": "5692",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 9th St",
+              "pos": "37.77741,-122.4163",
+              "kind": "station",
+              "code": "5652",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 8th St",
+              "pos": "37.77861,-122.4148",
+              "kind": "station",
+              "code": "5651",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 7th St",
+              "pos": "37.77981,-122.4132",
+              "kind": "station",
+              "code": "5649",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 6th St",
+              "pos": "37.78129,-122.4113",
+              "kind": "station",
+              "code": "5648",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 5th St",
+              "pos": "37.78339,-122.4087",
+              "kind": "station",
+              "code": "5646",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 5th St",
+              "pos": "37.78339,-122.4087",
+              "kind": "station",
+              "code": "5646",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 4th St",
+              "pos": "37.7866,-122.4046",
+              "kind": "station",
+              "code": "5642",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 3rd St",
+              "pos": "37.78771,-122.4032",
+              "kind": "station",
+              "code": "5641",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Market St \u0026 1st St",
+              "pos": "37.7909,-122.3991",
+              "kind": "station",
+              "code": "5638",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Beale St \u0026 Mission St",
+              "pos": "37.79175,-122.3967",
+              "kind": "station",
+              "code": "3089",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Beale St. \u0026 Howard St.",
+              "pos": "37.78971,-122.3942",
+              "kind": "station",
+              "code": "7619",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 212.66,
+          "duration": 214,
+          "transferDuration": 60,
+          "sName": "San Francisco, CA",
+          "sPos": "37.78918,-122.3926",
+          "tName": "Merced, CA",
+          "tPos": "37.30178,-120.4876",
+          "path": "kuseF~x_jVjFbEvNgLwDcFqzCgeD}N{Rw\\oz@uQgbCsB_h@oLwyAlIkt@ld@geAzL{`AxIw[vIKbd@oSdj@jZ`Yk_A`Yoi@xF_g@rLoc@t\\wi@la@sSzEkKjYseAvc@g[nzFw{E~eA_hAbzFgiJbUcRdToI_Dwy@y\\{bAzJgFdEwPyLsUgOjAyHbGsVk`@}`@_Rub@ZcFoj@yLsw@Lgq@oNs`@k_@wh@}Boj@jCsx@iIkc@oBobBrFsb@vN{i@zBs^hIs|@Zgg@_Fos@XseCu@oN}RoxAYsGnEc~VrFcr@uDo_A_M{vAg@kP`BknB{Eo]opAo`E}_@svCnFso@tO_k@cAcP}s@cgDoJoQqVgV}G{XsFobBsOo_AoUszBuMgyDD_IvSscIjEcgBSwbEaAg^IcoBfMWlNkJqIzBqDwDcMFCwgI}FoRkiBorC}Psc@oLsHkxBceD_O_YsYct@oA{s@bg@{yCx@oSe@{_LhDsj@`YkRxDgJxh@ku@vaBggDbTwj@`OwQ`w@s`BvdAksAtU_a@vRwOnl@ku@h^sx@fr@sy@zi@oa@th@cp@`[ge@bYgYxcAgqA|KkYlb@_a@jg@cBpDcCrt@g_AnU{a@vK_JsPoVxIcLfLwNpQfT~Zk[t_AcPhO{V`Kww@v\\kWfX_XrnDwfEfQkWbP{NrdCkxC~Wsd@~u@{eA`_@{Rt_@{HtkB{x@lVcHIskBxDsFjM_]ff@_i@vMgHtRzLxvBO`Hc`@xvAw~E`^{k@va@c_@dRo]hf@{e@ng@wq@x^wZb\\sh@tu@s|@|ZsVzRoV|o@gg@z^{NjP{WhDs^jAkh@xXkgAtM_\\`e@_hBjLkw@lTwe@lj@{vBnKgs@nVwj@|]w}Apb@cf@ve@ghBtBoUH{y@jV{g@djCwzJfJoo@`h@_k@tO{f@yRwI~X{eA",
+          "indicativePrice": {
+            "price": 32,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.greyhound.com/",
+                  "host": "greyhound.com",
+                  "hops": [
+                    {
+                      "sName": "San Francisco, CA",
+                      "sPos": "37.78918,-122.3926",
+                      "tName": "Merced, CA",
+                      "tPos": "37.30178,-120.4876",
+                      "frequency": 7,
+                      "duration": 214,
+                      "indicativePrice": {
+                        "price": 32,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "name": "6825",
+                          "vehicle": "bus",
+                          "agency": "GREYHOUNDUSA",
+                          "frequency": 7,
+                          "duration": 214,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "GREYHOUNDUSA",
+                          "frequency": 7,
+                          "duration": 214,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.greyhound.com/",
+                              "displayUrl": "greyhound.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "San Francisco, CA",
+              "pos": "37.78918,-122.3926",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Oakland, CA",
+              "pos": "37.811,-122.274",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Hayward, CA",
+              "pos": "37.66988,-122.0867",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Tracy, CA",
+              "pos": "37.73487,-121.4241",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Modesto, CA",
+              "pos": "37.63995,-121.0015",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Turlock, CA",
+              "pos": "37.50637,-120.8599",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Merced, CA",
+              "pos": "37.30178,-120.4876",
+              "kind": "station",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 135.81,
+          "duration": 163,
+          "transferDuration": 60,
+          "sName": "Merced Transpo",
+          "sPos": "37.30151,-120.4872",
+          "sCode": "111",
+          "tName": "Yosemite Valley Visitors Center",
+          "tPos": "37.74997,-119.5887",
+          "tCode": "17864",
+          "path": "mmtbFrsk~UzYsgAlFcLdJs]cEkFYol[sBoM_cIswT_J_i@uWke@uK{LuUoe@wDsk@kEkEeq@g[cHwG_T_Y_VgHgRkb@{R{T{dAcdAyLw_@eGg[wf@_o@if@cb@yQsa@aZ{Wi`AwhAw]oi@{Pkg@}W{a@cb@_~@kVsAwYwKeh@{Fgm@j_@mh@vAqD_FuFsXkJk[\\{XtQwu@sC{a@bDkb@uBw^eTcn@gDkPuGsPfK{}@yQ{m@sH{MsJcd@vA_Inj@sgAtE{[fDw]`_@o_@tA{c@uS{Tu[bHaXnNqMjKkSjVYnJsDrO{Gw@}GK_@sFuk@fB{G_]q^sMoIO_FsJ}SgLwO{V_MgMc@kJcJ{[Swb@cJkb@rAoYwIgs@mPsd@yToGyPbL_c@cD{UkIuNbNkO_@gZzTu\\z_@eMzVm[j^aWfY{i@zGoQnWgJj[KfMeb@zl@}JbFaRbO_SgEeSkf@s[fK{OfY_SnKsP_P}[{c@ob@_Bo[cRqVw^eYsUmAsK`Ag\\sDwJ}f@o`@_K{\\wO{K_J_Q_RwK{ToV}PkAkMfGy_@~LqKbYgN~J}F{EoCoa@uSws@lNkRx@wa@xOb@bf@_BvXoI|Bge@tEk^qGkPaIw]ca@sj@}Fo`@nE_PlR{WDke@iCcMiFcZgD_b@g[{NuQoYyWoTlPoS|Hkd@z@gs@dQ_p@i\\~Gq@kYiOwl@bJ_j@sE{\\kG[i@_WsNcj@gB_c@kC{MsEo[`FokAbNgm@wFo`@yVsO{aAkg@u~@ga@a_@KkXkEuh@cUiOcMkOcGoCoe@xM_l@rGgcA_BgP~EkUbB{n@rCgPa@cRzTwf@uC{S{N{t@oRo\\cDs]pKox@wQcoAkNw_@iHka@cJwOkXoQg\\se@}PkZoQoRrH{l@tOsb@oC_WpJgB_G?s_@z]aDvd@mOkD}BcRxFo_@xC_@qEjG{Dzd@~C~LiHjGkAjUqBc@",
+          "indicativePrice": {
+            "price": 26,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://yarts.com/routes-and-schedules/merced-hwy-140\u0026referrer=gtfs",
+                  "host": "yarts.com",
+                  "hops": [
+                    {
+                      "sName": "Merced Transpo",
+                      "sPos": "37.30151,-120.4872",
+                      "tName": "Yosemite Valley Visitors Center",
+                      "tPos": "37.74997,-119.5887",
+                      "frequency": 18,
+                      "duration": 163,
+                      "indicativePrice": {
+                        "price": 26,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "580",
+                          "name": "Merced HWY 140",
+                          "vehicle": "bus",
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 18,
+                          "duration": 164,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 18,
+                          "duration": 163,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://yarts.com/routes-and-schedules/merced-hwy-140\u0026referrer=gtfs",
+                              "displayUrl": "yarts.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Merced Transpo",
+              "pos": "37.30151,-120.4872",
+              "kind": "station",
+              "code": "111",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Cathey\u0027s Valley",
+              "pos": "37.43678,-120.0892",
+              "kind": "station",
+              "code": "117",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Midtown Mariposa",
+              "pos": "37.48578,-119.966",
+              "kind": "station",
+              "code": "119",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Roadside Rest",
+              "pos": "37.48917,-119.9716",
+              "kind": "station",
+              "code": "121",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Mariposa Park \u0026 Ride",
+              "pos": "37.49149,-119.974",
+              "kind": "station",
+              "code": "123",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Koa",
+              "pos": "37.54396,-119.9202",
+              "kind": "station",
+              "code": "125",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Midpines Park \u0026 Ride",
+              "pos": "37.54659,-119.92",
+              "kind": "station",
+              "code": "127",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Midpines Post Office",
+              "pos": "37.56252,-119.9376",
+              "kind": "station",
+              "code": "129",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite Bug Resort",
+              "pos": "37.57805,-119.954",
+              "kind": "station",
+              "code": "131",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Cedar Lodge",
+              "pos": "37.66031,-119.8529",
+              "kind": "station",
+              "code": "133",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "NPS Maintenance",
+              "pos": "37.66912,-119.8151",
+              "kind": "station",
+              "code": "135",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Barium Mine Rd",
+              "pos": "37.67115,-119.8045",
+              "kind": "station",
+              "code": "137",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "El Portal Post Office",
+              "pos": "37.67438,-119.7853",
+              "kind": "station",
+              "code": "139",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite View Lodge",
+              "pos": "37.67831,-119.7665",
+              "kind": "station",
+              "code": "141",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Half Dome Village",
+              "pos": "37.73779,-119.5726",
+              "kind": "station",
+              "code": "17865",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "The Majestic Yosemite Hotel",
+              "pos": "37.74633,-119.5743",
+              "kind": "station",
+              "code": "17866",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Yosemite Valley Visitors Center",
+              "pos": "37.74997,-119.5887",
+              "kind": "station",
+              "code": "17864",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "car",
+          "subkind": "taxi",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 57.77,
+          "duration": 62,
+          "transferDuration": 0,
+          "sName": "Yosemite Valley Visitors Center",
+          "sPos": "37.74997,-119.5887",
+          "tName": "Destination",
+          "tPos": "37.8651,-119.5383",
+          "vehicle": "taxi",
+          "path": "}~keFje|xUhKg@~GvP|E~ToAvOhGzJvNvI`GzKvJnUhHjHjHvD`MrKhK~@dNfF~KfNkAr_@NzOw@bKbC~]rKnHjB~Jc@bj@~Cj\\nKje@vAbMhM~SoAzQdM~Nv@zQeHra@d@~QcDzQ}@v_@uKj\\aD~R|@~KeIf\\iBvUiHfQ[bKsMnVt@~`@pNfTxKjCvd@b^dGnKnKfMRnV{CjYyOfX{KvIce@nh@sKfMmMrIbC~R}DnCwPb@dBbVmFv@sF_FsVoEuJfAaNkKqE~M~EbRrQzTKjLx@fF_BrW}g@nYyBnJ}J~OqEfBgKrTp@fHzGj\\gMn^sD~EcNr[uObM_HcHgFoSnHwP~CwStH{FMcNaGsGrHoXwMoa@pBwEhMsGfGsWuA_GqMcKgL~I_FnR_HjBoTkEgMkLiDsEaC{Ot@g[eN{O{Oga@]kNeOkV}U_IuE_I{Ngc@wL{LuKwQuAkZhCoUqFcQiv@w`@uXoF_TwH__@kQk^_CsNbJmFoKeEog@gEcIgKkJiMcCoXjA_FsE{C_QuN_YyKgOyHsGoFkTaNgP}[wj@{R{`@k@_GG{[{G_U~AoNhGgWkDoRuOoLmLcMsLsR?_JjDkPnFsL~IoOlE{J|Nof@fF_e@cBsRwDwPpIk[oG_Xd@_MpHoO}@g]rN{KvRWnV_Jb@wFcE{McXwCoPgNuCoIsFkHiIgQ{IgMfDs[nD{D",
+          "indicativePrice": {
+            "price": 220,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Drive",
+      "distance": 314.23,
+      "duration": 247,
+      "totalTransferDuration": 0,
+      "indicativePrice": {
+        "price": 25,
+        "currency": "USD",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Origin",
+          "pos": "37.76853,-122.4753",
+          "kind": ""
+        },
+        {
+          "name": "Destination",
+          "pos": "37.8651,-119.5383",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "car",
+          "subkind": "car",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 314.23,
+          "duration": 247,
+          "transferDuration": 0,
+          "sName": "Origin",
+          "sPos": "37.76853,-122.4753",
+          "tName": "Destination",
+          "tPos": "37.8651,-119.5383",
+          "vehicle": "car",
+          "path": "}loeF~~ojVgV_BmHox@_DFya@csGaFsHuD{j@dB{BaaAorAxa@{n@wDcFqzCgeD}N{Rw\\oz@uQgbCuC_p@gNk`BmO{uAtDwc@gCkd@b\\k{B|_@ou@zi@{T~Mgo@fUgl@hV{a@vYomBvUsg@zYo[dYw`ApGojA`IwN~t@ohBjNwN`hAwj@jm@rW`k@wX~n@km@plAcStgAop@bN_[lR_Z~JoXx^kp@ly@{z@fB_TeB{d@_@wkBsCg`@yLsw@sAk|@mKoUma@{n@{@kd@jCsx@iIkc@oBobBrFsb@vN{i@jNklBcA_h@eDsb@@coCuTcgBnEc~VrFcr@uDo_A_M{vAg@kP`BknB{Eo]opAo`Ee`@ozCvFwk@nN{w@{t@kkDkf@{p@sCwPsFobBsOo_AoUszBuMgyDD_I~QkkH_Fsm@i}B{tHeE__@e@_eBsIgjAi@o`J_OwqCgPc]k^_^ml@g}@gf@wdA{Dg}@bg@{yCx@oSo@gjL~Asb@_rAjSoHs@cEgjd@zKsi@xLgSnCgfLnAgwA|H_jBpC_gCnJkWfr@wx@tp@sWre@_YmNcj@o_@krAuK_gAu@gtFm@{IocAwxGud@_YcOoFsf@w]{Wkh@tLgr@gRkgAvGsq@rQ_o@_CgNkYon@q`@gl@gSob@oY_d@mOos@i|@{fAkf@wTa^ky@wNsuAwOsi@J{c@pOgrAQkRtD{u@zCklAxN{gAkAwf@pMgnB_[os@uGf@wjAr^us@{DusAoa@kMsVy[_d@iSgn@x^oUd]wl@vKw{ApEwTkJwRtM{l@vH_{@nIg]pVcQzKBzs@{n@zs@wiArH_lAk@{c@pIk\\n{@onAuAcs@fp@gyAnD{^xd@coAf{@kgChG_y@__@_mCz\\g}@sh@cu@qy@{`B_]oe@g_@{`BfZ_h@oA_b@wN{g@v[_Wpb@{x@d@{XmCca@fWciAzJ_ZzMkgAyAgs@~EowAtQ_[rTox@cAgNcRoq@_n@sfAi@cp@f[s^lGw~@nY{[j@cd@aM_YgTseAc@gZ{Isj@bE_c@yVspA|Ig[yJgXvR{_BwKcPyJk]eUw^|Mcp@dYkr@vGgo@j`@k_AmCsmBh@kHka@gvA|k@of@dVkm@uRoTrBwh@oF_bBpe@wP`_AfR`o@{F~MvKnv@w~@vLgGrK_Tbe@Bt`@_v@iDsPjPwdBtNgJbGcXnd@kSkQcr@jIo_@z_@{ZaWs_@oIcRcb@~g@p@kaA|H_z@iIkf@zRgh@eTwGsUn]oY{HsQk`@kb@{dBwh@gc@{Qcg@yWca@`Awp@sE{Ks|@oc@kg@oM__@kQou@cBeH_p@w\\kRo_@gCqS_k@el@o~@wp@ooAy@ce@wCk`@`GwYip@_bAhLgf@lPk[|Nof@dAosAlE{S_Fkd@`H{]l@{Rhx@_Y}o@gd@s`@_z@zI{Z",
+          "indicativePrice": {
+            "price": 25,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "Fly, night bus",
+      "distance": 495.33,
+      "duration": 568,
+      "totalTransferDuration": 190,
+      "indicativePrice": {
+        "price": 450,
+        "currency": "USD",
+        "isFreeTransfer": 0
+      },
+      "stops": [
+        {
+          "name": "Origin",
+          "pos": "37.76853,-122.4753",
+          "kind": ""
+        },
+        {
+          "name": "Daly City",
+          "pos": "37.70612,-122.4691",
+          "kind": "station",
+          "code": "DALY",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "San Francisco",
+          "pos": "37.61522,-122.39",
+          "kind": "airport",
+          "code": "SFO",
+          "countryCode": "US",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Fresno",
+          "pos": "36.76962,-119.7201",
+          "kind": "airport",
+          "code": "FAT",
+          "countryCode": "US",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Half Dome Village",
+          "pos": "37.73779,-119.5726",
+          "kind": "station",
+          "code": "17865",
+          "countryCode": "US",
+          "regionCode": "CA",
+          "timeZone": "America/Los_Angeles"
+        },
+        {
+          "name": "Destination",
+          "pos": "37.8651,-119.5383",
+          "kind": ""
+        }
+      ],
+      "segments": [
+        {
+          "kind": "bus",
+          "subkind": "bus",
+          "vehicle": "bus",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 8.49,
+          "duration": 23,
+          "transferDuration": 0,
+          "sName": "19th Ave \u0026 Lincoln Way",
+          "sPos": "37.76537,-122.4774",
+          "sCode": "3371",
+          "tName": "Daly City Bart Station",
+          "tPos": "37.70576,-122.4693",
+          "tCode": "4341",
+          "path": "q`oeFvjpjVpISlKg@x@?xHg@bKWzU{@|@FtH_@|@FjT{@bAFnHc@|@FvGS^KxIKbCWtFB~Kg@f@FxY{@@vJ`@?C{JZGfSg@dGSzLZlARr@v@PfCZoDlBWt^z@FK~DF~BkAtLoKx@s@~M_DbC{@lI_AhDGrCNnJKrBb@tUrC`Cv@DrB{AfBeA{Fc@sGOgPiAgAsGW?jBx@fA]v@fDjCHw@",
+          "indicativePrice": {
+            "price": 2,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.sfmta.com",
+                  "host": "sfmta.com",
+                  "hops": [
+                    {
+                      "sName": "19th Ave \u0026 Lincoln Way",
+                      "sPos": "37.76537,-122.4774",
+                      "tName": "Daly City Bart Station",
+                      "tPos": "37.70576,-122.4693",
+                      "frequency": 761,
+                      "duration": 23,
+                      "indicativePrice": {
+                        "price": 2,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "1028",
+                          "name": "28",
+                          "vehicle": "bus",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 626,
+                          "duration": 24,
+                          "days": 127
+                        },
+                        {
+                          "code": "10986",
+                          "name": "28R",
+                          "vehicle": "bus",
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 135,
+                          "duration": 20,
+                          "days": 62
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "SANFRANCISCOMUNICIPALTRANSPORTATIONAGENCY",
+                          "frequency": 761,
+                          "duration": 23,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.sfmta.com",
+                              "displayUrl": "sfmta.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "19th Ave \u0026 Lincoln Way",
+              "pos": "37.76537,-122.4774",
+              "kind": "station",
+              "code": "3371",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Irving St",
+              "pos": "37.76368,-122.4773",
+              "kind": "station",
+              "code": "3359",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Judah St",
+              "pos": "37.7614,-122.4771",
+              "kind": "station",
+              "code": "3365",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Judah St",
+              "pos": "37.7614,-122.4771",
+              "kind": "station",
+              "code": "3365",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Lawton St",
+              "pos": "37.75789,-122.4768",
+              "kind": "station",
+              "code": "3369",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Lawton St",
+              "pos": "37.75789,-122.4768",
+              "kind": "station",
+              "code": "3369",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Noriega St",
+              "pos": "37.75392,-122.4765",
+              "kind": "station",
+              "code": "3375",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Ortega St",
+              "pos": "37.75206,-122.4764",
+              "kind": "station",
+              "code": "3380",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Quintara St",
+              "pos": "37.7483,-122.4761",
+              "kind": "station",
+              "code": "3384",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Quintara St",
+              "pos": "37.7483,-122.4761",
+              "kind": "station",
+              "code": "3384",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Rivera St",
+              "pos": "37.74647,-122.476",
+              "kind": "station",
+              "code": "3389",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Santiago St",
+              "pos": "37.74507,-122.4759",
+              "kind": "station",
+              "code": "3393",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Taraval St",
+              "pos": "37.74318,-122.4758",
+              "kind": "station",
+              "code": "3395",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Ulloa St",
+              "pos": "37.74129,-122.4757",
+              "kind": "station",
+              "code": "3397",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Vicente St",
+              "pos": "37.73901,-122.4755",
+              "kind": "station",
+              "code": "3399",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Vicente St",
+              "pos": "37.73901,-122.4755",
+              "kind": "station",
+              "code": "3399",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Sloat Blvd",
+              "pos": "37.73455,-122.4752",
+              "kind": "station",
+              "code": "3390",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Eucalyptus Dr",
+              "pos": "37.73117,-122.475",
+              "kind": "station",
+              "code": "3354",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Eucalyptus Dr",
+              "pos": "37.73117,-122.475",
+              "kind": "station",
+              "code": "3354",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Winston Dr",
+              "pos": "37.72726,-122.4751",
+              "kind": "station",
+              "code": "7448",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Holloway Ave",
+              "pos": "37.72111,-122.4753",
+              "kind": "station",
+              "code": "3356",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "19th Ave \u0026 Junipero Serra Blvd",
+              "pos": "37.71732,-122.473",
+              "kind": "station",
+              "code": "3363",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Junipero Serra Blvd \u0026 Font Blvd",
+              "pos": "37.71463,-122.4719",
+              "kind": "station",
+              "code": "5136",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "JUNIPERO SERRA BLVD/S.F. Golf Club",
+              "pos": "37.71071,-122.4713",
+              "kind": "station",
+              "code": "5135",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Daly City Bart Station",
+              "pos": "37.70576,-122.4693",
+              "kind": "station",
+              "code": "4341",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "train",
+          "subkind": "subway",
+          "vehicle": "BART",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 12.93,
+          "duration": 16,
+          "transferDuration": 10,
+          "sName": "Daly City",
+          "sPos": "37.70612,-122.4691",
+          "sCode": "DALY",
+          "tName": "San Francisco Int\u0027l Airport",
+          "tPos": "37.61604,-122.3926",
+          "tCode": "SFIA",
+          "path": "gnceFvvnjV~BnBN[tJrGtDb@t[WfEs@zLcD~\\WrEk@tKsEjEwCnBsCvRwZpG{GlQwNfEoE|DcGtFoK`DsExHsGzX{OdGoFlC_EnGoLrF_KjFkJzCkEhFoFfOgLfHkIfDgGlQ{`@nFwIxDgEln@og@xZoN~GgDnjAkl@pn@gc@tEsFlAcFXkFPc^S{C}@oD",
+          "indicativePrice": {
+            "price": 8,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://www.bart.gov",
+                  "host": "bart.gov",
+                  "hops": [
+                    {
+                      "sName": "Daly City",
+                      "sPos": "37.70612,-122.4691",
+                      "tName": "San Francisco Int\u0027l Airport",
+                      "tPos": "37.61604,-122.3926",
+                      "frequency": 486,
+                      "duration": 16,
+                      "indicativePrice": {
+                        "price": 8,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "01",
+                          "name": "Pittsburg/Bay Point - SFIA/Millbrae",
+                          "vehicle": "BART",
+                          "agency": "BART",
+                          "frequency": 486,
+                          "duration": 16,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "BART",
+                          "frequency": 486,
+                          "duration": 16,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://www.bart.gov",
+                              "displayUrl": "bart.gov"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Daly City",
+              "pos": "37.70612,-122.4691",
+              "kind": "station",
+              "code": "DALY",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Colma",
+              "pos": "37.68464,-122.4662",
+              "kind": "station",
+              "code": "COLM",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "South San Francisco",
+              "pos": "37.66417,-122.4441",
+              "kind": "station",
+              "code": "SSAN",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "San Bruno",
+              "pos": "37.63775,-122.416",
+              "kind": "station",
+              "code": "SBRN",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "San Francisco Int\u0027l Airport",
+              "pos": "37.61604,-122.3926",
+              "kind": "station",
+              "code": "SFIA",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "flight",
+          "isMajor": 1,
+          "distance": 254.49,
+          "duration": 63,
+          "transferDuration": 120,
+          "sCode": "SFO",
+          "tCode": "FAT",
+          "indicativePrice": {
+            "price": 190,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 127,
+                  "indicativePrice": {
+                    "price": 300,
+                    "currency": "USD",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "SFO",
+                      "tCode": "FAT",
+                      "sTerminal": "3",
+                      "sTime": "10:45",
+                      "tTime": "11:48",
+                      "flight": "5347",
+                      "airline": "UA",
+                      "duration": 63,
+                      "aircraft": "CRJ",
+                      "codeshares": [
+                        {
+                          "airline": "AC",
+                          "flight": "4342"
+                        },
+                        {
+                          "airline": "CM",
+                          "flight": "2672"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 127,
+                  "indicativePrice": {
+                    "price": 300,
+                    "currency": "USD",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "SFO",
+                      "tCode": "FAT",
+                      "sTerminal": "3",
+                      "sTime": "14:21",
+                      "tTime": "15:24",
+                      "flight": "5452",
+                      "airline": "UA",
+                      "duration": 63,
+                      "aircraft": "CRJ",
+                      "codeshares": [
+                        {
+                          "airline": "AC",
+                          "flight": "4336"
+                        },
+                        {
+                          "airline": "AV",
+                          "flight": "2034"
+                        },
+                        {
+                          "airline": "CM",
+                          "flight": "2477"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "isHidden": 0,
+              "isReturn": 0,
+              "legs": [
+                {
+                  "days": 127,
+                  "indicativePrice": {
+                    "price": 300,
+                    "currency": "USD",
+                    "isFreeTransfer": 0
+                  },
+                  "hops": [
+                    {
+                      "sCode": "SFO",
+                      "tCode": "FAT",
+                      "sTerminal": "3",
+                      "sTime": "20:06",
+                      "tTime": "21:09",
+                      "flight": "5453",
+                      "airline": "UA",
+                      "duration": 63,
+                      "aircraft": "CRJ",
+                      "codeshares": [
+                        {
+                          "airline": "AC",
+                          "flight": "4334"
+                        },
+                        {
+                          "airline": "CM",
+                          "flight": "1718"
+                        },
+                        {
+                          "airline": "LH",
+                          "flight": "8886"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bus",
+          "subkind": "nightbus",
+          "vehicle": "night bus",
+          "isMajor": 1,
+          "isImperial": 1,
+          "distance": 159.91,
+          "duration": 211,
+          "transferDuration": 60,
+          "sName": "Fresno Yosemite International Airport",
+          "sPos": "36.76883,-119.7194",
+          "sCode": "407",
+          "tName": "Half Dome Village",
+          "tPos": "37.73779,-119.5726",
+          "tCode": "17865",
+          "path": "ell_FjuuyUkTvc@?n|Bsl@CeBjQkWfCsd@{@wTcGcYsUscAkeAMrmBLbiEaBrL{VvAs}Bw@cYcG@sMuRjCwG~FpO_KxIKmAnSsw@nAqWfGmh@vYgQzCeuCzGwnCk@em@bB}YfDw~EVajC?yvBKeEZupA[x@~Ay@_Buq@_@a\\wHilBsjAgaCcbAeo@oS_RcSsb@{MgZoQiMsA}\\gOcZsGkUgWuWgP}JkCunAoLeRwLwTgV{_AoSiyBsQeUBo]kVkj@BoaAjFgLC_k@kFuc@{d@wPW_\\fHwQcOuQch@sTgUyZ_Lkg@_Cg|@WkWsEym@rDwVkLmUF}Z{Bsg@sP_FsKqKky@|@{a@gC{j@_EoH_YcVeY_b@ij@vH{GcT~@oW{KgO{a@wy@oRoFqt@fEmRfHw[b^wLbC_O_Ba\\n\\sMfT_f@cXq]k_@{Poq@kHkAqJkGga@cOu^Vqe@bI_OCoWvByHcOaLocAa]kI_RJiTwPiYj@yQ~UwYbLoLzNou@wNkd@gRa\\jAcm@gSqGnJ_QfKqEj]q^rIcHrPst@oEpEb]qQj@_CjP}Wva@gKFmEcGgPgBcCs^au@oGm|@vEoWoTwAwe@yCcB}BjUwQsDaKf@{VsXqRsIePbC{M{DiS~DgO_AmF{DsNk@uLjDwQ{G}GjHyGnRsc@sKgGcp@ub@wR_DcTsMoC{OzU{HbGqFv\\nEz\\ua@n`B_@~XmFrYmDgIxHfAaq@okAqF_ToC{Bd]vz@nMnUv@re@sH~LkHrc@iPz_@}_@f`@iVrLub@fp@{SjIMvLaLbM_z@kVoPkSbAoj@e[Se_@z}@g_@_DsJ{Zsm@gFyXbMya@sFcUrZym@jGcd@_NaYwAac@sVo`@~TbRbh@cG~O{\\vPwQvXuWwIuWvPqAjc@aVrIcSsGsVvMqd@oYq^gGqe@fPeOkWuDoZkOgHiO~i@kc@~JgUnV_ZkI}RcOe`@b@mEsW|K{g@cLs\\fCcfBzKsa@hBw_AsZ{u@aWg^cDs]pKox@wQcoAkNw_@iHka@cJwOkXoQen@_aAoQoRvPkbAhGwOgCkTpJgB",
+          "indicativePrice": {
+            "price": 30,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          },
+          "itineraries": [
+            {
+              "legs": [
+                {
+                  "url": "http://yarts.com/routes-and-schedules/fresno-madera-yosemite-valley?referrer=gtfs",
+                  "host": "yarts.com",
+                  "hops": [
+                    {
+                      "sName": "Fresno Yosemite International Airport",
+                      "sPos": "36.76883,-119.7194",
+                      "tName": "Half Dome Village",
+                      "tPos": "37.73779,-119.5726",
+                      "frequency": 7,
+                      "duration": 211,
+                      "indicativePrice": {
+                        "price": 30,
+                        "currency": "USD",
+                        "isFreeTransfer": 0
+                      },
+                      "lines": [
+                        {
+                          "code": "2005",
+                          "name": "Fresno HWY 41",
+                          "vehicle": "night bus",
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 7,
+                          "duration": 211,
+                          "days": 127
+                        }
+                      ],
+                      "agencies": [
+                        {
+                          "agency": "YOSEMITEAREAREGIONALTRANSPORTATION",
+                          "frequency": 7,
+                          "duration": 211,
+                          "actions": [
+                            {
+                              "text": "Schedules at",
+                              "url": "http://yarts.com/routes-and-schedules/fresno-madera-yosemite-valley?referrer=gtfs",
+                              "displayUrl": "yarts.com"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "stops": [
+            {
+              "name": "Fresno Yosemite International Airport",
+              "pos": "36.76883,-119.7194",
+              "kind": "station",
+              "code": "407",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Fresno State",
+              "pos": "36.80869,-119.7502",
+              "kind": "station",
+              "code": "410",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "North Fresno",
+              "pos": "36.84191,-119.7832",
+              "kind": "station",
+              "code": "413",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Hwy 145 Park \u0026 Ride",
+              "pos": "37.01018,-119.7944",
+              "kind": "station",
+              "code": "416",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Coarsegold Market",
+              "pos": "37.26202,-119.6997",
+              "kind": "station",
+              "code": "419",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Best Western Plus Yosemite Gateway Inn",
+              "pos": "37.33603,-119.6461",
+              "kind": "station",
+              "code": "425",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Tenaya Lodge",
+              "pos": "37.47335,-119.6349",
+              "kind": "station",
+              "code": "428",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Big Trees Lodge",
+              "pos": "37.53681,-119.655",
+              "kind": "station",
+              "code": "431",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Wawona Store",
+              "pos": "37.54518,-119.6391",
+              "kind": "station",
+              "code": "434",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            },
+            {
+              "name": "Half Dome Village",
+              "pos": "37.73779,-119.5726",
+              "kind": "station",
+              "code": "17865",
+              "countryCode": "US",
+              "regionCode": "CA",
+              "timeZone": "America/Los_Angeles"
+            }
+          ]
+        },
+        {
+          "kind": "car",
+          "subkind": "taxi",
+          "isMajor": 0,
+          "isImperial": 1,
+          "distance": 59.51,
+          "duration": 64,
+          "transferDuration": 0,
+          "sName": "Half Dome Village",
+          "sPos": "37.73779,-119.5726",
+          "tName": "Destination",
+          "tPos": "37.8651,-119.5383",
+          "vehicle": "taxi",
+          "path": "otieFr_yxUcBkDqJbKuWbUwEjV_@rX}GnQ|AzT|E~ToAvOhGzJxKjF~IfOvJnUhHjHjHvD`MrKhK~@dNfF~KfNkAr_@NzOw@bKbC~]rKnHjB~Jc@bj@~Cj\\nKje@vAbMhM~SoAzQdM~Nv@zQeHra@d@~QcDzQ}@v_@uKj\\aD~R|@~KeIf\\iBvUiHfQ[bKsMnVt@~`@pNfTxKjCvd@b^dGnKnKfMRnV{CjYyOfX{KvIce@nh@sKfMmMrIbC~R}DnCwPb@dBbVmFv@sF_FsVoEuJfAiO_KiDrM~EbRtQzUMjKx@fF_BrW}g@nYyBnJ}J~OqEfBgKrTp@fHzGj\\gMn^sD~EcNr[uObM_HcHgFoSnHwP~CwStH{FMcNaGsGrHoXwMoa@pBwEhMsGfGsWuA_GqMcKgL~I_FnR_HjBoTkEgMkLiDsEaC{Ot@g[eN{O{Oga@]kNeOkV}U_IuE_I{Ngc@wL{LuKwQuAkZhCoUqFcQiv@w`@uXoF_TwH__@kQk^_CsNbJsIw^qC_X}OwPiMcCoXjA_FsE{C_QuN_YyKgOyHsGoFkTaNgP}[wj@{R{`@k@_GG{[{G_U~AoNhGgWkDoRuOoLmLcMsLsR?_JjDkPnFsL~IoOlE{J|Nof@fF_e@cBsRwDwPpIk[oG_Xd@_MpHoO}@g]rN{KvRWnV_Jb@wFcE{McXwCoPgNuCoIsFkHiIgQ{IgMfDs[nD{D",
+          "indicativePrice": {
+            "price": 220,
+            "currency": "USD",
+            "isFreeTransfer": 0
+          }
+        }
+      ]
+    }
+  ]
+}

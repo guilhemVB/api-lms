@@ -1,0 +1,69 @@
+services:
+
+    maplace_marker_builder:
+        class : AppBundle\Service\MaplaceMarkerBuilder
+        arguments:
+            - "@twig"
+
+    voyage_stats:
+        class : AppBundle\Service\Stats\VoyageStats
+        arguments:
+            - "@twig"
+
+    best_journey_finder:
+        class: AppBundle\Service\Journey\BestJourneyFinder
+
+    journey_service:
+        class: AppBundle\Service\Journey\JourneyService
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@best_journey_finder"
+
+    crud_stage:
+        class : AppBundle\Service\CRUD\CRUDStage
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@journey_service"
+
+    crud_available_journey:
+        class : AppBundle\Service\CRUD\CRUDAvailableJourney
+        arguments:
+            - "@doctrine.orm.entity_manager"
+
+    crud_voyage:
+        class : AppBundle\Service\CRUD\CRUDVoyage
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@google_url_shortener_api"
+            - "@journey_service"
+
+    voyage_service:
+        class : AppBundle\Service\VoyageService
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@maplace_marker_builder"
+
+    google_url_shortener_api:
+        class : AppBundle\Service\GoogleUrlShortener\GoogleUrlShortenerApi
+        arguments:
+            - '%api_google_key%'
+            - "@router"
+
+    journey_fetcher:
+        class: AppBundle\Service\Journey\JourneyFetcher
+        arguments:
+            - '%available_journey_api%'
+
+    fetch_available_journey_worker:
+        class: AppBundle\Worker\FetchAvailableJourney
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@journey_fetcher"
+            - "@logger"
+
+    update_voyages_worker:
+        class: AppBundle\Worker\UpdateVoyageWorker
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@best_journey_finder"
+            - "@logger"
