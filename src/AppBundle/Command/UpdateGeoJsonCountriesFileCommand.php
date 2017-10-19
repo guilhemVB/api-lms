@@ -62,8 +62,8 @@ class UpdateGeoJsonCountriesFileCommand extends ContainerAwareCommand
                 'totalPrices' => $country->getTotalPrices(),
                 'codeAlpha2' => $country->getCodeAlpha2(),
                 'codeAlpha3' => $country->getCodeAlpha3(),
-                'viewUrl' =>  $kernel->getContainer()->get('router')->generate(
-                    'country', ['slug' => $country->getSlug()], UrlGeneratorInterface::ABSOLUTE_URL)
+//                'viewUrl' =>  $kernel->getContainer()->get('router')->generate(
+//                    'country', ['slug' => $country->getSlug()], UrlGeneratorInterface::ABSOLUTE_URL)
             ];
         }
 

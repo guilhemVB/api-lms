@@ -24,4 +24,4 @@ echo "Création du fichier pays geoJson :"
 php bin/console app:update:geojson-country
 
 echo "Chargement des fixtures :"
-bin/behat -c behat_fixtures.yml -f progress
+vendor/behat/behat/bin/behat -c behat_fixtures.yml -f progress

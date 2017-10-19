@@ -96,12 +96,8 @@ api_platform:
     enable_fos_user: true
     http_cache:
         invalidation:
-            enabled: true
-            varnish_urls: '%varnish_urls%'
-        max_age: 0
-        shared_max_age: 3600
-        vary: ['Content-Type', 'Authorization']
-        public: true
+            enabled: false
+            varnish_urls: []
 
 lexik_jwt_authentication:
     private_key_path: '%jwt_private_key_path%'

@@ -2,11 +2,16 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\Country;
-use AppBundle\Entity\Destination;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *      attributes={
+ *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "read-voyage", "availableJourney"}}
+ *      },
+ * )
  * @ORM\Table(name="stage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StageRepository")
  */
@@ -21,12 +26,14 @@ class Stage
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"read-stage"})
      */
     private $id;
 
     /**
      * @var Voyage
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Voyage", inversedBy="stages")
+     * @Groups({"read-stage"})
      */
     private $voyage;
 
@@ -34,12 +41,14 @@ class Stage
      * @var Destination
      * @ORM\ManyToOne(targetEntity="Destination")
      * @ORM\JoinColumn(name="destination_id", referencedColumnName="id", nullable=true)
+     * @Groups({"read-stage"})
      */
     private $destination;
 
     /**
      * @var float
      * @ORM\Column(type="float", nullable=false)
+     * @Groups({"read-stage"})
      */
     private $nbDays;
 
@@ -47,12 +56,14 @@ class Stage
      * @var Country
      * @ORM\ManyToOne(targetEntity="Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
+     * @Groups({"read-stage"})
      */
     private $country;
 
     /**
      * @var int
      * @ORM\Column(type="integer", nullable=false)
+     * @Groups({"read-stage"})
      */
     private $position;
 

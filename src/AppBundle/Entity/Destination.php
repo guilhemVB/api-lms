@@ -5,14 +5,24 @@ namespace AppBundle\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(collectionOperations={"get"={"method"="GET"}}, itemOperations={"get"={"method"="GET"}})
+ * @ApiResource(
+ *      collectionOperations={"get"={"method"="GET"}},
+ *      itemOperations={"get"={"method"="GET"}},
+ *      attributes={
+ *          "filters"={"slug.search_filter", "country.search_filter"},
+ *          "normalization_context"={"groups"={"read-destination-full", "read-country-light", "prices", "location", "periods"}}
+ *      }
+ * )
  * @ORM\Table(
  *  name="destination",
  *  uniqueConstraints={@ORM\UniqueConstraint(name="name_unique_by_country", columns={"name", "country_id"})}
  * )
  * @ORM\Entity(repositoryClass="AppBundle\Repository\DestinationRepository")
+ * @UniqueEntity("slug")
  */
 class Destination
 {
@@ -20,6 +30,7 @@ class Destination
     use ORMBehaviors\Timestampable\Timestampable;
     use PricesTrait;
     use PeriodsTrait;
+    use LocationTrait;
 
     /**
      * @var integer
@@ -27,14 +38,22 @@ class Destination
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"read-destination-light", "read-destination-full"})
      */
     private $id;
 
     /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255)
+     * @Groups({"read-destination-light", "read-destination-full"})
      */
     private $name;
+
+    /**
+     * @var string
+     * @Groups({"read-destination-light", "read-destination-full"})
+     */
+    protected $slug;
 
     /**
      * @var boolean
@@ -51,32 +70,23 @@ class Destination
     /**
      * @var array
      * @ORM\Column(name="description", type="array", nullable=true)
+     * @Groups({"read-destination-full"})
      */
     private $description;
 
     /**
      * @var array
      * @ORM\Column(name="tips", type="array")
+     * @Groups({"read-destination-full"})
      */
     private $tips;
 
     /**
      * @var Country
      * @ORM\ManyToOne(targetEntity="Country", inversedBy="destinations")
+     * @Groups({"read-destination-full"})
      */
     private $country;
-
-    /**
-     * @var float
-     * @ORM\Column(type="float", nullable=false)
-     */
-    private $longitude;
-
-    /**
-     * @var float
-     * @ORM\Column(type="float", nullable=false)
-     */
-    private $latitude;
 
     /**
      * @var \DateTime
@@ -178,44 +188,6 @@ class Destination
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @param float $longitude
-     * @return Destination
-     */
-    public function setLongitude($longitude)
-    {
-        $this->longitude = $longitude;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLongitude()
-    {
-        return $this->longitude;
-    }
-
-    /**
-     * @param float $latitude
-     * @return Destination
-     */
-    public function setLatitude($latitude)
-    {
-        $this->latitude = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLatitude()
-    {
-        return $this->latitude;
     }
 
     /**

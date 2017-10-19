@@ -7,9 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *      attributes={
+ *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}}
+ *      },
+ * )
  * @ORM\Table(name="voyage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\VoyageRepository")
  * @UniqueEntity("token")
@@ -25,36 +30,42 @@ class Voyage
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"read-voyage"})
      */
     private $id;
 
     /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @Groups({"read-voyage"})
      */
     private $name;
 
     /**
      * @var string
      * @ORM\Column(name="token", type="string", length=255, nullable=false, unique=true)
+     * @Groups({"read-voyage"})
      */
     private $token;
 
     /**
      * @var string
      * @ORM\Column(name="url_minified", type="string", length=255, nullable=true)
+     * @Groups({"read-voyage"})
      */
     private $urlMinified;
 
     /**
      * @var boolean
      * @ORM\Column(type="boolean", nullable=false)
+     * @Groups({"read-voyage"})
      */
     private $showPricesInPublic = true;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime", nullable=false)
+     * @Groups({"read-voyage"})
      */
     private $startDate;
 
@@ -62,6 +73,7 @@ class Voyage
      * @var Destination
      * @ORM\ManyToOne(targetEntity="Destination")
      * @ORM\JoinColumn(name="destination_id", referencedColumnName="id", nullable=false)
+     * @Groups({"read-voyage"})
      */
     private $startDestination;
 
@@ -74,6 +86,7 @@ class Voyage
     /**
      * @var ArrayCollection|Stage[]
      * @ORM\OneToMany(targetEntity="Stage", mappedBy="voyage")
+     * @Groups({"read-voyage"})
      */
     private $stages;
 

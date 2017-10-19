@@ -6,9 +6,9 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(collectionOperations={"get"={"method"="GET"}}, itemOperations={"get"={"method"="GET"}})
  * @ORM\Table(name="currency")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CurrencyRepository")
  */
@@ -29,18 +29,21 @@ class Currency
     /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     * @Groups({"currency"})
      */
     private $name;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=16, nullable=false)
+     * @Groups({"currency"})
      */
     private $code;
 
     /**
      * @var float
      * @ORM\Column(type="float", nullable=true)
+     * @Groups({"currency"})
      */
     private $eurRate;
 

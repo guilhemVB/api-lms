@@ -2,18 +2,22 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Serializer\Annotation\Groups;
+
 trait PricesTrait
 {
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"prices"})
      */
     private $priceAccommodation;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"prices"})
      */
     private $priceLifeCost;
 

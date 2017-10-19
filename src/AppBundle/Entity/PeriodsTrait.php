@@ -2,78 +2,92 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Serializer\Annotation\Groups;
+
 trait PeriodsTrait
 {
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodJanuary;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodFebruary;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodMarch;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodApril;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodMay;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodJune;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodJuly;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodAugust;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodSeptember;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodOctober;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodNovember;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"periods"})
      */
     private $periodDecember;
 

@@ -20,8 +20,6 @@ parameters:
 
     cors_allow_origin: http://localhost
 
-    varnish_urls: [http://varnish]
-
     image_banner_destinations_path : images/banners/destinations/
     image_banner_countries_path : images/banners/countries/
     image_banner_homepage_path : images/banners/homepage/

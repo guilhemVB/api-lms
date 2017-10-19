@@ -6,9 +6,17 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(collectionOperations={"get"={"method"="GET"}}, itemOperations={"get"={"method"="GET"}})
+ * @ApiResource(
+ *      collectionOperations={"get"={"method"="GET"}},
+ *      itemOperations={"get"={"method"="GET"}},
+ *      attributes={
+ *          "filters"={"slug.search_filter"},
+ *          "normalization_context"={"groups"={"read-country-full", "read-destination-light", "prices", "location"}}
+ *      }
+ * )
  * @ORM\Table(name="country")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CountryRepository")
  */
@@ -18,6 +26,7 @@ class Country
     use ORMBehaviors\Sluggable\Sluggable;
     use ORMBehaviors\Timestampable\Timestampable;
     use PricesTrait;
+    use LocationTrait;
 
     /**
      * @var integer
@@ -25,30 +34,41 @@ class Country
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"read-country-light", "read-country-full"})
      */
     private $id;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=16, nullable=true)
+     * @Groups({"read-country-full"})
      */
     private $codeAlpha2;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=16, nullable=true)
+     * @Groups({"read-country-full"})
      */
     private $codeAlpha3;
 
     /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255)
+     * @Groups({"read-country-light", "read-country-full"})
      */
     private $name;
 
     /**
      * @var string
+     * @Groups({"read-country-light", "read-country-full"})
+     */
+    protected $slug;
+
+    /**
+     * @var string
      * @ORM\Column(name="capital_name", type="string", length=255)
+     * @Groups({"read-country-full"})
      */
     private $capitalName;
 
@@ -56,36 +76,42 @@ class Country
      * @var Destination
      * @ORM\OneToOne(targetEntity="Destination")
      * @ORM\JoinColumn(name="defaultDestination_id", referencedColumnName="id", nullable=true)
+     * @Groups({"read-country-full"})
      */
     private $defaultDestination;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=1024)
+     * @Groups({"read-country-full"})
      */
     private $visaInformation;
 
     /**
      * @var string
      * @ORM\Column(type="string", length=1024)
+     * @Groups({"read-country-full"})
      */
     private $visaDuration;
 
     /**
      * @var array
      * @ORM\Column(name="languages", type="array", nullable=true)
+     * @Groups({"read-country-full"})
      */
     private $languages;
 
     /**
      * @var integer
      * @ORM\Column(type="integer", nullable=true)
+     * @Groups({"read-country-full"})
      */
     private $population;
 
     /**
      * @var ArrayCollection|Destination[]
      * @ORM\OneToMany(targetEntity="Destination", mappedBy="country")
+     * @Groups({"read-country-full"})
      */
     private $destinations;
 
@@ -96,20 +122,9 @@ class Country
     private $redirectToDestination = false;
 
     /**
-     * @var float
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $longitude;
-
-    /**
-     * @var float
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $latitude;
-
-    /**
      * @var Currency
      * @ORM\ManyToOne(targetEntity="Currency", inversedBy="countries")
+     * @Groups({"read-country-full"})
      */
     private $currency;
 
@@ -237,44 +252,6 @@ class Country
         $this->codeAlpha3 = $codeAlpha3;
 
         return $this;
-    }
-
-    /**
-     * @param float $longitude
-     * @return $this
-     */
-    public function setLongitude($longitude)
-    {
-        $this->longitude = $longitude;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLongitude()
-    {
-        return $this->longitude;
-    }
-
-    /**
-     * @param float $latitude
-     * @return $this
-     */
-    public function setLatitude($latitude)
-    {
-        $this->latitude = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLatitude()
-    {
-        return $this->latitude;
     }
 
     /**

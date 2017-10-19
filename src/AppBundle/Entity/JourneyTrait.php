@@ -3,18 +3,21 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Service\CRUD\CRUDStage;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 trait JourneyTrait
 {
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"journey"})
      */
     private $transportType;
 
     /**
      * @var AvailableJourney
      * @ORM\ManyToOne(targetEntity="AvailableJourney")
+     * @Groups({"journey"})
      */
     private $availableJourney;
 
