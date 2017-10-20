@@ -1,0 +1,5 @@
+#!/bin/bash
+
+setfacl -R -m u:www-data:rwX -m u:root:rwX app/cache app/logs
+setfacl -dR -m u:www-data:rwX -m u:root:rwX app/cache app/logs
+
