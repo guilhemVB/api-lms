@@ -6,6 +6,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
@@ -31,6 +32,7 @@ class User extends BaseUser
     /**
      * @var ArrayCollection|Voyage[]
      * @ORM\OneToMany(targetEntity="Voyage", mappedBy="user")
+     * @Groups({"user-write"})
      */
     private $voyages;
 
@@ -54,7 +56,11 @@ class User extends BaseUser
      */
     protected $plainPassword;
 
-
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"user"})
+     */
+    protected $fullname;
 
     public function __construct()
     {
@@ -62,6 +68,25 @@ class User extends BaseUser
         $this->voyages = new ArrayCollection();
     }
 
+    public function setFullname($fullname)
+    {
+        $this->fullname = $fullname;
+
+        return $this;
+    }
+    public function getFullname()
+    {
+        return $this->fullname;
+    }
+
+    /**
+     * @param UserInterface $user
+     * @return bool
+     */
+    public function isUser(UserInterface $user = null)
+    {
+        return $user instanceof self && $user->id === $this->id;
+    }
 
     /**
      * @return integer
