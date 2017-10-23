@@ -5,6 +5,7 @@ namespace AppBundle\Doctrine\ORM\Extension;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\QueryCollectionExtensionInterface;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\QueryItemExtensionInterface;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Util\QueryNameGeneratorInterface;
+use AppBundle\Entity\Stage;
 use AppBundle\Entity\User;
 use AppBundle\Entity\Voyage;
 use Doctrine\ORM\QueryBuilder;
@@ -46,7 +47,7 @@ final class CurrentUserExtension implements QueryCollectionExtensionInterface, Q
     private function addWhere(QueryBuilder $queryBuilder, string $resourceClass)
     {
         $user = $this->tokenStorage->getToken()->getUser();
-        if ($user instanceof User && Voyage::class === $resourceClass && !$this->authorizationChecker->isGranted('ROLE_USER')) {
+        if (in_array($resourceClass, [Voyage::class, Stage::class]) && $user instanceof User && $this->authorizationChecker->isGranted('ROLE_USER')) {
             $rootAlias = $queryBuilder->getRootAliases()[0];
             $queryBuilder->andWhere(sprintf('%s.user = :current_user', $rootAlias));
             $queryBuilder->setParameter('current_user', $user->getId());
