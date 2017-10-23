@@ -31,10 +31,10 @@ Feature: Fixtures
             | Tour dè Frânce | gui                            | 2017-10-12 20:30:54  | Paris                                              |
         Given entities "AppBundle\Entity\Stage" :
             | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position |
-            | Tour dè Frânce                      | Lyon                              |                               | 4      | 1        |
-            | Tour dè Frânce                      | Nice                              |                               | 3      | 2        |
-            | Tour dè Frânce                      | Bordeaux                          |                               | 5      | 3        |
-            | Tour dè Frânce                      | Paris                             |                               | 1      | 4        |
+            | Tour dè Frânce               | Lyon                              |                               | 4      | 1        |
+            | Tour dè Frânce               | Nice                              |                               | 3      | 2        |
+            | Tour dè Frânce               | Bordeaux                          |                               | 5      | 3        |
+            | Tour dè Frânce               | Paris                             |                               | 1      | 4        |
 
     Scenario: Fixtures Voyage Tour d'Eur@pe
         Given entities "AppBundle\Entity\Voyage" :
@@ -42,9 +42,9 @@ Feature: Fixtures
             | Tour d'Eur@pe | user                           | 2017-09-18 08:30:00  | Nice                                               |
         Given entities "AppBundle\Entity\Stage" :
             | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position |
-            | Tour d'Eur@pe                       |                                   | France                        | 4      | 1        |
-            | Tour d'Eur@pe                       |                                   | Royaume-Uni                   | 3      | 2        |
-            | Tour d'Eur@pe                       |                                   | Irlande                       | 5      | 3        |
-            | Tour d'Eur@pe                       | Stockholm                         |                               | 1      | 4        |
-            | Tour d'Eur@pe                       | Amsterdam                         |                               | 3      | 5        |
-            | Tour d'Eur@pe                       |                                   | Danemark                      | 3      | 5        |
+            | Tour d'Eur@pe                |                                   | France                        | 4      | 1        |
+            | Tour d'Eur@pe                |                                   | Royaume-Uni                   | 3      | 2        |
+            | Tour d'Eur@pe                |                                   | Irlande                       | 5      | 3        |
+            | Tour d'Eur@pe                | Stockholm                         |                               | 1      | 4        |
+            | Tour d'Eur@pe                | Amsterdam                         |                               | 3      | 5        |
+            | Tour d'Eur@pe                |                                   | Danemark                      | 3      | 5        |
