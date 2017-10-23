@@ -39,7 +39,7 @@ Feature: Fixtures
     Scenario: Fixtures Voyage Tour d'Eur@pe
         Given entities "AppBundle\Entity\Voyage" :
             | name          | AppBundle\Entity\User:username | startDate(\DateTime) | StartDestination:AppBundle\Entity\Destination:name |
-            | Tour d'Eur@pe | gui                            | 2017-09-18 08:30:00  | Nice                                               |
+            | Tour d'Eur@pe | user                           | 2017-09-18 08:30:00  | Nice                                               |
         Given entities "AppBundle\Entity\Stage" :
             | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position |
             | Tour d'Eur@pe                       |                                   | France                        | 4      | 1        |

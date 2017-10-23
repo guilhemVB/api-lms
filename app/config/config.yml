@@ -93,11 +93,19 @@ nelmio_cors:
         '^/': ~
 
 api_platform:
+    title:           API - Le Monde en Sac
+    description:     The core API for the website le Monde en Sac
     enable_fos_user: true
     http_cache:
         invalidation:
             enabled: false
             varnish_urls: []
+    eager_loading:
+        max_joins: 1
+#    collection:
+#        pagination:
+#            enabled: true
+#            items_per_page: 30
 
 lexik_jwt_authentication:
     private_key_path: '%jwt_private_key_path%'

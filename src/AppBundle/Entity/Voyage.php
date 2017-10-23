@@ -12,6 +12,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ApiResource(
  *      attributes={
+ *          "force_eager"=false,
  *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}}
  *      },
  * )
@@ -80,6 +81,7 @@ class Voyage
     /**
      * @var User
      * @ORM\ManyToOne(targetEntity="User", inversedBy="voyages")
+     * @Groups({"read-voyage"})
      */
     private $user;
 
