@@ -8,12 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
  *      attributes={
  *          "force_eager"=false,
- *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}}
+ *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}},
+ *          "denormalization_context"={"groups"={"write-voyage"}}
  *      },
  * )
  * @ORM\Table(name="voyage")
@@ -38,7 +40,10 @@ class Voyage
     /**
      * @var string
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
-     * @Groups({"read-voyage"})
+     * @Groups({"read-voyage", "write-voyage"})
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(max = 255)
      */
     private $name;
 
@@ -46,6 +51,8 @@ class Voyage
      * @var string
      * @ORM\Column(name="token", type="string", length=255, nullable=false, unique=true)
      * @Groups({"read-voyage"})
+     * @Assert\NotNull()
+     * @Assert\Length(max = 255)
      */
     private $token;
 
@@ -53,20 +60,24 @@ class Voyage
      * @var string
      * @ORM\Column(name="url_minified", type="string", length=255, nullable=true)
      * @Groups({"read-voyage"})
+     * @Assert\Length(max = 255)
      */
     private $urlMinified;
 
     /**
      * @var boolean
      * @ORM\Column(type="boolean", nullable=false)
-     * @Groups({"read-voyage"})
+     * @Groups({"read-voyage", "write-voyage"})
+     * @Assert\NotNull()
      */
     private $showPricesInPublic = true;
 
     /**
      * @var \DateTime
      * @ORM\Column(type="datetime", nullable=false)
-     * @Groups({"read-voyage"})
+     * @Groups({"read-voyage", "write-voyage"})
+     * @Assert\NotNull()
+     * @Assert\DateTime()
      */
     private $startDate;
 
@@ -74,7 +85,8 @@ class Voyage
      * @var Destination
      * @ORM\ManyToOne(targetEntity="Destination")
      * @ORM\JoinColumn(name="destination_id", referencedColumnName="id", nullable=false)
-     * @Groups({"read-voyage"})
+     * @Groups({"read-voyage", "write-voyage"})
+     * @Assert\NotNull()
      */
     private $startDestination;
 
@@ -82,6 +94,7 @@ class Voyage
      * @var User
      * @ORM\ManyToOne(targetEntity="User", inversedBy="voyages")
      * @Groups({"read-voyage"})
+     * @Assert\NotNull()
      */
     private $user;
 

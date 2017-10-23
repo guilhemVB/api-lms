@@ -4,16 +4,25 @@ namespace AppBundle\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource(
  *      attributes={
- *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "read-voyage", "availableJourney"}}
+ *          "force_eager"=false,
+ *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "read-voyage", "availableJourney"}},
+ *          "denormalization_context"={"groups"={"write-stage", "journey"}}
  *      },
  * )
  * @ORM\Table(name="stage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StageRepository")
+ * @UniqueEntity(
+ *     fields={"voyage", "position"},
+ *     errorPath="position",
+ *     message="This position is already in use on this Voyage."
+ * )
  */
 class Stage
 {
@@ -33,37 +42,50 @@ class Stage
     /**
      * @var Voyage
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Voyage", inversedBy="stages")
-     * @Groups({"read-stage"})
+     * @Groups({"write-stage", "write-stage"})
+     * @Assert\NotNull()
      */
     private $voyage;
+
+    /**
+     * @var float
+     * @ORM\Column(type="float", nullable=false)
+     * @Groups({"read-stage", "write-stage"})
+     * @Assert\NotNull()
+     * @Assert\Range(min=0)
+     */
+    private $nbDays;
 
     /**
      * @var Destination
      * @ORM\ManyToOne(targetEntity="Destination")
      * @ORM\JoinColumn(name="destination_id", referencedColumnName="id", nullable=true)
-     * @Groups({"read-stage"})
+     * @Groups({"read-stage", "write-stage"})
+     * @Assert\Expression(
+     *     expression="(this.country != null xor this.destination != null",
+     *     message="Either Country or Destination must be set"
+     * )
      */
     private $destination;
-
-    /**
-     * @var float
-     * @ORM\Column(type="float", nullable=false)
-     * @Groups({"read-stage"})
-     */
-    private $nbDays;
 
     /**
      * @var Country
      * @ORM\ManyToOne(targetEntity="Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
-     * @Groups({"read-stage"})
+     * @Groups({"read-stage", "write-stage"})
+     * @Assert\Expression(
+     *     expression="this.country != null xor this.destination != null",
+     *     message="Either Country or Destination must be set"
+     * )
      */
     private $country;
 
     /**
      * @var int
      * @ORM\Column(type="integer", nullable=false)
-     * @Groups({"read-stage"})
+     * @Groups({"read-stage", "write-stage"})
+     * @Assert\Range(min=0)
+     * @Assert\NotNull()
      */
     private $position;
 

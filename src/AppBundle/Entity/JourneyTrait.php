@@ -11,6 +11,7 @@ trait JourneyTrait
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"journey"})
+     * @Assert\Choice({"TRAIN", "BUS", "FLY", "NONE", null})
      */
     private $transportType;
 
