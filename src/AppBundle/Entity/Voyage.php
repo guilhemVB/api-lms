@@ -94,7 +94,6 @@ class Voyage
      * @var User
      * @ORM\ManyToOne(targetEntity="User", inversedBy="voyages")
      * @Groups({"read-voyage"})
-     * @Assert\NotNull()
      */
     private $user;
 

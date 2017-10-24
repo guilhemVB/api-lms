@@ -47,7 +47,7 @@ services:
         class : AppBundle\Service\GoogleUrlShortener\GoogleUrlShortenerApi
         arguments:
             - '%api_google_key%'
-            - "@router"
+            - '@router'
 
     journey_fetcher:
         class: AppBundle\Service\Journey\JourneyFetcher
@@ -67,3 +67,24 @@ services:
             - "@doctrine.orm.entity_manager"
             - "@best_journey_finder"
             - "@logger"
+
+    app.addCurrentUser.extension:
+        class: AppBundle\Doctrine\ORM\Extension\CurrentUserExtension
+        arguments:
+            - '@security.token_storage'
+            - '@security.authorization_checker'
+        tags:
+            - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
+            - { name: api_platform.doctrine.orm.query_extension.item }
+
+    app.addCurrentUser.subscriber:
+        class: AppBundle\EventSubscriber\AddCurrentUserSubscriber
+        arguments:
+            - '@security.token_storage'
+        tags: [ { name: 'kernel.event_subscriber'} ]
+
+    app.addGoogleUrlShortener.subscriber:
+        class: AppBundle\EventSubscriber\AddGoogleUrlShortenerSubscriber
+        arguments:
+            - "@google_url_shortener_api"
+        tags: [ { name: 'kernel.event_subscriber'} ]
