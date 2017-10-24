@@ -28,9 +28,11 @@ class GoogleUrlShortenerApi implements GoogleUrlShortenerApiInterface
      */
     public function shortenByVoyageToken($token)
     {
-        $url = $this->router->generate('shareVoyage', ['token' => $token], Router::ABSOLUTE_URL);
-
-        return $this->shorten($url);
+        //TODO
+        return '';
+//        $url = $this->router->generate('shareVoyage', ['token' => $token], Router::ABSOLUTE_URL);
+//
+//        return $this->shorten($url);
     }
 
     /**

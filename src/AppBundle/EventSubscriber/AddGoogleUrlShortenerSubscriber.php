@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
-final class AddGoogleUrlShortenerSubscriber implements EventSubscriberInterface
+class AddGoogleUrlShortenerSubscriber implements EventSubscriberInterface
 {
 
     /** @var GoogleUrlShortenerApiInterface */

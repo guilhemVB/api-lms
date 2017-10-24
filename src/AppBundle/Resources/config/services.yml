@@ -49,6 +49,9 @@ services:
             - '%api_google_key%'
             - '@router'
 
+    # usefull for symfony autowiring
+    AppBundle\Service\GoogleUrlShortener\GoogleUrlShortenerApiInterface: '@google_url_shortener_api'
+
     journey_fetcher:
         class: AppBundle\Service\Journey\JourneyFetcher
         arguments:
@@ -77,14 +80,3 @@ services:
             - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
             - { name: api_platform.doctrine.orm.query_extension.item }
 
-    app.addCurrentUser.subscriber:
-        class: AppBundle\EventSubscriber\AddCurrentUserSubscriber
-        arguments:
-            - '@security.token_storage'
-        tags: [ { name: 'kernel.event_subscriber'} ]
-
-    app.addGoogleUrlShortener.subscriber:
-        class: AppBundle\EventSubscriber\AddGoogleUrlShortenerSubscriber
-        arguments:
-            - "@google_url_shortener_api"
-        tags: [ { name: 'kernel.event_subscriber'} ]
