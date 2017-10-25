@@ -13,6 +13,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *      collectionOperations={"get"={"method"="GET"}},
  *      itemOperations={"get"={"method"="GET"}},
  *      attributes={
+ *          "force_eager"=false,
  *          "filters"={"slug.search_filter"},
  *          "normalization_context"={"groups"={"read-country-full", "read-destination-light", "prices", "location"}}
  *      }

@@ -3,25 +3,39 @@ default:
         filters:
             tags: ~@skip
     extensions:
-        Behat\Symfony2Extension: ~
+        Behat\Symfony2Extension:
+            kernel:
+                env: "test"
+                debug: "true"
+        Behat\MinkExtension:
+            base_url: "http://127.0.0.1:8000/"
+            sessions:
+                default:
+                    symfony2: ~
+        Sanpi\Behatch\Extension: ~
     suites:
         backend_calculator:
             type: symfony_bundle
             bundle: 'AppBundle'
             contexts :
+#                - FeatureContext: { container: "@service_container" }
+                - Behat\MinkExtension\Context\MinkContext
+                - Sanpi\Behatch\Context\RestContext
+                - Sanpi\Behatch\Context\JsonContext
+
                 - AppBundle\Features\Context\FeatureContext
                 - AppBundle\Features\Context\CommonGivenContext:
                     container: '@service_container'
-                - AppBundle\Features\Context\CountryContext:
-                    container: '@service_container'
-                - AppBundle\Features\Context\DestinationContext:
-                    container: '@service_container'
-                - AppBundle\Features\Context\UserContext:
-                    container: '@service_container'
-                - AppBundle\Features\Context\VoyageContext:
-                    container: '@service_container'
-                - AppBundle\Features\Context\StageContext:
-                    container: '@service_container'
-                - AppBundle\Features\Context\JourneyContext:
-                    container: '@service_container'
+#                - AppBundle\Features\Context\CountryContext:
+#                    container: '@service_container'
+#                - AppBundle\Features\Context\DestinationContext:
+#                    container: '@service_container'
+#                - AppBundle\Features\Context\UserContext:
+#                    container: '@service_container'
+#                - AppBundle\Features\Context\VoyageContext:
+#                    container: '@service_container'
+#                - AppBundle\Features\Context\StageContext:
+#                    container: '@service_container'
+#                - AppBundle\Features\Context\JourneyContext:
+#                    container: '@service_container'
 
