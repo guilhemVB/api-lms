@@ -35,7 +35,7 @@ install:
 
 # Run script
 script:
-  - bin/behat
+  - vendor/behat/behat/bin/behat
   - php bin/console doctrine:schema:validate --env=test
 
 notifications:
