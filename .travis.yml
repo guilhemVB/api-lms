@@ -1,0 +1,42 @@
+language: php
+
+# Allows use container-based infrastructure
+sudo: false
+
+# Start mysql service
+services:
+  - mysql
+
+# Cache composer packages so "composer install" is faster
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+php:
+  - 7.0
+
+# Matrix to test in every php version
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+
+
+before-install:
+  - chmod +x bin/behat
+  - composer self-update
+  - rm -rf var/cache/*
+
+install:
+  - composer install --no-scripts --dev
+  - cp app/config/parameters_travis.yml.dist app/config/parameters.yml
+  - rm -rf var/cache/*
+  - travis_retry php bin/console doctrine:database:create --env=test
+  - php bin/console doctrine:schema:update --force --env=test
+
+# Run script
+script:
+  - bin/behat
+  - php bin/console doctrine:schema:validate --env=test
+
+notifications:
+  email: false
