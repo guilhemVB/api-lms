@@ -33,6 +33,7 @@ Feature: CRUD Voyages
         Given les utilisateurs :
             | nom | mot de passe | email       |
             | gui | gui          | gui@gui.gui |
+        When I store the the token for user "gui" password "gui"
 
 
 

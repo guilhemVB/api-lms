@@ -18,7 +18,6 @@ default:
             type: symfony_bundle
             bundle: 'AppBundle'
             contexts :
-#                - FeatureContext: { container: "@service_container" }
                 - Behat\MinkExtension\Context\MinkContext
                 - Sanpi\Behatch\Context\RestContext
                 - Sanpi\Behatch\Context\JsonContext
@@ -26,6 +25,7 @@ default:
                 - AppBundle\Features\Context\FeatureContext
                 - AppBundle\Features\Context\CommonGivenContext:
                     container: '@service_container'
+                    request: '@behatch.http_call.request'
                 - AppBundle\Features\Context\CountryContext:
                     container: '@service_container'
 #                - AppBundle\Features\Context\DestinationContext:

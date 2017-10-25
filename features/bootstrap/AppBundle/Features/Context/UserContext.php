@@ -4,7 +4,9 @@ namespace AppBundle\Features\Context;
 
 use AppBundle\Entity\User;
 use AppKernel;
+use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\TableNode;
+use Behatch\HttpCall\Request;
 use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -13,9 +15,9 @@ class UserContext extends CommonContext
     /** @var UserManagerInterface */
     private $userManager;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct(ContainerInterface $container, Request $request)
     {
-        parent::__construct($container);
+        parent::__construct($container,  $request);
         $this->userManager = $container->get('fos_user.user_manager');
     }
 
@@ -41,5 +43,19 @@ class UserContext extends CommonContext
             $this->userManager->updateUser($user);
         }
 
+    }
+
+    /**
+     * @When I store the the token for user :username password :password
+     */
+    public function iStoreTheTheTokenForUserPassword($username, $password)
+    {
+        $this->request->send(
+            $method,
+            $this->locatePath($url),
+            [],
+            $files,
+            $body !== null ? $body->getRaw() : null
+        );
     }
 }

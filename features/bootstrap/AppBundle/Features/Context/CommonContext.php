@@ -2,6 +2,7 @@
 
 namespace AppBundle\Features\Context;
 
+use Behatch\Context\BaseContext;
 use AppBundle\Entity\Country;
 use AppBundle\Entity\Currency;
 use AppBundle\Entity\Destination;
@@ -15,21 +16,29 @@ use AppBundle\Repository\UserRepository;
 use AppBundle\Repository\StageRepository;
 use AppBundle\Repository\VoyageRepository;
 use Behat\Behat\Context\Context;
+use Behatch\HttpCall\Request;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-abstract class CommonContext extends \PHPUnit_Framework_TestCase implements Context
+abstract class CommonContext extends BaseContext implements Context
 {
 
     /** @var  EntityManager */
     protected $em;
 
+    /** @var string */
+    protected $userToken = "";
+
+    /** @var Request */
+    protected $request;
+
     /**
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(ContainerInterface $container, Request $request)
     {
         $this->em = $container->get('doctrine')->getManager();
+        $this->request = $request;
     }
 
     /**
