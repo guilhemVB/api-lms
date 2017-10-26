@@ -31,9 +31,9 @@ Feature: CRUD Voyages
             | New-York                                          | Boston                                          |           |         | 195         | 279       |           |         |
             | Boston                                            | Paris                                           |           |         |             |           | 612       | 876     |
         Given les utilisateurs :
-            | nom | mot de passe | email       |
-            | gui | gui          | gui@gui.gui |
-        When I store the the token for user "gui" password "gui"
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        When I ask the token for user "gui" password "gui"
 
 
 

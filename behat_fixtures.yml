@@ -3,25 +3,16 @@ default:
         Behat\Symfony2Extension:
             kernel:
                 env: dev
-        Behat\MinkExtension:
-            base_url: "http://127.0.0.1:8000/"
-            sessions:
-                default:
-                    symfony2: ~
-        Sanpi\Behatch\Extension: ~
     suites:
-        backend_calculator:
+        fixtures:
             type: symfony_bundle
             bundle: 'AppBundle'
             paths:
                 - src/AppBundle/Fixtures/
             contexts :
-                - Behat\MinkExtension\Context\MinkContext
-                - Sanpi\Behatch\Context\RestContext
-                - Sanpi\Behatch\Context\JsonContext
-
                 - AppBundle\Features\Context\CommonGivenContext:
                     container: '@service_container'
                 - AppBundle\Features\Context\UserContext:
                     container: '@service_container'
+                    kernel: '@kernel'
 

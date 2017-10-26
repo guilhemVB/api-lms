@@ -1,6 +1,6 @@
 Feature: Fixtures
 
-    Scenario: Fixtures tilisateur
+    Scenario: Fixtures User
         Given les utilisateurs :
             | nom   | mot de passe | email               | role             |
             | gui   | gui          | gimli.fr@hotmail.fr | ROLE_SUPER_ADMIN |
