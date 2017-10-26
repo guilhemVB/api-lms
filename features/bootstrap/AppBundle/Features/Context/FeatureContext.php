@@ -3,35 +3,35 @@
 namespace AppBundle\Features\Context;
 
 use Behat\Behat\Context\Context;
-use AppKernel;
-use Behat\Behat\Context\SnippetAcceptingContext;
-use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\ArrayInput;
+use Doctrine\ORM\Tools\SchemaTool;
 
-class FeatureContext implements Context, SnippetAcceptingContext
+class FeatureContext extends CommonContext implements Context
 {
+    /** @var SchemaTool */
+    private $schemaTool;
+
+    /** @var array */
+    private $classes;
+
+    public function __construct($container)
+    {
+        parent::__construct($container);
+        $this->schemaTool = new SchemaTool($this->em);
+        $this->classes = $this->em->getMetadataFactory()->getAllMetadata();
+        $this->schemaTool->dropSchema($this->classes);
+    }
 
     /** @BeforeScenario */
-    public function before($event)
+    public function before()
     {
-        $kernel = new AppKernel('test', true);
-        $kernel->boot();
-        $application = new Application($kernel);
-        $application->setAutoExit(false);
-        FeatureContext::runConsole($application, 'doctrine:schema:drop', ['--force' => true, '--full-database' => true]);
-        FeatureContext::runConsole($application, 'doctrine:schema:create');
-        $kernel->shutdown();
+        $this->schemaTool->createSchema($this->classes);
     }
 
     /**
-     * @param Application $application
-     * @param string $command
-     * @param array $options
-     * @return int
+     * @AfterScenario
      */
-    public static function runConsole($application, $command, $options = [])
+    public function dropDatabase()
     {
-        $options = array_merge($options, ['command' => $command]);
-        return $application->run(new ArrayInput($options));
+        $this->schemaTool->dropSchema($this->classes);
     }
 }

@@ -4,6 +4,7 @@ namespace AppBundle\Features\Context;
 
 use AppKernel;
 use Behat\Gherkin\Node\TableNode;
+use Behatch\HttpCall\Request;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\DependencyInjection\ContainerInterface;

@@ -29,16 +29,16 @@ abstract class CommonContext extends BaseContext implements Context
     /** @var string */
     protected $userToken = "";
 
-    /** @var Request */
-    protected $request;
+    /** @var object Doctrine */
+    protected $doctrine;
 
     /**
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container, Request $request)
+    public function __construct(ContainerInterface $container)
     {
-        $this->em = $container->get('doctrine')->getManager();
-        $this->request = $request;
+        $this->doctrine = $container->get('doctrine');
+        $this->em = $this->doctrine->getManager();
     }
 
     /**

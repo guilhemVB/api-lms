@@ -12,20 +12,21 @@ default:
             sessions:
                 default:
                     symfony2: ~
-        Sanpi\Behatch\Extension: ~
+        Behatch\Extension: ~
     suites:
         backend_calculator:
             type: symfony_bundle
             bundle: 'AppBundle'
             contexts :
                 - Behat\MinkExtension\Context\MinkContext
-                - Sanpi\Behatch\Context\RestContext
-                - Sanpi\Behatch\Context\JsonContext
+                - behatch:context:json
+                - behatch:context:rest
+                - behatch:context:debug
 
-                - AppBundle\Features\Context\FeatureContext
+                - AppBundle\Features\Context\FeatureContext:
+                    container: '@service_container'
                 - AppBundle\Features\Context\CommonGivenContext:
                     container: '@service_container'
-                    request: '@behatch.http_call.request'
                 - AppBundle\Features\Context\CountryContext:
                     container: '@service_container'
 #                - AppBundle\Features\Context\DestinationContext:

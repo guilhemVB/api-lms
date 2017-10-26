@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityRepository;
 
 /**
  * @package AppBundle\Repository
- * @method Voyage findOneByName(string)
+ * @method Voyage findOneByName($name)
  * @method Voyage findOneByToken(string)
  */
 class VoyageRepository extends EntityRepository

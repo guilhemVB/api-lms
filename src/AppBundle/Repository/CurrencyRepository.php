@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityRepository;
 
 /**
  * @package AppBundle\Entity
- * @method Currency findOneByCode(string)
+ * @method Currency findOneByCode($code)
  */
 class CurrencyRepository extends EntityRepository
 {

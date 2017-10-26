@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityRepository;
 
 /**
  * @package AppBundle\Entity
- * @method Country findOneByName(string)
+ * @method Country findOneByName($name)
  * @method Country find($id)
  */
 class CountryRepository extends EntityRepository
