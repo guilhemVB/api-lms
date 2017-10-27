@@ -33,7 +33,8 @@ Feature: CRUD Voyages
         Given les utilisateurs :
             | nom | mot de passe | email       | role      |
             | gui | gui          | gui@gui.gui | ROLE_USER |
-        When I ask the token for user "gui" password "gui"
+        When I send a "GET" request to "/voyages.jsonld"
+        Then the response status code should be 200
 
 
 

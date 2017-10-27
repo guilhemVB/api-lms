@@ -21,7 +21,6 @@ default:
                 - Behat\MinkExtension\Context\MinkContext
                 - behatch:context:json
                 - behatch:context:rest
-                - behatch:context:debug
 
                 - AppBundle\Features\Context\FeatureContext:
                     container: '@service_container'
@@ -33,7 +32,7 @@ default:
 #                    container: '@service_container'
                 - AppBundle\Features\Context\UserContext:
                     container: '@service_container'
-                    kernel: '@kernel'
+                    JWTManager: '@lexik_jwt_authentication.jwt_manager'
 #                - AppBundle\Features\Context\VoyageContext:
 #                    container: '@service_container'
 #                - AppBundle\Features\Context\StageContext:
