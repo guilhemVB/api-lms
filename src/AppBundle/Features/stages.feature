@@ -1,3 +1,4 @@
+@skip
 Feature: Stages
 
     Scenario: Supprimer une étapes

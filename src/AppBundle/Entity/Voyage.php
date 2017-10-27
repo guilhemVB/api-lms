@@ -51,8 +51,6 @@ class Voyage
      * @var string
      * @ORM\Column(name="token", type="string", length=255, nullable=false, unique=true)
      * @Groups({"read-voyage"})
-     * @Assert\NotNull()
-     * @Assert\Length(max = 255)
      */
     private $token;
 
@@ -108,7 +106,6 @@ class Voyage
     public function __construct()
     {
         $this->stages = new ArrayCollection();
-        $this->token = md5(uniqid(time(), true));
     }
 
     /**

@@ -1,5 +1,13 @@
 Feature: CRUD Destinations
 
+    Scenario: Check unknown routes
+        When I send a "POST" request to "/destinations.jsonld"
+        Then the response status code should be 405
+        When I send a "PUT" request to "/destinations/1.jsonld"
+        Then the response status code should be 405
+        When I send a "DELETE" request to "/destinations/1.jsonld"
+        Then the response status code should be 405
+
     Scenario: CRUD Destinations
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
@@ -41,8 +49,8 @@ Feature: CRUD Destinations
                         "longitude": null,
                         "latitude": null
                     },
-                    "priceAccommodation": "30",
-                    "priceLifeCost": "20",
+                    "priceAccommodation": 30,
+                    "priceLifeCost": 20,
                     "periodJanuary": null,
                     "periodFebruary": null,
                     "periodMarch": null,
@@ -55,8 +63,8 @@ Feature: CRUD Destinations
                     "periodOctober": null,
                     "periodNovember": null,
                     "periodDecember": null,
-                    "longitude": "2.336492",
-                    "latitude": "48.864592"
+                    "longitude": 2.336492,
+                    "latitude": 48.864592
                 }
             ],
             "hydra:totalItems": 1,
@@ -93,11 +101,10 @@ Feature: CRUD Destinations
             }
         }
         """
-
         When I send a "POST" request to "/destinations.jsonld" with body:
         """
         {
-            "name" : Lyon"
+            "name" : "Lyon"
         }
         """
         Then the response status code should be 405

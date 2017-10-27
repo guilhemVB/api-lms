@@ -8,3 +8,5 @@ services:
     journey_fetcher:
         class: AppBundle\Service\Journey\JourneyFetcherMock
 
+    token_generator:
+        class: AppBundle\Service\Tokenizer\TokenGeneratorMock

@@ -1,6 +1,16 @@
 Feature: CRUD Voyages
 
-    Scenario: Create Voyage
+    Scenario: Check authentication
+        When I send a "GET" request to "/voyages.jsonld"
+        Then the response status code should be 401
+        When I send a "POST" request to "/voyages.jsonld"
+        Then the response status code should be 401
+        When I send a "PUT" request to "/voyages/1.jsonld"
+        Then the response status code should be 401
+        When I send a "DELETE" request to "/voyages/1.jsonld"
+        Then the response status code should be 401
+
+    Scenario: CRUD Voyages
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
@@ -33,8 +43,72 @@ Feature: CRUD Voyages
         Given les utilisateurs :
             | nom | mot de passe | email       | role      |
             | gui | gui          | gui@gui.gui | ROLE_USER |
-        When I send a "GET" request to "/voyages.jsonld"
-        Then the response status code should be 200
+        Given I add "Content-Type" header equal to "application/json"
 
+        When I send a "POST" request to "/voyages.jsonld" with body:
+        """
+        {
+            "startDate": "2018/01/01",
+            "startDestination":"/destinations/1",
+        }
+        """
+        Then the response status code should be 400
+
+        When I send a "POST" request to "/voyages.jsonld" with body:
+        """
+        {
+            "name":"TDM",
+            "startDestination":"/destinations/1",
+        }
+        """
+        Then the response status code should be 400
+
+        When I send a "POST" request to "/voyages.jsonld" with body:
+        """
+        {
+            "name":"TDM",
+            "startDate": "2018/01/01"
+        }
+        """
+        Then the response status code should be 400
+
+        When I send a "POST" request to "/voyages.jsonld" with body:
+        """
+        {
+            "name":"TDM",
+            "startDate": "2018/01/01",
+            "startDestination":"/destinations/1",
+            "showPricesInPublic": false
+        }
+        """
+        Then the response status code should be 201
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+          "@context": "\/contexts\/Voyage",
+          "@id": "\/voyages\/1",
+          "@type": "Voyage",
+          "id": 1,
+          "name": "TDM",
+          "token": "TOKEN_MOCK",
+          "urlMinified": "google.com\/shortenMOCK",
+          "showPricesInPublic": false,
+          "startDate": "2018-01-01T00:00:00+01:00",
+          "startDestination": {
+              "@id": "\/destinations\/1",
+              "@type": "Destination",
+              "id": 1,
+              "name": "Paris",
+              "slug": "paris"
+          },
+          "user": "\/users\/1",
+          "stages": [],
+          "transportType": null,
+          "availableJourney": null
+        }
+        """
+#       TODO : update, get, delete
 
 

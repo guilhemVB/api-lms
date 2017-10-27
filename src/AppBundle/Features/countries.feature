@@ -1,5 +1,13 @@
 Feature: CRUD Destinations
 
+    Scenario: Check unknown routes
+        When I send a "POST" request to "/countries.jsonld"
+        Then the response status code should be 405
+        When I send a "PUT" request to "/countries/1.jsonld"
+        Then the response status code should be 405
+        When I send a "DELETE" request to "/countries/1.jsonld"
+        Then the response status code should be 405
+
     Scenario: CRUD Destinations
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
@@ -67,7 +75,7 @@ Feature: CRUD Destinations
         When I send a "POST" request to "/countries.jsonld" with body:
         """
         {
-            "name" : Espagne",
+            "name" : "Espagne",
             "codeAlpha3": "ESP"
         }
         """

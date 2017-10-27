@@ -49,8 +49,12 @@ services:
             - '%api_google_key%'
             - '@router'
 
+    token_generator:
+        class: AppBundle\Service\Tokenizer\TokenGenerator
+
     # usefull for symfony autowiring
     AppBundle\Service\GoogleUrlShortener\GoogleUrlShortenerApiInterface: '@google_url_shortener_api'
+    AppBundle\Service\Tokenizer\TokenGeneratorInterface: '@token_generator'
 
     journey_fetcher:
         class: AppBundle\Service\Journey\JourneyFetcher

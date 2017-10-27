@@ -1,3 +1,4 @@
+@skip
 Feature: Stats voyage
 
     Scenario: Calculer les stats

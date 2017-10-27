@@ -1,3 +1,4 @@
+@skip
 Feature: Available Journey calculator
 
     Scenario: Récupérer et stocker et mettre à jour les trajets
