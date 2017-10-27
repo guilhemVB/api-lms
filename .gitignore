@@ -24,7 +24,9 @@ node_modules
 .vagrant
 app/Resources/views/footer.html.twig
 docker-compose.yml
-/var/jwt/*
+!/var/jwt/
+/var/jwt/private.pem
+/var/jwt/public.pem
 /docker/.data
 /docker/app
 /docker/alk
