@@ -44,6 +44,7 @@ Feature: CRUD Voyages
             | nom | mot de passe | email       | role      |
             | gui | gui          | gui@gui.gui | ROLE_USER |
         Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
 
         When I send a "POST" request to "/voyages.jsonld" with body:
         """
@@ -109,6 +110,78 @@ Feature: CRUD Voyages
           "availableJourney": null
         }
         """
-#       TODO : update, get, delete
 
+        When I send a "PUT" request to "/voyages/1.jsonld" with body:
+        """
+        {
+            "name":"TDM 222",
+            "startDate": "2020-01-01T00:00:00+01:00",
+            "startDestination":"/destinations/2",
+            "showPricesInPublic": false
+        }
+        """
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+          "@context": "\/contexts\/Voyage",
+          "@id": "\/voyages\/1",
+          "@type": "Voyage",
+          "id": 1,
+          "name": "TDM 222",
+          "token": "TOKEN_MOCK",
+          "urlMinified": "google.com\/shortenMOCK",
+          "showPricesInPublic": false,
+          "startDate": "2020-01-01T00:00:00+01:00",
+          "startDestination": {
+              "@id": "\/destinations\/2",
+              "@type": "Destination",
+              "id": 2,
+              "name": "Lyon",
+              "slug": "lyon"
+          },
+          "user": "\/users\/1",
+          "stages": [],
+          "transportType": null,
+          "availableJourney": null
+        }
+        """
+
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+          "@context": "\/contexts\/Voyage",
+          "@id": "\/voyages\/1",
+          "@type": "Voyage",
+          "id": 1,
+          "name": "TDM 222",
+          "token": "TOKEN_MOCK",
+          "urlMinified": "google.com\/shortenMOCK",
+          "showPricesInPublic": false,
+          "startDate": "2020-01-01T00:00:00+01:00",
+          "startDestination": {
+              "@id": "\/destinations\/2",
+              "@type": "Destination",
+              "id": 2,
+              "name": "Lyon",
+              "slug": "lyon"
+          },
+          "user": "\/users\/1",
+          "stages": [],
+          "transportType": null,
+          "availableJourney": null
+        }
+        """
+
+        When I send a "DELETE" request to "/voyages/1.jsonld"
+        Then the response status code should be 204
+
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 404
 

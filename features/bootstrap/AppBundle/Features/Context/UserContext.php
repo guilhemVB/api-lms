@@ -2,46 +2,19 @@
 
 namespace AppBundle\Features\Context;
 
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Behat\Gherkin\Node\TableNode;
-use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
-use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Behatch\Context\RestContext;
 
 class UserContext extends CommonContext
 {
     /** @var UserManagerInterface */
     private $userManager;
 
-    /** @var JWTManager */
-    private $JWTManager;
-
-    /** @var RestContext */
-    private $restContext;
-
-    public function __construct(ContainerInterface $container, JWTManager $JWTManager)
+    public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
         $this->userManager = $container->get('fos_user.user_manager');
-        $this->JWTManager = $JWTManager;
-    }
-
-    /**
-     *  @BeforeScenario
-     */
-    public function getBehatchJsonContext(BeforeScenarioScope $scope)
-    {
-        $environment = $scope->getEnvironment();
-
-        $this->restContext = $environment->getContext('Behatch\Context\RestContext');
-    }
-
-    private function setToken(UserInterface $user)
-    {
-        $token = $this->JWTManager->create($user);
-        $this->restContext->iAddHeaderEqualTo('Authorization', 'Bearer '.$token);
     }
 
     /**
@@ -64,8 +37,6 @@ class UserContext extends CommonContext
                 $user->addRole($userRow['role']);
             }
             $this->userManager->updateUser($user);
-            $this->setToken($user);
-            return;
         }
     }
 }

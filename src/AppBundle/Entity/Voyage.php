@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      attributes={
  *          "force_eager"=false,
  *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}},
- *          "denormalization_context"={"groups"={"write-voyage"}}
+ *          "denormalization_context"={"groups"={"write-voyage", "journey"}}
  *      },
  * )
  * @ORM\Table(name="voyage")

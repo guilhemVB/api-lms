@@ -14,5 +14,4 @@ default:
                     container: '@service_container'
                 - AppBundle\Features\Context\UserContext:
                     container: '@service_container'
-                    kernel: '@kernel'
 

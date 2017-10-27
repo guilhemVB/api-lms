@@ -74,6 +74,16 @@ abstract class CommonContext extends BaseContext implements Context
     }
 
     /**
+     * @return User
+     */
+    protected function findUserByName($username)
+    {
+        /** @var UserRepository $userRepository */
+        $userRepository = $this->em->getRepository('AppBundle:User');
+        return $userRepository->findOneByUsername($username);
+    }
+
+    /**
      * @param string $name
      * @return Destination
      */
