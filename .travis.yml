@@ -22,7 +22,7 @@ matrix:
 
 
 before-install:
-#  - timedatectl set-timezone Europe/Paris
+  - timedatectl set-timezone Europe/London
   - chmod +x bin/behat
   - composer self-update
   - rm -rf var/cache/*
