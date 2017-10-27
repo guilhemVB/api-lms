@@ -76,7 +76,7 @@ Feature: CRUD Voyages
         """
         {
             "name":"TDM",
-            "startDate": "2018-01-01T00:00:00+00:00",
+            "startDate": "2018-01-01T00:00:00+01:00",
             "startDestination":"/destinations/1",
             "showPricesInPublic": false
         }
