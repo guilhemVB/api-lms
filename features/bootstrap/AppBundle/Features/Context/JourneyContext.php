@@ -106,7 +106,7 @@ class JourneyContext extends CommonContext
     {
         $availableJourneyRepository = $this->em->getRepository('AppBundle:AvailableJourney');
 
-        $this->assertSameSize($tableAvailableJourney->getHash(), $availableJourneyRepository->findAll());
+        $this->assertEquals(count($tableAvailableJourney->getHash()), count($availableJourneyRepository->findAll()));
 
         foreach ($tableAvailableJourney as $availableJourneyRow) {
             $fromDestination = $this->findDestinationByName($availableJourneyRow['depuis']);
@@ -115,7 +115,7 @@ class JourneyContext extends CommonContext
             /** @var AvailableJourney $availableJourney */
             $availableJourney = $availableJourneyRepository->findOneBy(['fromDestination' => $fromDestination, 'toDestination' => $toDestination]);
 
-            $this->assertNotNull($availableJourney, $fromDestination->getName() . " - " . $toDestination->getName());
+            $this->assertTrue($availableJourney !== null, $fromDestination->getName() . " - " . $toDestination->getName());
 
             $this->assertEquals($availableJourneyRow['prix avion'], $availableJourney->getFlyPrices(), $fromDestination->getName() . " - " . $toDestination->getName());
             $this->assertEquals($availableJourneyRow['temps avion'], $availableJourney->getFlyTime(), $fromDestination->getName() . " - " . $toDestination->getName());

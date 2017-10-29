@@ -1,7 +1,16 @@
-@skip
 Feature: Available Journey calculator
 
-    Scenario: Récupérer et stocker et mettre à jour les trajets
+    Scenario: Check authentication
+        When I send a "GET" request to "/available_journeys.jsonld"
+        Then the response status code should be 401
+        When I send a "POST" request to "/available_journeys.jsonld"
+        Then the response status code should be 405
+        When I send a "PUT" request to "/available_journeys/1.jsonld"
+        Then the response status code should be 405
+        When I send a "DELETE" request to "/available_journeys/1.jsonld"
+        Then the response status code should be 405
+
+    Scenario: fetch Available Journey
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
@@ -19,7 +28,7 @@ Feature: Available Journey calculator
             | New-York | Etat-Unis                     | -73.9862683 | 40.7590453 |
             | Londres  | Royaume-Unis                  | -0.0775694  | 51.5082493 |
         When je lance la récupération des transports possibles
-        Given les possibilitées de transports sont :
+        Then les possibilitées de transports sont :
             | depuis   | jusqu'à  | prix avion | temps avion | prix train | temps train | prix bus | temps bus |
             | Paris    | Lyon     | 136        | 269         | 82         | 152         | 21       | 452       |
             | Paris    | Londres  | 111        | 319         | 235        | 205         | 47       | 587       |
@@ -43,7 +52,28 @@ Feature: Available Journey calculator
             | New-York | Paris    | 469        | 622         |            |             |          |           |
             | New-York | Londres  | 493        | 638         |            |             |          |           |
 
+        When I send a "POST" request to "/available_journeys.jsonld" with body:
+        """
+        {}
+        """
+        Then the response status code should be 405
 
+        When I send a "PUT" request to "/available_journeys.jsonld" with body:
+        """
+        {}
+        """
+        Then the response status code should be 405
+
+        When I send a "DELETE" request to "/available_journeys/1.jsonld"
+        Then the response status code should be 405
+
+        Given les utilisateurs :
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
+
+    @skip
     Scenario: Mettre à jour les voyages après l'ajout d'un trajets
         Given entity "AppBundle\Entity\Currency" :
             | name | code |

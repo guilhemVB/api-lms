@@ -39,6 +39,6 @@ default:
 #                    container: '@service_container'
 #                - AppBundle\Features\Context\StageContext:
 #                    container: '@service_container'
-#                - AppBundle\Features\Context\JourneyContext:
-#                    container: '@service_container'
+                - AppBundle\Features\Context\JourneyContext:
+                    container: '@service_container'
 
