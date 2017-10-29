@@ -2,11 +2,21 @@
 
 namespace AppBundle\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *      collectionOperations={"get"={"method"="GET"}},
+ *      itemOperations={"get"={"method"="GET"}},
+ *      attributes={
+ *          "force_eager"=false,
+ *          "filters"={"availableJourney.group_filter", "availableJourney.search_filter"},
+ *          "normalization_context"={"groups"={"availableJourney", "read-destination-light"}}
+ *      },
+ * )
  * @ORM\Table(name="available_journey")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AvailableJourneyRepository")
  */
@@ -20,6 +30,7 @@ class AvailableJourney
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups({"availableJourney"})
      */
     private $id;
 

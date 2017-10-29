@@ -11,3 +11,9 @@ services:
         parent: 'api_platform.doctrine.orm.search_filter'
         arguments: [ { country.slug: 'exact' } ]
         tags: [ 'api_platform.filter' ]
+
+    availableJourney.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { fromDestination.id: 'exact', toDestination.id: 'exact' } ]
+        tags: [ 'api_platform.filter' ]
+

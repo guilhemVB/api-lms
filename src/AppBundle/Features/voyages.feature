@@ -117,7 +117,8 @@ Feature: CRUD Voyages
             "name":"TDM 222",
             "startDate": "2020-01-01T00:00:00+00:00",
             "startDestination":"/destinations/2",
-            "showPricesInPublic": false
+            "showPricesInPublic": false,
+            "availableJourney":"/available_journeys/1"
         }
         """
         Then the response status code should be 200
@@ -126,26 +127,50 @@ Feature: CRUD Voyages
         And the JSON should be equal to:
         """
         {
-          "@context": "\/contexts\/Voyage",
-          "@id": "\/voyages\/1",
-          "@type": "Voyage",
-          "id": 1,
-          "name": "TDM 222",
-          "token": "TOKEN_MOCK",
-          "urlMinified": "google.com\/shortenMOCK",
-          "showPricesInPublic": false,
-          "startDate": "2020-01-01T00:00:00+00:00",
-          "startDestination": {
-              "@id": "\/destinations\/2",
-              "@type": "Destination",
-              "id": 2,
-              "name": "Lyon",
-              "slug": "lyon"
-          },
-          "user": "\/users\/1",
-          "stages": [],
-          "transportType": null,
-          "availableJourney": null
+            "@context": "\/contexts\/Voyage",
+            "@id": "\/voyages\/1",
+            "@type": "Voyage",
+            "id": 1,
+            "name": "TDM 222",
+            "token": "TOKEN_MOCK",
+            "urlMinified": "google.com\/shortenMOCK",
+            "showPricesInPublic": false,
+            "startDate": "2020-01-01T00:00:00+00:00",
+            "startDestination": {
+                "@id": "\/destinations\/2",
+                "@type": "Destination",
+                "id": 2,
+                "name": "Lyon",
+                "slug": "lyon"
+            },
+            "user": "\/users\/1",
+            "stages": [],
+            "transportType": null,
+            "availableJourney": {
+                "@id": "\/available_journeys\/1",
+                "@type": "AvailableJourney",
+                "id": 1,
+                "fromDestination": {
+                    "@id": "\/destinations\/1",
+                    "@type": "Destination",
+                    "id": 1,
+                    "name": "Paris",
+                    "slug": "paris"
+                },
+                "toDestination": {
+                    "@id": "\/destinations\/2",
+                    "@type": "Destination",
+                    "id": 2,
+                    "name": "Lyon",
+                    "slug": "lyon"
+                },
+                "flyPrices": 52,
+                "flyTime": 56,
+                "busPrices": 5,
+                "busTime": 390,
+                "trainPrices": 50,
+                "trainTime": 120
+            }
         }
         """
 
@@ -156,26 +181,50 @@ Feature: CRUD Voyages
         And the JSON should be equal to:
         """
         {
-          "@context": "\/contexts\/Voyage",
-          "@id": "\/voyages\/1",
-          "@type": "Voyage",
-          "id": 1,
-          "name": "TDM 222",
-          "token": "TOKEN_MOCK",
-          "urlMinified": "google.com\/shortenMOCK",
-          "showPricesInPublic": false,
-          "startDate": "2020-01-01T00:00:00+00:00",
-          "startDestination": {
-              "@id": "\/destinations\/2",
-              "@type": "Destination",
-              "id": 2,
-              "name": "Lyon",
-              "slug": "lyon"
-          },
-          "user": "\/users\/1",
-          "stages": [],
-          "transportType": null,
-          "availableJourney": null
+            "@context": "\/contexts\/Voyage",
+            "@id": "\/voyages\/1",
+            "@type": "Voyage",
+            "id": 1,
+            "name": "TDM 222",
+            "token": "TOKEN_MOCK",
+            "urlMinified": "google.com\/shortenMOCK",
+            "showPricesInPublic": false,
+            "startDate": "2020-01-01T00:00:00+00:00",
+            "startDestination": {
+                "@id": "\/destinations\/2",
+                "@type": "Destination",
+                "id": 2,
+                "name": "Lyon",
+                "slug": "lyon"
+            },
+            "user": "\/users\/1",
+            "stages": [],
+            "transportType": null,
+            "availableJourney": {
+                "@id": "\/available_journeys\/1",
+                "@type": "AvailableJourney",
+                "id": 1,
+                "fromDestination": {
+                    "@id": "\/destinations\/1",
+                    "@type": "Destination",
+                    "id": 1,
+                    "name": "Paris",
+                    "slug": "paris"
+                },
+                "toDestination": {
+                    "@id": "\/destinations\/2",
+                    "@type": "Destination",
+                    "id": 2,
+                    "name": "Lyon",
+                    "slug": "lyon"
+                },
+                "flyPrices": 52,
+                "flyTime": 56,
+                "busPrices": 5,
+                "busTime": 390,
+                "trainPrices": 50,
+                "trainTime": 120
+            }
         }
         """
 

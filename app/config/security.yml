@@ -47,4 +47,5 @@ security:
         - { path: ^/countries, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/voyages, roles: [ ROLE_USER ] }
         - { path: ^/stages, roles: [ ROLE_USER ] }
+        - { path: ^/available_journeys, roles: [ ROLE_USER ] }
         - { path: ^/admin, roles: [ ROLE_SUPER_ADMIN ] }
