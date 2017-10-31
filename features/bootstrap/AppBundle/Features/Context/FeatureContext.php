@@ -21,17 +21,10 @@ class FeatureContext extends CommonContext implements Context
         $this->schemaTool->dropSchema($this->classes);
     }
 
-    /** @BeforeScenario */
-    public function before()
-    {
-        $this->schemaTool->createSchema($this->classes);
-    }
-
-    /**
-     * @AfterScenario
-     */
-    public function dropDatabase()
+    /** @BeforeScenario @emptyDatabase */
+    public function emptyDatabase()
     {
         $this->schemaTool->dropSchema($this->classes);
+        $this->schemaTool->createSchema($this->classes);
     }
 }

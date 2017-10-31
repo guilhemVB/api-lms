@@ -8,6 +8,7 @@ Feature: CRUD Destinations
         When I send a "DELETE" request to "/destinations/1.jsonld"
         Then the response status code should be 405
 
+    @emptyDatabase
     Scenario: CRUD Destinations
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |

@@ -1,4 +1,4 @@
-Feature: CRUD Destinations
+Feature: CRUD Countries
 
     Scenario: Check unknown routes
         When I send a "POST" request to "/countries.jsonld"
@@ -8,6 +8,7 @@ Feature: CRUD Destinations
         When I send a "DELETE" request to "/countries/1.jsonld"
         Then the response status code should be 405
 
+    @emptyDatabase
     Scenario: CRUD Destinations
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |

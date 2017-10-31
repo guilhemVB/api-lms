@@ -10,6 +10,7 @@ Feature: Available Journey calculator
         When I send a "DELETE" request to "/available_journeys/1.jsonld"
         Then the response status code should be 405
 
+    @emptyDatabase
     Scenario: fetch Available Journey
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
@@ -51,27 +52,12 @@ Feature: Available Journey calculator
             | Londres  | New-York | 496        | 681         |            |             |          |           |
             | New-York | Paris    | 469        | 622         |            |             |          |           |
             | New-York | Londres  | 493        | 638         |            |             |          |           |
+#        Given les utilisateurs :
+#            | nom | mot de passe | email       | role      |
+#            | gui | gui          | gui@gui.gui | ROLE_USER |
+#        Given I add "Content-Type" header equal to "application/json"
+#        Given I authenticate the user "gui"
 
-        When I send a "POST" request to "/available_journeys.jsonld" with body:
-        """
-        {}
-        """
-        Then the response status code should be 405
-
-        When I send a "PUT" request to "/available_journeys.jsonld" with body:
-        """
-        {}
-        """
-        Then the response status code should be 405
-
-        When I send a "DELETE" request to "/available_journeys/1.jsonld"
-        Then the response status code should be 405
-
-        Given les utilisateurs :
-            | nom | mot de passe | email       | role      |
-            | gui | gui          | gui@gui.gui | ROLE_USER |
-        Given I add "Content-Type" header equal to "application/json"
-        Given I authenticate the user "gui"
 
     @skip
     Scenario: Mettre à jour les voyages après l'ajout d'un trajets
