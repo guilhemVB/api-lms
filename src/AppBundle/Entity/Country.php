@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *      attributes={
  *          "force_eager"=false,
  *          "filters"={"slug.search_filter"},
- *          "normalization_context"={"groups"={"read-country-full", "read-destination-light", "prices", "location"}}
+ *          "normalization_context"={"groups"={"read-country-full", "read-destination-light", "prices", "location", "currency"}}
  *      }
  * )
  * @ORM\Table(name="country")

@@ -14,6 +14,6 @@ services:
 
     availableJourney.search_filter:
         parent: 'api_platform.doctrine.orm.search_filter'
-        arguments: [ { fromDestination.id: 'exact', toDestination.id: 'exact' } ]
+        arguments: [ { fromDestination: 'exact', toDestination: 'exact' } ]
         tags: [ 'api_platform.filter' ]
 

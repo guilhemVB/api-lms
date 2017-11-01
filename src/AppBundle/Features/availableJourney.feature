@@ -1,6 +1,6 @@
 Feature: Available Journey calculator
 
-    Scenario: Check authentication
+    Scenario: Check authentication and unknow routes
         When I send a "GET" request to "/available_journeys.jsonld"
         Then the response status code should be 401
         When I send a "POST" request to "/available_journeys.jsonld"
@@ -11,7 +11,7 @@ Feature: Available Journey calculator
         Then the response status code should be 405
 
     @emptyDatabase
-    Scenario: fetch Available Journey
+    Scenario: GET Available Journey
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
@@ -52,11 +52,286 @@ Feature: Available Journey calculator
             | Londres  | New-York | 496        | 681         |            |             |          |           |
             | New-York | Paris    | 469        | 622         |            |             |          |           |
             | New-York | Londres  | 493        | 638         |            |             |          |           |
-#        Given les utilisateurs :
-#            | nom | mot de passe | email       | role      |
-#            | gui | gui          | gui@gui.gui | ROLE_USER |
-#        Given I add "Content-Type" header equal to "application/json"
-#        Given I authenticate the user "gui"
+        Given les utilisateurs :
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
+
+        When I send a "GET" request to "/available_journeys.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+          "@context": "\/contexts\/AvailableJourney",
+          "@id": "\/available_journeys",
+          "@type": "hydra:Collection",
+          "hydra:member": [
+              {
+                  "@id": "\/available_journeys\/1",
+                  "@type": "AvailableJourney",
+                  "id": 1,
+                  "fromDestination": {
+                      "@id": "\/destinations\/4",
+                      "@type": "Destination",
+                      "id": 4,
+                      "name": "Londres",
+                      "slug": "londres"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/3",
+                      "@type": "Destination",
+                      "id": 3,
+                      "name": "New-York",
+                      "slug": "new-york"
+                  },
+                  "flyPrices": 496,
+                  "flyTime": 681,
+                  "busPrices": null,
+                  "busTime": null,
+                  "trainPrices": null,
+                  "trainTime": null
+              },
+              {
+                  "@id": "\/available_journeys\/3",
+                  "@type": "AvailableJourney",
+                  "id": 3,
+                  "fromDestination": {
+                      "@id": "\/destinations\/4",
+                      "@type": "Destination",
+                      "id": 4,
+                      "name": "Londres",
+                      "slug": "londres"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/1",
+                      "@type": "Destination",
+                      "id": 1,
+                      "name": "Paris",
+                      "slug": "paris"
+                  },
+                  "flyPrices": 114,
+                  "flyTime": 311,
+                  "busPrices": 52,
+                  "busTime": 616,
+                  "trainPrices": 235,
+                  "trainTime": 201
+              },
+              {
+                  "@id": "\/available_journeys\/4",
+                  "@type": "AvailableJourney",
+                  "id": 4,
+                  "fromDestination": {
+                      "@id": "\/destinations\/3",
+                      "@type": "Destination",
+                      "id": 3,
+                      "name": "New-York",
+                      "slug": "new-york"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/4",
+                      "@type": "Destination",
+                      "id": 4,
+                      "name": "Londres",
+                      "slug": "londres"
+                  },
+                  "flyPrices": 493,
+                  "flyTime": 638,
+                  "busPrices": null,
+                  "busTime": null,
+                  "trainPrices": null,
+                  "trainTime": null
+              },
+              {
+                  "@id": "\/available_journeys\/6",
+                  "@type": "AvailableJourney",
+                  "id": 6,
+                  "fromDestination": {
+                      "@id": "\/destinations\/3",
+                      "@type": "Destination",
+                      "id": 3,
+                      "name": "New-York",
+                      "slug": "new-york"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/1",
+                      "@type": "Destination",
+                      "id": 1,
+                      "name": "Paris",
+                      "slug": "paris"
+                  },
+                  "flyPrices": 469,
+                  "flyTime": 622,
+                  "busPrices": null,
+                  "busTime": null,
+                  "trainPrices": null,
+                  "trainTime": null
+              },
+              {
+                  "@id": "\/available_journeys\/10",
+                  "@type": "AvailableJourney",
+                  "id": 10,
+                  "fromDestination": {
+                      "@id": "\/destinations\/1",
+                      "@type": "Destination",
+                      "id": 1,
+                      "name": "Paris",
+                      "slug": "paris"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/4",
+                      "@type": "Destination",
+                      "id": 4,
+                      "name": "Londres",
+                      "slug": "londres"
+                  },
+                  "flyPrices": 111,
+                  "flyTime": 319,
+                  "busPrices": 47,
+                  "busTime": 587,
+                  "trainPrices": 235,
+                  "trainTime": 205
+              },
+              {
+                  "@id": "\/available_journeys\/11",
+                  "@type": "AvailableJourney",
+                  "id": 11,
+                  "fromDestination": {
+                      "@id": "\/destinations\/1",
+                      "@type": "Destination",
+                      "id": 1,
+                      "name": "Paris",
+                      "slug": "paris"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/3",
+                      "@type": "Destination",
+                      "id": 3,
+                      "name": "New-York",
+                      "slug": "new-york"
+                  },
+                  "flyPrices": 469,
+                  "flyTime": 725,
+                  "busPrices": null,
+                  "busTime": null,
+                  "trainPrices": null,
+                  "trainTime": null
+              }
+          ],
+          "hydra:totalItems": 6,
+          "hydra:search": {
+              "@type": "hydra:IriTemplate",
+              "hydra:template": "\/available_journeys.jsonld{?fromDestination,fromDestination[],toDestination,toDestination[]}",
+              "hydra:variableRepresentation": "BasicRepresentation",
+              "hydra:mapping": [
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "fromDestination",
+                      "property": "fromDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "fromDestination[]",
+                      "property": "fromDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "toDestination",
+                      "property": "toDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "toDestination[]",
+                      "property": "toDestination",
+                      "required": false
+                  }
+              ]
+          }
+        }
+        """
+
+
+        When I send a "GET" request to "/available_journeys.jsonld?fromDestination=/destinations/4&toDestination=/destinations/1"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+          "@context": "\/contexts\/AvailableJourney",
+          "@id": "\/available_journeys",
+          "@type": "hydra:Collection",
+          "hydra:member": [
+              {
+                  "@id": "\/available_journeys\/3",
+                  "@type": "AvailableJourney",
+                  "id": 3,
+                  "fromDestination": {
+                      "@id": "\/destinations\/4",
+                      "@type": "Destination",
+                      "id": 4,
+                      "name": "Londres",
+                      "slug": "londres"
+                  },
+                  "toDestination": {
+                      "@id": "\/destinations\/1",
+                      "@type": "Destination",
+                      "id": 1,
+                      "name": "Paris",
+                      "slug": "paris"
+                  },
+                  "flyPrices": 114,
+                  "flyTime": 311,
+                  "busPrices": 52,
+                  "busTime": 616,
+                  "trainPrices": 235,
+                  "trainTime": 201
+              }
+          ],
+          "hydra:totalItems": 1,
+          "hydra:view": {
+              "@id": "\/available_journeys.jsonld?fromDestination=%2Fdestinations%2F4&toDestination=%2Fdestinations%2F1",
+              "@type": "hydra:PartialCollectionView"
+          },
+          "hydra:search": {
+              "@type": "hydra:IriTemplate",
+              "hydra:template": "\/available_journeys.jsonld{?fromDestination,fromDestination[],toDestination,toDestination[]}",
+              "hydra:variableRepresentation": "BasicRepresentation",
+              "hydra:mapping": [
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "fromDestination",
+                      "property": "fromDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "fromDestination[]",
+                      "property": "fromDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "toDestination",
+                      "property": "toDestination",
+                      "required": false
+                  },
+                  {
+                      "@type": "IriTemplateMapping",
+                      "variable": "toDestination[]",
+                      "property": "toDestination",
+                      "required": false
+                  }
+              ]
+          }
+        }
+        """
+
 
 
     @skip
