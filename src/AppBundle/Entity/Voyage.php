@@ -72,10 +72,10 @@ class Voyage
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="datetime", nullable=false)
+     * @ORM\Column(type="date", nullable=false)
      * @Groups({"read-voyage", "write-voyage"})
      * @Assert\NotNull()
-     * @Assert\DateTime()
+     * @Assert\Date()
      */
     private $startDate;
 
