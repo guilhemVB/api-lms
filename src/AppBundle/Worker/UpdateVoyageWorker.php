@@ -3,6 +3,7 @@
 namespace AppBundle\Worker;
 
 use AppBundle\Entity\Destination;
+use AppBundle\Entity\JourneyInterface;
 use AppBundle\Entity\Stage;
 use AppBundle\Entity\Voyage;
 use AppBundle\Repository\AvailableJourneyRepository;
@@ -18,9 +19,6 @@ class UpdateVoyageWorker
     /** @var EntityManager */
     private $em;
 
-    /** @var LoggerInterface */
-    private $logger;
-
     /** @var AvailableJourneyRepository */
     private $availableJourneyRepository;
 
@@ -33,11 +31,10 @@ class UpdateVoyageWorker
     /** @var BestJourneyFinder */
     private $bestJourneyFinder;
 
-    public function __construct(EntityManager $em, BestJourneyFinder $bestJourneyFinder, LoggerInterface $logger)
+    public function __construct(EntityManager $em, BestJourneyFinder $bestJourneyFinder)
     {
         $this->em = $em;
         $this->bestJourneyFinder = $bestJourneyFinder;
-        $this->logger = $logger;
 
         $this->availableJourneyRepository = $em->getRepository('AppBundle:AvailableJourney');
         $this->voyageRepository = $em->getRepository('AppBundle:Voyage');
@@ -51,7 +48,6 @@ class UpdateVoyageWorker
 
         foreach ($voyages as $voyage) {
             $this->updateAvailableJourneys($voyage);
-            $this->em->flush();
         }
     }
 
@@ -72,23 +68,22 @@ class UpdateVoyageWorker
             $this->updateAvailableJourneyIfNeeded($voyage, $voyage->getStartDestination(), $firstStage->getDestination());
         }
 
-        $fromDestination = null;
-        $toDestination = null;
-
         for ($i = 1; $i < count($stages); $i++) {
             $stageA = $stages[$i - 1];
             $stageB = $stages[$i];
 
             $this->updateAvailableJourneyIfNeeded($stageA, $stageA->getDestination(), $stageB->getDestination());
         }
+
+        $this->em->flush();
     }
 
     /**
-     * @param Voyage|Stage $voyageOrStage
+     * @param JourneyInterface $voyageOrStage
      * @param Destination $fromDestination
      * @param Destination $toDestination
      */
-    private function updateAvailableJourneyIfNeeded($voyageOrStage, Destination $fromDestination, Destination $toDestination)
+    private function updateAvailableJourneyIfNeeded(JourneyInterface $voyageOrStage, Destination $fromDestination, Destination $toDestination)
     {
         $availableJourney = $voyageOrStage->getAvailableJourney();
 
@@ -114,9 +109,9 @@ class UpdateVoyageWorker
     }
 
     /**
-     * @param Voyage|Stage $voyageOrStage
+     * @param JourneyInterface $voyageOrStage
      */
-    private function resetVoyageOrStage($voyageOrStage)
+    private function resetVoyageOrStage(JourneyInterface $voyageOrStage)
     {
         $voyageOrStage->setAvailableJourney(null);
         $voyageOrStage->setTransportType(null);

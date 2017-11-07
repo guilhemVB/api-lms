@@ -71,7 +71,7 @@ class MaplaceMarkerBuilder
      * @param bool $onlyPoint
      * @return array
      */
-    private function buildMaker($longitude, $latitude, $name, $destination = null, $country = null, $options = [], $number = null, $onlyPoint = false)
+    private function buildMaker($longitude, $latitude, $name, Destination $destination = null, Country $country = null, $options = [], $number = null, $onlyPoint = false)
     {
         $options = array_merge($this->defaultOptions(), $options);
         $dataMaplace = [

@@ -9,7 +9,6 @@ use AppBundle\Repository\CurrencyRepository;
 use AppBundle\Service\CSVParser;
 use AppBundle\Twig\AssetExistsExtension;
 use Doctrine\ORM\EntityManager;
-//use pcrov\JsonReader\JsonReader;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -64,9 +63,6 @@ class AddDefaultDestinationInCountriesCommand extends ContainerAwareCommand
                 $country->setDefaultDestination($destinations[0]);
             }
 
-            if ($cptFlush%30 === 0) {
-                $em->flush();
-            }
             $cptFlush++;
         }
 

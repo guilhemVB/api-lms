@@ -18,7 +18,6 @@
 /web/css/*
 /web/js/*
 /web/files/countries.geojson
-.idea
 node_modules
 .sass-cache
 .vagrant

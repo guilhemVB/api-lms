@@ -24,7 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     message="This position is already in use on this Voyage."
  * )
  */
-class Stage
+class Stage implements JourneyInterface
 {
 
     use JourneyTrait;

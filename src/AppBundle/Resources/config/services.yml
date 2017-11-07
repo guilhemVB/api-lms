@@ -73,7 +73,6 @@ services:
         arguments:
             - "@doctrine.orm.entity_manager"
             - "@best_journey_finder"
-            - "@logger"
 
     app.addCurrentUser.extension:
         class: AppBundle\Doctrine\ORM\Extension\CurrentUserExtension

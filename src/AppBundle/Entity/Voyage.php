@@ -22,7 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\VoyageRepository")
  * @UniqueEntity("token")
  */
-class Voyage
+class Voyage implements JourneyInterface
 {
 
     use JourneyTrait;

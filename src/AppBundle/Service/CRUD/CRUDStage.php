@@ -174,7 +174,7 @@ class CRUDStage
      * @param Stage $stage
      * @param float $nbDays
      */
-    public function changeNumberDays($stage, $nbDays)
+    public function changeNumberDays(Stage $stage, $nbDays)
     {
         $stage->setNbDays($nbDays);
         $this->em->persist($stage);
