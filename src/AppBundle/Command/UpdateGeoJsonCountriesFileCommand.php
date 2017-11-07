@@ -51,9 +51,9 @@ class UpdateGeoJsonCountriesFileCommand extends ContainerAwareCommand
 
         $countries = $countryRepository->findCountriesWithDestinations();
 
-        $countryData = [];
+        $countriesData = [];
         foreach ($countries as $country) {
-            $countryData[] = [
+            $countriesData[] = [
                 'id' => $country->getId(),
                 'name' => $country->getName(),
                 'slug' => $country->getSlug(),
@@ -87,22 +87,22 @@ class UpdateGeoJsonCountriesFileCommand extends ContainerAwareCommand
         $newGeoJson["features"] = [];
 
         $nbFound = 0;
-        $nbToFind = count($countryData);
+        $nbToFind = count($countriesData);
         do {
             $geoJsonCountry = $reader->value();
             $ISO_A3 = $geoJsonCountry['properties']["ISO_A3"];
-            $keyCountryFound = array_search($ISO_A3, array_column($countryData, 'codeAlpha3'));
+            $keyCountryFound = array_search($ISO_A3, array_column($countriesData, 'codeAlpha3'));
 
             if ($keyCountryFound !== false) {
-                $geoJsonCountry["properties"] = array_merge($geoJsonCountry["properties"], $countryData[$keyCountryFound]);
+                $geoJsonCountry["properties"] = array_merge($geoJsonCountry["properties"], $countriesData[$keyCountryFound]);
                 $newGeoJson["features"][] = $geoJsonCountry;
 
-                $countryName = $countryData[$keyCountryFound]['name'];
+                $countryName = $countriesData[$keyCountryFound]['name'];
                 $nbFound++;
                 $output->writeln("<info>--- $countryName trouvé - $nbFound / $nbToFind ---</info>");
 
-                unset($countryData[$keyCountryFound]);
-                $countryData = array_values($countryData);
+                unset($countriesData[$keyCountryFound]);
+                $countriesData = array_values($countriesData);
                 if ($nbFound == $nbToFind) {
                     break;
                 }
@@ -113,7 +113,9 @@ class UpdateGeoJsonCountriesFileCommand extends ContainerAwareCommand
 
         if ($nbFound != $nbToFind) {
             $output->writeln("<error>--- Pays trouvés : $nbFound / $nbToFind. Il manque :---</error>");
-            var_dump($countryData);
+            foreach ($countriesData as $countryData) {
+                $output->writeln($countryData['name']);
+            }
         }
 
         $fp = fopen($kernel->getProjectDir() . "/web/files/countries.geojson", 'w');

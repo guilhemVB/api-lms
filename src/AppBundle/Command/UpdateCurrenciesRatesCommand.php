@@ -53,8 +53,6 @@ class UpdateCurrenciesRatesCommand extends ContainerAwareCommand
 
         $lastRatesData = $this->fetchLastRates($output);
 
-        var_dump($lastRatesData);
-
         if (is_null($lastRatesData)) {
             $output->writeln("<error>Impossible de récupérer les données depuis l'API.</error>");
 
