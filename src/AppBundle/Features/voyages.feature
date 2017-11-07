@@ -50,7 +50,7 @@ Feature: CRUD Voyages
         When I send a "POST" request to "/voyages.jsonld" with body:
         """
         {
-            "startDate": "2018-01-01T00:00:00+01:00",
+            "startDate": "2018-01-01",
             "startDestination":"/destinations/1",
         }
         """
@@ -69,7 +69,7 @@ Feature: CRUD Voyages
         """
         {
             "name":"TDM",
-            "startDate": "2018-01-01T00:00:00+01:00"
+            "startDate": "2018-01-01"
         }
         """
         Then the response status code should be 400
@@ -78,7 +78,7 @@ Feature: CRUD Voyages
         """
         {
             "name":"TDM",
-            "startDate": "2018-01-01T00:00:00+01:00",
+            "startDate": "2018-01-01",
             "startDestination":"/destinations/1",
             "showPricesInPublic": false
         }
@@ -97,7 +97,7 @@ Feature: CRUD Voyages
           "token": "TOKEN_MOCK",
           "urlMinified": "google.com\/shortenMOCK",
           "showPricesInPublic": false,
-          "startDate": "2018-01-01T00:00:00+01:00",
+          "startDate": "2018-01-01",
           "startDestination": {
               "@id": "\/destinations\/1",
               "@type": "Destination",
@@ -116,7 +116,7 @@ Feature: CRUD Voyages
         """
         {
             "name":"TDM 222",
-            "startDate": "2020-01-01T00:00:00+01:00",
+            "startDate": "2020-01-01",
             "startDestination":"/destinations/2",
             "showPricesInPublic": false,
             "availableJourney":"/available_journeys/1"
@@ -136,7 +136,7 @@ Feature: CRUD Voyages
             "token": "TOKEN_MOCK",
             "urlMinified": "google.com\/shortenMOCK",
             "showPricesInPublic": false,
-            "startDate": "2020-01-01T00:00:00+01:00",
+            "startDate": "2020-01-01",
             "startDestination": {
                 "@id": "\/destinations\/2",
                 "@type": "Destination",
@@ -190,7 +190,7 @@ Feature: CRUD Voyages
             "token": "TOKEN_MOCK",
             "urlMinified": "google.com\/shortenMOCK",
             "showPricesInPublic": false,
-            "startDate": "2020-01-01T00:00:00+01:00",
+            "startDate": "2020-01-01",
             "startDestination": {
                 "@id": "\/destinations\/2",
                 "@type": "Destination",

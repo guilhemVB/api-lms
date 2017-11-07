@@ -2,6 +2,7 @@
 
 namespace AppBundle\Features\Context;
 
+use Behat\Behat\Hook\Scope\AfterScenarioScope;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -40,5 +41,13 @@ class AuthenticationContext extends CommonContext
         $user = $this->findUserByName($username);
         $token = $this->JWTManager->create($user);
         $this->restContext->iAddHeaderEqualTo('Authorization', 'Bearer ' . $token);
+    }
+
+    /**
+     * @AfterScenario
+     */
+    public function afterScenario(AfterScenarioScope $scope)
+    {
+        $this->restContext->iAddHeaderEqualTo('Authorization', '');
     }
 }

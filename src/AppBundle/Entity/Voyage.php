@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(
  *      attributes={
  *          "force_eager"=false,
- *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}},
+ *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}, "datetime_format" = "Y-m-d"},
  *          "denormalization_context"={"groups"={"write-voyage", "journey"}}
  *      },
  * )
@@ -72,10 +72,10 @@ class Voyage
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="date", nullable=false)
+     * @ORM\Column(type="datetime", nullable=false)
      * @Groups({"read-voyage", "write-voyage"})
      * @Assert\NotNull()
-     * @Assert\Date()
+     * @Assert\DateTime()
      */
     private $startDate;
 
