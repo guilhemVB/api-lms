@@ -1,5 +1,6 @@
 {
-    "name": "Guilhem/api-lms",
+    "name": "guilhemVB/api-lms",
+    "description": "API - Le Monde en Sac",
     "license": "MIT",
     "type": "project",
     "homepage": "http://api.lemondeensac.com",
