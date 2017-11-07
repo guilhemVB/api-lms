@@ -7,6 +7,8 @@ services:
 
     journey_fetcher:
         class: AppBundle\Service\Journey\JourneyFetcherMock
+        arguments:
+            - "@kernel"
 
     token_generator:
         class: AppBundle\Service\Tokenizer\TokenGeneratorMock
