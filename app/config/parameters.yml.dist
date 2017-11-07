@@ -16,7 +16,7 @@ parameters:
     mailer_password: test
 
     # A secret key that's used to generate certain security-related tokens
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: ThisTokenIsVerySecretYhear
 
     cors_allow_origin: http://localhost
 
