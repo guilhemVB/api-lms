@@ -5,6 +5,7 @@ http://api.lemondeensac.com/
 ## Installation
 
 ```
+cd docker
 docker build -t lms-base image/base
 docker-compose up -d --build
 ```
