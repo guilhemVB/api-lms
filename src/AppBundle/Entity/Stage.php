@@ -62,7 +62,7 @@ class Stage implements JourneyInterface
      * @ORM\JoinColumn(name="destination_id", referencedColumnName="id", nullable=true)
      * @Groups({"read-stage", "write-stage"})
      * @Assert\Expression(
-     *     expression="(this.country != null xor this.destination != null",
+     *     expression="this.assertCountryXORDestination()",
      *     message="Either Country or Destination must be set"
      * )
      */
@@ -73,10 +73,6 @@ class Stage implements JourneyInterface
      * @ORM\ManyToOne(targetEntity="Country")
      * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
      * @Groups({"read-stage", "write-stage"})
-     * @Assert\Expression(
-     *     expression="this.country != null xor this.destination != null",
-     *     message="Either Country or Destination must be set"
-     * )
      */
     private $country;
 
@@ -189,5 +185,13 @@ class Stage implements JourneyInterface
     public function setCountry($country)
     {
         $this->country = $country;
+    }
+
+    /**
+     * @return bool
+     */
+    public function assertCountryXORDestination()
+    {
+        return $this->getCountry() !== null xor $this->getDestination() !== null;
     }
 }

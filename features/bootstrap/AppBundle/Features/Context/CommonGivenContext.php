@@ -44,6 +44,8 @@ class CommonGivenContext extends CommonContext
                     $entity->$property($relatedEntity);
                 } else {
                     $property = "set$propertyName";
+
+                    // exemple : startDate(\DateTime)
                     preg_match('#\(+(.*)\)+#', $propertyName, $variableType);
                     if ($variableType) {
                         $value = new $variableType[1]($value);

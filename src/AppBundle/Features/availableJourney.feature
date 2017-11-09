@@ -263,72 +263,72 @@ Feature: Available Journey calculator
         And the JSON should be equal to:
         """
         {
-          "@context": "\/contexts\/AvailableJourney",
-          "@id": "\/available_journeys",
-          "@type": "hydra:Collection",
-          "hydra:member": [
-              {
-                  "@id": "\/available_journeys\/3",
-                  "@type": "AvailableJourney",
-                  "id": 3,
-                  "fromDestination": {
-                      "@id": "\/destinations\/4",
-                      "@type": "Destination",
-                      "id": 4,
-                      "name": "Londres",
-                      "slug": "londres"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/1",
-                      "@type": "Destination",
-                      "id": 1,
-                      "name": "Paris",
-                      "slug": "paris"
-                  },
-                  "flyPrices": 114,
-                  "flyTime": 311,
-                  "busPrices": 52,
-                  "busTime": 616,
-                  "trainPrices": 235,
-                  "trainTime": 201
-              }
-          ],
-          "hydra:totalItems": 1,
-          "hydra:view": {
-              "@id": "\/available_journeys.jsonld?fromDestination=%2Fdestinations%2F4&toDestination=%2Fdestinations%2F1",
-              "@type": "hydra:PartialCollectionView"
-          },
-          "hydra:search": {
-              "@type": "hydra:IriTemplate",
-              "hydra:template": "\/available_journeys.jsonld{?fromDestination,fromDestination[],toDestination,toDestination[]}",
-              "hydra:variableRepresentation": "BasicRepresentation",
-              "hydra:mapping": [
-                  {
-                      "@type": "IriTemplateMapping",
-                      "variable": "fromDestination",
-                      "property": "fromDestination",
-                      "required": false
-                  },
-                  {
-                      "@type": "IriTemplateMapping",
-                      "variable": "fromDestination[]",
-                      "property": "fromDestination",
-                      "required": false
-                  },
-                  {
-                      "@type": "IriTemplateMapping",
-                      "variable": "toDestination",
-                      "property": "toDestination",
-                      "required": false
-                  },
-                  {
-                      "@type": "IriTemplateMapping",
-                      "variable": "toDestination[]",
-                      "property": "toDestination",
-                      "required": false
-                  }
-              ]
-          }
+            "@context": "\/contexts\/AvailableJourney",
+            "@id": "\/available_journeys",
+            "@type": "hydra:Collection",
+            "hydra:member": [
+                {
+                    "@id": "\/available_journeys\/3",
+                    "@type": "AvailableJourney",
+                    "id": 3,
+                    "fromDestination": {
+                        "@id": "\/destinations\/4",
+                        "@type": "Destination",
+                        "id": 4,
+                        "name": "Londres",
+                        "slug": "londres"
+                    },
+                    "toDestination": {
+                        "@id": "\/destinations\/1",
+                        "@type": "Destination",
+                        "id": 1,
+                        "name": "Paris",
+                        "slug": "paris"
+                    },
+                    "flyPrices": 114,
+                    "flyTime": 311,
+                    "busPrices": 52,
+                    "busTime": 616,
+                    "trainPrices": 235,
+                    "trainTime": 201
+                }
+            ],
+            "hydra:totalItems": 1,
+            "hydra:view": {
+                "@id": "\/available_journeys.jsonld?fromDestination=%2Fdestinations%2F4&toDestination=%2Fdestinations%2F1",
+                "@type": "hydra:PartialCollectionView"
+            },
+            "hydra:search": {
+                "@type": "hydra:IriTemplate",
+                "hydra:template": "\/available_journeys.jsonld{?fromDestination,fromDestination[],toDestination,toDestination[]}",
+                "hydra:variableRepresentation": "BasicRepresentation",
+                "hydra:mapping": [
+                    {
+                        "@type": "IriTemplateMapping",
+                        "variable": "fromDestination",
+                        "property": "fromDestination",
+                        "required": false
+                    },
+                    {
+                        "@type": "IriTemplateMapping",
+                        "variable": "fromDestination[]",
+                        "property": "fromDestination",
+                        "required": false
+                    },
+                    {
+                        "@type": "IriTemplateMapping",
+                        "variable": "toDestination",
+                        "property": "toDestination",
+                        "required": false
+                    },
+                    {
+                        "@type": "IriTemplateMapping",
+                        "variable": "toDestination[]",
+                        "property": "toDestination",
+                        "required": false
+                    }
+                ]
+            }
         }
         """
 
