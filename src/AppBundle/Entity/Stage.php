@@ -80,7 +80,7 @@ class Stage implements JourneyInterface
      * @var int
      * @ORM\Column(type="integer", nullable=false)
      * @Groups({"read-stage", "write-stage"})
-     * @Assert\Range(min=0)
+     * @Assert\Range(min=1)
      * @Assert\NotNull()
      */
     private $position;

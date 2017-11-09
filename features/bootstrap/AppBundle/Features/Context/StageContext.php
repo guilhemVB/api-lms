@@ -3,21 +3,21 @@
 namespace AppBundle\Features\Context;
 
 use AppBundle\Repository\StageRepository;
-use AppBundle\Service\CRUD\CRUDStage;
+use AppBundle\Service\CRUD\StageManager;
 use AppKernel;
 use Behat\Gherkin\Node\TableNode;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class StageContext extends CommonContext
 {
-    /** @var CRUDStage */
-    private $CRUDStage;
+    /** @var StageManager */
+    private $stageManager;
 
     public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
 
-        $this->CRUDStage = $container->get('crud_stage');
+        $this->stageManager = $container->get('crud_stage');
     }
 
     /**
@@ -29,10 +29,10 @@ class StageContext extends CommonContext
         foreach ($tableStages as $stageRow) {
             if (!empty($stageRow['destination'])) {
                 $destination = $this->findDestinationByName($stageRow['destination']);
-                $this->CRUDStage->addDestination($destination, $voyage, $stageRow['nombre de jour']);
+                $this->stageManager->addDestination($destination, $voyage, $stageRow['nombre de jour']);
             } else {
                 $country = $this->findCountryByName($stageRow['pays']);
-                $this->CRUDStage->addCountry($country, $voyage, $stageRow['nombre de jour']);
+                $this->stageManager->addCountry($country, $voyage, $stageRow['nombre de jour']);
             }
         }
     }
@@ -48,7 +48,7 @@ class StageContext extends CommonContext
 
         foreach ($stages as $stage) {
             if ($stage->getPosition() == $position) {
-                $this->CRUDStage->remove($stage);
+                $this->stageManager->remove($stage);
                 return;
             }
         }
@@ -95,7 +95,7 @@ class StageContext extends CommonContext
 
         foreach ($stages as $stage) {
             if ($stage->getPosition() == $oldPosition) {
-                $this->CRUDStage->changePosition($stage, $oldPosition, $newPosition);
+                $this->stageManager->changePosition($stage, $oldPosition, $newPosition);
                 return;
             }
         }

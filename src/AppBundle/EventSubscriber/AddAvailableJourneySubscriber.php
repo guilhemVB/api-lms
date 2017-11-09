@@ -5,29 +5,31 @@ namespace AppBundle\EventSubscriber;
 use ApiPlatform\Core\EventListener\EventPriorities;
 use AppBundle\Entity\Stage;
 use AppBundle\Entity\Voyage;
+use AppBundle\Service\CRUD\StageManager;
 use AppBundle\Service\Journey\JourneyService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
+use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 class AddAvailableJourneySubscriber implements EventSubscriberInterface
 {
 
     /**
-     * @var JourneyService
+     * @var StageManager
      */
-    private $journeyService;
+    private $stageManager;
 
 
-    public function __construct(JourneyService $journeyService)
+    public function __construct(StageManager $stageManager)
     {
-        $this->journeyService = $journeyService;
+        $this->stageManager = $stageManager;
     }
 
     public static function getSubscribedEvents()
     {
         return [
-            KernelEvents::VIEW => ['calculateAvailableJourneys', EventPriorities::PRE_WRITE],
+            KernelEvents::VIEW => ['calculateAvailableJourneys', EventPriorities::POST_VALIDATE],
         ];
     }
 
@@ -38,10 +40,13 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
         if ($method === 'POST') {
             $object = $event->getControllerResult();
             if ($object instanceof Stage) {
-
-                // utiliser le CRUDStage Add
-
+                $object = $this->stageManager->checkAvailableJourneyAfterNewStage($object);
                 $event->setControllerResult($object);
+            }
+        } else if($method === 'PUT') {
+            $object = $event->getControllerResult();
+            if ($object instanceof Stage) {
+                // TODO
             } elseif ($object instanceof Voyage) {
                 // TODO
             }

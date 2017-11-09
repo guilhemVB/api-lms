@@ -112,8 +112,8 @@ Feature: Stages
         {
             "voyage": "/voyages/1",
             "nbDays":3,
-            "destination": "/destinations/1",
-            "position": 0
+            "destination": "/destinations/2",
+            "position": 1
         }
         """
         Then the response status code should be 201
@@ -128,14 +128,14 @@ Feature: Stages
             "id": 1,
             "nbDays": 3,
             "destination": {
-                "@id": "\/destinations\/1",
+                "@id": "\/destinations\/2",
                 "@type": "Destination",
-                "id": 1,
-                "name": "Paris",
-                "slug": "paris"
+                "id": 2,
+                "name": "Lyon",
+                "slug": "lyon"
             },
             "country": null,
-            "position": 0,
+            "position": 1,
             "transportType": null,
             "availableJourney": null
         }
@@ -147,19 +147,18 @@ Feature: Stages
             "voyage": "/voyages/1",
             "nbDays":3,
             "destination": "/destinations/2",
-            "position": 0
+            "position": 1
         }
         """
         Then the response status code should be 400
-
 
         When I send a "POST" request to "/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
             "nbDays":2,
-            "destination": "/destinations/2",
-            "position": 1
+            "destination": "/destinations/3",
+            "position": 2
         }
         """
         Then the response status code should be 201
@@ -174,28 +173,130 @@ Feature: Stages
             "id": 2,
             "nbDays": 2,
             "destination": {
-                "@id": "\/destinations\/2",
+                "@id": "\/destinations\/3",
                 "@type": "Destination",
-                "id": 2,
-                "name": "Lyon",
-                "slug": "lyon"
+                "id": 3,
+                "name": "Marseille",
+                "slug": "marseille"
             },
             "country": null,
-            "position": 1,
+            "position": 2,
             "transportType": null,
             "availableJourney": null
         }
         """
 
-#        When I send a "GET" request to "/voyages/1.jsonld"
-#        Then the response status code should be 200
-#        And the response should be in JSON
-#        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
-#        And the JSON should be equal to:
-#        """
-#        {
-#        }
-#        """
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+            "@context": "\/contexts\/Voyage",
+            "@id": "\/voyages\/1",
+            "@type": "Voyage",
+            "id": 1,
+            "name": "TDM",
+            "token": "TOKEN1",
+            "urlMinified": null,
+            "showPricesInPublic": true,
+            "startDate": "2017-01-20",
+            "startDestination": {
+                "@id": "\/destinations\/1",
+                "@type": "Destination",
+                "id": 1,
+                "name": "Paris",
+                "slug": "paris"
+            },
+            "stages": [
+                {
+                    "@id": "\/stages\/1",
+                    "@type": "Stage",
+                    "id": 1,
+                    "nbDays": 3,
+                    "destination": {
+                        "@id": "\/destinations\/2",
+                        "@type": "Destination",
+                        "id": 2,
+                        "name": "Lyon",
+                        "slug": "lyon"
+                    },
+                    "country": null,
+                    "position": 1,
+                    "transportType": "BUS",
+                    "availableJourney": {
+                        "@id": "\/available_journeys\/2",
+                        "@type": "AvailableJourney",
+                        "id": 2,
+                        "fromDestination": {
+                            "@id": "\/destinations\/2",
+                            "@type": "Destination",
+                            "id": 2,
+                            "name": "Lyon",
+                            "slug": "lyon"
+                        },
+                        "toDestination": {
+                            "@id": "\/destinations\/3",
+                            "@type": "Destination",
+                            "id": 3,
+                            "name": "Marseille",
+                            "slug": "marseille"
+                        },
+                        "flyPrices": 207,
+                        "flyTime": 211,
+                        "busPrices": 24,
+                        "busTime": 280,
+                        "trainPrices": 66,
+                        "trainTime": 212
+                    }
+                },
+                {
+                    "@id": "\/stages\/2",
+                    "@type": "Stage",
+                    "id": 2,
+                    "nbDays": 2,
+                    "destination": {
+                        "@id": "\/destinations\/3",
+                        "@type": "Destination",
+                        "id": 3,
+                        "name": "Marseille",
+                        "slug": "marseille"
+                    },
+                    "country": null,
+                    "position": 2,
+                    "transportType": null,
+                    "availableJourney": null
+                }
+            ],
+            "transportType": "BUS",
+            "availableJourney": {
+                "@id": "\/available_journeys\/1",
+                "@type": "AvailableJourney",
+                "id": 1,
+                "fromDestination": {
+                    "@id": "\/destinations\/1",
+                    "@type": "Destination",
+                    "id": 1,
+                    "name": "Paris",
+                    "slug": "paris"
+                },
+                "toDestination": {
+                    "@id": "\/destinations\/2",
+                    "@type": "Destination",
+                    "id": 2,
+                    "name": "Lyon",
+                    "slug": "lyon"
+                },
+                "flyPrices": 52,
+                "flyTime": 56,
+                "busPrices": 5,
+                "busTime": 390,
+                "trainPrices": 50,
+                "trainTime": 120
+            }
+        }
+        """
 
 
     @skip

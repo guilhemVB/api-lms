@@ -6,7 +6,7 @@ use AppBundle\Entity\Destination;
 use AppBundle\Repository\DestinationRepository;
 use AppBundle\Entity\AvailableJourney;
 use AppBundle\Repository\AvailableJourneyRepository;
-use AppBundle\Service\CRUD\CRUDStage;
+use AppBundle\Service\CRUD\StageManager;
 use AppBundle\Service\Journey\JourneyFetcherInterface;
 use Doctrine\ORM\EntityManager;
 use Psr\Log\LoggerInterface;
@@ -177,13 +177,13 @@ class FetchAvailableJourney
                 }
             }
 
-            if ($typeOfTransport === CRUDStage::FLY) {
+            if ($typeOfTransport === StageManager::FLY) {
                 $availableJourney->setFlyPrices($bestPriceAndDuration['price']);
                 $availableJourney->setFlyTime($bestPriceAndDuration['duration']);
-            } elseif ($typeOfTransport === CRUDStage::TRAIN) {
+            } elseif ($typeOfTransport === StageManager::TRAIN) {
                 $availableJourney->setTrainPrices($bestPriceAndDuration['price']);
                 $availableJourney->setTrainTime($bestPriceAndDuration['duration']);
-            } elseif ($typeOfTransport === CRUDStage::BUS) {
+            } elseif ($typeOfTransport === StageManager::BUS) {
                 $availableJourney->setBusPrices($bestPriceAndDuration['price']);
                 $availableJourney->setBusTime($bestPriceAndDuration['duration']);
             } else {
@@ -217,13 +217,13 @@ class FetchAvailableJourney
         $mainTransportType = key($distanceByType);
 
         if ($mainTransportType === 'flight') {
-            return CRUDStage::FLY;
+            return StageManager::FLY;
         }
         if ($mainTransportType === 'bus') {
-            return CRUDStage::BUS;
+            return StageManager::BUS;
         }
         if ($mainTransportType === 'train') {
-            return CRUDStage::TRAIN;
+            return StageManager::TRAIN;
         } else {
             return null;
         }

@@ -4,7 +4,7 @@ namespace AppBundle\Service\Journey;
 
 
 use AppBundle\Entity\AvailableJourney;
-use AppBundle\Service\CRUD\CRUDStage;
+use AppBundle\Service\CRUD\StageManager;
 
 class BestJourneyFinder
 {
@@ -19,21 +19,21 @@ class BestJourneyFinder
 
         $busPrice = $availableJourney->getBusPrices();
         if (!is_null($busPrice)) {
-            $transports[CRUDStage::BUS] = $busPrice;
+            $transports[StageManager::BUS] = $busPrice;
         }
 
         $trainPrice = $availableJourney->getTrainPrices();
         if (!is_null($trainPrice)) {
-            $transports[CRUDStage::TRAIN] = $trainPrice;
+            $transports[StageManager::TRAIN] = $trainPrice;
         }
 
         $flyPrice = $availableJourney->getFlyPrices();
         if (!is_null($flyPrice)) {
-            $transports[CRUDStage::FLY] = $flyPrice;
+            $transports[StageManager::FLY] = $flyPrice;
         }
 
         if (empty($transports)) {
-            return CRUDStage::NONE;
+            return StageManager::NONE;
         }
 
         $minTransportKey = (array_keys($transports, min($transports)));

@@ -20,7 +20,7 @@ services:
             - "@best_journey_finder"
 
     crud_stage:
-        class : AppBundle\Service\CRUD\CRUDStage
+        class : AppBundle\Service\CRUD\StageManager
         arguments:
             - "@doctrine.orm.entity_manager"
             - "@journey_service"

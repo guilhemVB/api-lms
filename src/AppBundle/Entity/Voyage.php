@@ -91,7 +91,6 @@ class Voyage implements JourneyInterface
     /**
      * @var User
      * @ORM\ManyToOne(targetEntity="User", inversedBy="voyages")
-     * @Groups({"read-voyage"})
      */
     private $user;
 

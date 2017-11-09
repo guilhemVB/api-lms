@@ -12,7 +12,7 @@ use AppBundle\Service\Journey\BestJourneyFinder;
 use AppBundle\Service\Journey\JourneyService;
 use Doctrine\ORM\EntityManager;
 
-class CRUDStage
+class StageManager
 {
 
     const TRAIN = "TRAIN";
@@ -63,6 +63,24 @@ class CRUDStage
     }
 
     /**
+     * @param Stage $stage
+     * @return Stage
+     */
+    public function checkAvailableJourneyAfterNewStage(Stage $stage)
+    {
+        $voyage = $stage->getVoyage();
+        $nbStages = count($voyage->getStages());
+        if ($nbStages === 0) {
+            $this->journeyService->updateJourneyByVoyage($voyage, $stage);
+        } else {
+            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $nbStages);
+            $this->journeyService->updateJourneyByStage($stageBefore, $stage);
+        }
+
+        return $stage;
+    }
+
+    /**
      * @param Destination|null $destination
      * @param Country|null $country
      * @param Voyage $voyage
@@ -88,14 +106,7 @@ class CRUDStage
 
         $this->em->flush();
 
-        if ($nbStages == 0) {
-            $this->journeyService->updateJourneyByVoyage($voyage);
-        } else {
-            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $nbStages);
-            $this->journeyService->updateJourneyByStage($stageBefore);
-        }
 
-        return $stage;
     }
 
     /**

@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Service\CRUD\CRUDStage;
+use AppBundle\Service\CRUD\StageManager;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -50,7 +50,7 @@ trait JourneyTrait
      */
     public function setTransportType($transportType)
     {
-        if (is_null($transportType) || CRUDStage::BUS === $transportType || CRUDStage::TRAIN === $transportType || CRUDStage::FLY === $transportType || CRUDStage::NONE === $transportType) {
+        if (is_null($transportType) || StageManager::BUS === $transportType || StageManager::TRAIN === $transportType || StageManager::FLY === $transportType || StageManager::NONE === $transportType) {
             $this->transportType = $transportType;
         } else {
             throw new \Exception("Unknow transportType '$transportType''");
@@ -80,19 +80,19 @@ trait JourneyTrait
         $time = null;
 
         switch ($transportType) {
-            case CRUDStage::BUS :
+            case StageManager::BUS :
                 $price = $availableJourney->getBusPrices();
                 $time = $availableJourney->getBusTime();
                 break;
-            case CRUDStage::TRAIN :
+            case StageManager::TRAIN :
                 $price = $availableJourney->getTrainPrices();
                 $time = $availableJourney->getTrainTime();
                 break;
-            case CRUDStage::FLY :
+            case StageManager::FLY :
                 $price = $availableJourney->getFlyPrices();
                 $time = $availableJourney->getFlyTime();
                 break;
-            case CRUDStage::NONE :
+            case StageManager::NONE :
                 $price = 0;
                 $time = 0;
                 break;

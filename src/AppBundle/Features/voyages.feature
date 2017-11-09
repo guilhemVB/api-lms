@@ -89,26 +89,25 @@ Feature: CRUD Voyages
         And the JSON should be equal to:
         """
         {
-          "@context": "\/contexts\/Voyage",
-          "@id": "\/voyages\/1",
-          "@type": "Voyage",
-          "id": 1,
-          "name": "TDM",
-          "token": "TOKEN_MOCK",
-          "urlMinified": "google.com\/shortenMOCK",
-          "showPricesInPublic": false,
-          "startDate": "2018-01-01",
-          "startDestination": {
-              "@id": "\/destinations\/1",
-              "@type": "Destination",
-              "id": 1,
-              "name": "Paris",
-              "slug": "paris"
-          },
-          "user": "\/users\/1",
-          "stages": [],
-          "transportType": null,
-          "availableJourney": null
+            "@context": "\/contexts\/Voyage",
+            "@id": "\/voyages\/1",
+            "@type": "Voyage",
+            "id": 1,
+            "name": "TDM",
+            "token": "TOKEN_MOCK",
+            "urlMinified": "google.com\/shortenMOCK",
+            "showPricesInPublic": false,
+            "startDate": "2018-01-01",
+            "startDestination": {
+                "@id": "\/destinations\/1",
+                "@type": "Destination",
+                "id": 1,
+                "name": "Paris",
+                "slug": "paris"
+            },
+            "stages": [],
+            "transportType": null,
+            "availableJourney": null
         }
         """
 
@@ -144,7 +143,6 @@ Feature: CRUD Voyages
                 "name": "Lyon",
                 "slug": "lyon"
             },
-            "user": "\/users\/1",
             "stages": [],
             "transportType": null,
             "availableJourney": {
@@ -198,7 +196,6 @@ Feature: CRUD Voyages
                 "name": "Lyon",
                 "slug": "lyon"
             },
-            "user": "\/users\/1",
             "stages": [],
             "transportType": null,
             "availableJourney": {

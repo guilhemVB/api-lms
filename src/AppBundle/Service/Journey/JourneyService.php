@@ -35,12 +35,16 @@ class JourneyService
 
     /**
      * @param Stage $stage
+     * @param Stage|null $stageAfter
      * @return Stage
+     * @throws \Exception
      */
-    public function updateJourneyByStage(Stage $stage)
+    public function updateJourneyByStage(Stage $stage, Stage $stageAfter = null)
     {
         $voyage = $stage->getVoyage();
-        $stageAfter = $this->stageRepository->findStageByPosition($voyage, $stage->getPosition() + 1);
+        if (is_null($stageAfter)) {
+            $stageAfter = $this->stageRepository->findStageByPosition($voyage, $stage->getPosition() + 1);
+        }
 
         if (is_null($stageAfter)) {
             $stage->setAvailableJourney(null);
@@ -68,11 +72,15 @@ class JourneyService
 
     /**
      * @param Voyage $voyage
+     * @param Stage|null $stageAfter
      * @return Voyage
+     * @throws \Exception
      */
-    public function updateJourneyByVoyage(Voyage $voyage)
+    public function updateJourneyByVoyage(Voyage $voyage, Stage $stageAfter = null)
     {
-        $stageAfter = $this->stageRepository->findStageByPosition($voyage, 1);
+        if (is_null($stageAfter)) {
+            $stageAfter = $this->stageRepository->findStageByPosition($voyage, 1);
+        }
 
         if (is_null($stageAfter)) {
             $voyage->setAvailableJourney(null);
