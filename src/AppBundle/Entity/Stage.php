@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(
  *      attributes={
  *          "force_eager"=false,
- *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "read-voyage", "availableJourney"}},
+ *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}},
  *          "denormalization_context"={"groups"={"write-stage", "journey"}}
  *      },
  * )
@@ -42,7 +42,7 @@ class Stage implements JourneyInterface
     /**
      * @var Voyage
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Voyage", inversedBy="stages")
-     * @Groups({"write-stage", "write-stage"})
+     * @Groups({"write-stage"})
      * @Assert\NotNull()
      */
     private $voyage;

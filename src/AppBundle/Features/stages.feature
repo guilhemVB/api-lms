@@ -15,32 +15,24 @@ Feature: Stages
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
-            | Dollard Américain | USD  |
         Given entities "AppBundle\Entity\Country" :
             | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration | priceAccommodation | priceLifeCost |
             | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |                    |               |
-            | Belgique  | Bruxelles   | BEL        | EUR                            | Visa gratuit    | 90 jours     | 25                 | 25            |
-            | Etat-Unis | Washington  | USA        | USD                            | ESTA            | 30 jours     |                    |               |
         Given entities "AppBundle\Entity\Destination" :
             | name      | AppBundle\Entity\Country:name | latitude   | longitude  | priceAccommodation | priceLifeCost |
             | Paris     | France                        | 48.864592  | 2.336492   | 30                 | 20            |
             | Lyon      | France                        | 45.756573  | 4.818846   | 15                 | 10            |
             | Marseille | France                        | 43.288654  | 5.354511   | 20                 | 20            |
-            | New-York  | Etat-Unis                     | 40.732977  | -73.993414 | 60                 | 35            |
-            | Boston    | Etat-Unis                     | 42.359370  | -71.059168 | 50                 | 40            |
-            | Bruges    | Belgique                      | 50.8439026 | 4.3469415  | 30                 | 25            |
+            | Sens      | France                        | 42.288654  | 5.654511   | 12                 | 15            |
         Given les destinations par défaut :
             | pays      | destination |
             | France    | Paris       |
-            | Belgique  | Bruges      |
-            | Etat-Unis | New-York    |
         Given entities "AppBundle\Entity\AvailableJourney" :
             | fromDestination:AppBundle\Entity\Destination:name | toDestination:AppBundle\Entity\Destination:name | flyPrices | flyTime | trainPrices | trainTime | busPrices | busTime |
             | Paris                                             | Lyon                                            | 52        | 56      | 50          | 120       | 5         | 390     |
             | Lyon                                              | Marseille                                       | 207       | 211     | 66          | 212       | 24        | 280     |
-            | Marseille                                         | New-York                                        | 599       | 859     |             |           |           |         |
-            | New-York                                          | Boston                                          |           |         | 195         | 279       |           |         |
-            | Boston                                            | Paris                                           |           |         |             |           | 612       | 876     |
+            | Paris                                             | Sens                                            |           |         | 20          | 56        | 5         | 120     |
+            | Sens                                              | Marseille                                       |           |         | 98          | 320       | 56        | 612     |
         Given les utilisateurs :
             | nom | mot de passe | email       | role      |
             | gui | gui          | gui@gui.gui | ROLE_USER |
@@ -53,6 +45,11 @@ Feature: Stages
         Given I add "Content-Type" header equal to "application/json"
         Given I authenticate the user "gui"
 
+
+##################################
+#        POST error nbDays
+##################################
+
         When I send a "POST" request to "/stages.jsonld" with body:
         """
         {
@@ -62,6 +59,11 @@ Feature: Stages
         }
         """
         Then the response status code should be 400
+
+
+##################################
+#        POST error position
+##################################
 
         When I send a "POST" request to "/stages.jsonld" with body:
         """
@@ -73,6 +75,11 @@ Feature: Stages
         """
         Then the response status code should be 400
 
+
+##################################
+#        POST error voyage
+##################################
+
         When I send a "POST" request to "/stages.jsonld" with body:
         """
         {
@@ -82,6 +89,11 @@ Feature: Stages
         }
         """
         Then the response status code should be 400
+
+
+#############################################
+#        POST error country AND destination
+#############################################
 
         When I send a "POST" request to "/stages.jsonld" with body:
         """
@@ -96,6 +108,10 @@ Feature: Stages
         Then the response status code should be 400
 
 
+#######################################
+#        POST error voyage other user
+#######################################
+
         When I send a "POST" request to "/stages.jsonld" with body:
         """
         {
@@ -106,6 +122,11 @@ Feature: Stages
         }
         """
         Then the response status code should be 400
+
+
+##############################
+#        POST OK
+##############################
 
         When I send a "POST" request to "/stages.jsonld" with body:
         """
@@ -141,6 +162,42 @@ Feature: Stages
         }
         """
 
+
+##############################
+#        GET OK
+##############################
+
+        When I send a "GET" request to "/stages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+            "@context": "\/contexts\/Stage",
+            "@id": "\/stages\/1",
+            "@type": "Stage",
+            "id": 1,
+            "nbDays": 3,
+            "destination": {
+                "@id": "\/destinations\/2",
+                "@type": "Destination",
+                "id": 2,
+                "name": "Lyon",
+                "slug": "lyon"
+            },
+            "country": null,
+            "position": 1,
+            "transportType": null,
+            "availableJourney": null
+        }
+        """
+
+
+############################################
+#        POST error position already exist
+############################################
+
         When I send a "POST" request to "/stages.jsonld" with body:
         """
         {
@@ -151,6 +208,11 @@ Feature: Stages
         }
         """
         Then the response status code should be 400
+
+
+############################################
+#        POST OK
+############################################
 
         When I send a "POST" request to "/stages.jsonld" with body:
         """
@@ -185,6 +247,11 @@ Feature: Stages
             "availableJourney": null
         }
         """
+
+
+############################################
+#        GET Voyage OK
+############################################
 
         When I send a "GET" request to "/voyages/1.jsonld"
         Then the response status code should be 200
@@ -297,6 +364,46 @@ Feature: Stages
             }
         }
         """
+
+
+#########################################
+#        PUT OK -> change destination
+#########################################
+
+        When I send a "PUT" request to "/stages/1.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":1,
+            "destination": "/destinations/4",
+            "position": 1
+        }
+        """
+        Then the response status code should be 201
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+            "@context": "\/contexts\/Stage",
+            "@id": "\/stages\/1",
+            "@type": "Stage",
+            "id": 1,
+            "nbDays": 1,
+            "destination": {
+                "@id": "\/destinations\/4",
+                "@type": "Destination",
+                "id": 4,
+                "name": "Sens",
+                "slug": "sens"
+            },
+            "country": null,
+            "position": 1,
+            "transportType": null,
+            "availableJourney": null
+        }
+        """
+
 
 
     @skip

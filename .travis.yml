@@ -37,7 +37,7 @@ install:
 
 # Run script
 script:
-  - vendor/behat/behat/bin/behat
+  - vendor/behat/behat/bin/behat -vv
   - php bin/console doctrine:schema:update --force --env=test
   - php bin/console doctrine:schema:validate --env=test
 
