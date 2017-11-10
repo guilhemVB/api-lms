@@ -6,6 +6,7 @@ use ApiPlatform\Core\EventListener\EventPriorities;
 use AppBundle\Entity\Stage;
 use AppBundle\Entity\Voyage;
 use AppBundle\Service\CRUD\StageManager;
+use AppBundle\Service\CRUD\VoyageManager;
 use AppBundle\Service\Journey\JourneyService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
@@ -20,10 +21,16 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
      */
     private $stageManager;
 
+    /**
+     * @var VoyageManager
+     */
+    private $voyageManager;
 
-    public function __construct(StageManager $stageManager)
+
+    public function __construct(StageManager $stageManager, VoyageManager $voyageManager)
     {
         $this->stageManager = $stageManager;
+        $this->voyageManager = $voyageManager;
     }
 
     public static function getSubscribedEvents()
@@ -37,19 +44,20 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
     {
         $method = $event->getRequest()->getMethod();
 
+        $object = $event->getControllerResult();
         if ($method === 'POST') {
-            $object = $event->getControllerResult();
             if ($object instanceof Stage) {
                 $object = $this->stageManager->checkAvailableJourneyAfterNewStage($object);
-                $event->setControllerResult($object);
             }
-        } else if($method === 'PUT') {
+        } elseif($method === 'PUT') {
             $object = $event->getControllerResult();
             if ($object instanceof Stage) {
                 // TODO
             } elseif ($object instanceof Voyage) {
-                // TODO
+                $object = $this->voyageManager->update($object);
             }
         }
+
+        $event->setControllerResult($object);
     }
 }

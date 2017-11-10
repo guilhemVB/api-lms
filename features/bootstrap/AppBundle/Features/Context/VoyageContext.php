@@ -3,7 +3,7 @@
 namespace AppBundle\Features\Context;
 
 use AppBundle\Repository\UserRepository;
-use AppBundle\Service\CRUD\CRUDVoyage;
+use AppBundle\Service\CRUD\VoyageManager;
 use AppBundle\Service\Stats\VoyageStats;
 use AppKernel;
 use Behat\Gherkin\Node\TableNode;
@@ -11,8 +11,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class VoyageContext extends CommonContext
 {
-    /** @var CRUDVoyage */
-    private $CRUDVoyage;
+    /** @var VoyageManager */
+    private $voyageManager;
 
     /** @var VoyageStats */
     private $voyageStats;
@@ -20,7 +20,7 @@ class VoyageContext extends CommonContext
     public function __construct(ContainerInterface $container)
     {
         parent::__construct($container);
-        $this->CRUDVoyage = $container->get('crud_voyage');
+        $this->voyageManager = $container->get('voyage_manager');
         $this->voyageStats = $container->get('voyage_stats');
     }
 
@@ -34,7 +34,7 @@ class VoyageContext extends CommonContext
 
         foreach ($tableVoyages as $voyageRow) {
             $destination = $this->findDestinationByName($voyageRow['destination de départ']);
-            $this->CRUDVoyage->add($user, $voyageRow['nom'], $voyageRow['date de départ'], $destination);
+            $this->voyageManager->add($user, $voyageRow['nom'], $voyageRow['date de départ'], $destination);
         }
     }
 

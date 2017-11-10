@@ -111,14 +111,17 @@ Feature: CRUD Voyages
         }
         """
 
+        Given entities "AppBundle\Entity\Stage" :
+            | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position |
+            | TDM                          | Marseille                         |                               | 4      | 1        |
+
         When I send a "PUT" request to "/voyages/1.jsonld" with body:
         """
         {
             "name":"TDM 222",
             "startDate": "2020-01-01",
             "startDestination":"/destinations/2",
-            "showPricesInPublic": false,
-            "availableJourney":"/available_journeys/1"
+            "showPricesInPublic": false
         }
         """
         Then the response status code should be 200
@@ -143,32 +146,50 @@ Feature: CRUD Voyages
                 "name": "Lyon",
                 "slug": "lyon"
             },
-            "stages": [],
-            "transportType": null,
-            "availableJourney": {
-                "@id": "\/available_journeys\/1",
-                "@type": "AvailableJourney",
-                "id": 1,
-                "fromDestination": {
-                    "@id": "\/destinations\/1",
-                    "@type": "Destination",
+            "stages": [
+                {
+                    "@id": "\/stages\/1",
+                    "@type": "Stage",
                     "id": 1,
-                    "name": "Paris",
-                    "slug": "paris"
-                },
-                "toDestination": {
+                    "nbDays": 4,
+                    "destination": {
+                        "@id": "\/destinations\/3",
+                        "@type": "Destination",
+                        "id": 3,
+                        "name": "Marseille",
+                        "slug": "marseille"
+                    },
+                    "country": null,
+                    "position": 1,
+                    "transportType": null,
+                   "availableJourney": null
+                }
+            ],
+            "transportType": "BUS",
+            "availableJourney": {
+                "@id": "\/available_journeys\/2",
+                "@type": "AvailableJourney",
+                "id": 2,
+                "fromDestination": {
                     "@id": "\/destinations\/2",
                     "@type": "Destination",
                     "id": 2,
                     "name": "Lyon",
                     "slug": "lyon"
                 },
-                "flyPrices": 52,
-                "flyTime": 56,
-                "busPrices": 5,
-                "busTime": 390,
-                "trainPrices": 50,
-                "trainTime": 120
+                "toDestination": {
+                    "@id": "\/destinations\/3",
+                    "@type": "Destination",
+                    "id": 3,
+                    "name": "Marseille",
+                    "slug": "marseille"
+                },
+                "flyPrices": 207,
+                "flyTime": 211,
+                "busPrices": 24,
+                "busTime": 280,
+                "trainPrices": 66,
+                "trainTime": 212
             }
         }
         """
@@ -196,32 +217,50 @@ Feature: CRUD Voyages
                 "name": "Lyon",
                 "slug": "lyon"
             },
-            "stages": [],
-            "transportType": null,
-            "availableJourney": {
-                "@id": "\/available_journeys\/1",
-                "@type": "AvailableJourney",
-                "id": 1,
-                "fromDestination": {
-                    "@id": "\/destinations\/1",
-                    "@type": "Destination",
+            "stages": [
+                {
+                    "@id": "\/stages\/1",
+                    "@type": "Stage",
                     "id": 1,
-                    "name": "Paris",
-                    "slug": "paris"
-                },
-                "toDestination": {
+                    "nbDays": 4,
+                    "destination": {
+                        "@id": "\/destinations\/3",
+                        "@type": "Destination",
+                        "id": 3,
+                        "name": "Marseille",
+                        "slug": "marseille"
+                    },
+                    "country": null,
+                    "position": 1,
+                    "transportType": null,
+                   "availableJourney": null
+                }
+            ],
+            "transportType": "BUS",
+            "availableJourney": {
+                "@id": "\/available_journeys\/2",
+                "@type": "AvailableJourney",
+                "id": 2,
+                "fromDestination": {
                     "@id": "\/destinations\/2",
                     "@type": "Destination",
                     "id": 2,
                     "name": "Lyon",
                     "slug": "lyon"
                 },
-                "flyPrices": 52,
-                "flyTime": 56,
-                "busPrices": 5,
-                "busTime": 390,
-                "trainPrices": 50,
-                "trainTime": 120
+                "toDestination": {
+                    "@id": "\/destinations\/3",
+                    "@type": "Destination",
+                    "id": 3,
+                    "name": "Marseille",
+                    "slug": "marseille"
+                },
+                "flyPrices": 207,
+                "flyTime": 211,
+                "busPrices": 24,
+                "busTime": 280,
+                "trainPrices": 66,
+                "trainTime": 212
             }
         }
         """

@@ -30,11 +30,9 @@ services:
         arguments:
             - "@doctrine.orm.entity_manager"
 
-    crud_voyage:
-        class : AppBundle\Service\CRUD\CRUDVoyage
+    voyage_manager:
+        class : AppBundle\Service\CRUD\VoyageManager
         arguments:
-            - "@doctrine.orm.entity_manager"
-            - "@google_url_shortener_api"
             - "@journey_service"
 
     voyage_service:
