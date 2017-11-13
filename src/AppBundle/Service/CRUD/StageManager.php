@@ -38,30 +38,6 @@ class StageManager
         $this->stageRepository = $em->getRepository('AppBundle:Stage');
     }
 
-
-    /**
-     * @param Country $country
-     * @param Voyage $voyage
-     * @param int $nbDays
-     * @return Stage
-     */
-    public function addCountry(Country $country, Voyage $voyage, $nbDays)
-    {
-        return $this->add(null, $country, $voyage, $nbDays);
-    }
-
-
-    /**
-     * @param Destination $destination
-     * @param Voyage $voyage
-     * @param int $nbDays
-     * @return Stage
-     */
-    public function addDestination(Destination $destination, Voyage $voyage, $nbDays)
-    {
-        return $this->add($destination, null, $voyage, $nbDays);
-    }
-
     /**
      * @param Stage $stage
      * @return Stage
@@ -81,32 +57,27 @@ class StageManager
     }
 
     /**
-     * @param Destination|null $destination
-     * @param Country|null $country
-     * @param Voyage $voyage
-     * @param int $nbDays
+     * @param Stage $stage
+     *
      * @return Stage
      */
-    private function add(Destination $destination = null, Country $country = null, Voyage $voyage, $nbDays)
+    public function updateStage(Stage $stage)
     {
-        $nbStages = count($voyage->getStages());
-        $stage = new Stage();
-        if (!is_null($destination)) {
-            $stage->setDestination($destination);
-        } elseif(!is_null($country)) {
-            $stage->setCountry($country);
+        $position = $stage->getPosition();
+        $voyage = $stage->getVoyage();
+        if ($position > 1) {
+            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $position-1);
+            $this->journeyService->updateJourneyByStage($stageBefore, $stage);
+        } else {
+            $this->journeyService->updateJourneyByVoyage($voyage, $stage);
         }
-        $stage->setNbDays($nbDays);
-        $stage->setPosition($nbStages + 1);
-        $stage->setVoyage($voyage);
-        $this->em->persist($stage);
 
-        $voyage->addStage($stage);
-        $this->em->persist($voyage);
+        $stageAfter = $this->stageRepository->findStageByPosition($voyage, $position+1);
+        if (!is_null($stageAfter)) {
+            $this->journeyService->updateJourneyByStage($stage, $stageAfter);
+        }
 
-        $this->em->flush();
-
-
+        return $stage;
     }
 
     /**

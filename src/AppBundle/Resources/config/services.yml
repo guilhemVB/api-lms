@@ -72,12 +72,4 @@ services:
             - "@doctrine.orm.entity_manager"
             - "@best_journey_finder"
 
-    app.addCurrentUser.extension:
-        class: AppBundle\Doctrine\ORM\Extension\CurrentUserExtension
-        arguments:
-            - '@security.token_storage'
-            - '@security.authorization_checker'
-        tags:
-            - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
-            - { name: api_platform.doctrine.orm.query_extension.item }
 

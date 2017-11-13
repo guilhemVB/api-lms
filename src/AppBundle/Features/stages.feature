@@ -249,9 +249,68 @@ Feature: Stages
         """
 
 
-############################################
-#        GET Voyage OK
-############################################
+#########################################
+#        PUT OK -> change destination
+#########################################
+
+        When I send a "PUT" request to "/stages/1.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":1,
+            "destination": "/destinations/4",
+            "position": 1
+        }
+        """
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+            "@context": "\/contexts\/Stage",
+            "@id": "\/stages\/1",
+            "@type": "Stage",
+            "id": 1,
+            "nbDays": 1,
+            "destination": {
+                "@id": "\/destinations\/4",
+                "@type": "Destination",
+                "id": 4,
+                "name": "Sens",
+                "slug": "sens"
+            },
+            "country": null,
+            "position": 1,
+            "transportType": "BUS",
+            "availableJourney": {
+                "@id": "\/available_journeys\/4",
+                "@type": "AvailableJourney",
+                "id": 4,
+                "fromDestination": {
+                    "@id": "\/destinations\/4",
+                    "@type": "Destination",
+                    "id": 4,
+                    "name": "Sens",
+                    "slug": "sens"
+                },
+                "toDestination": {
+                    "@id": "\/destinations\/3",
+                    "@type": "Destination",
+                    "id": 3,
+                    "name": "Marseille",
+                    "slug": "marseille"
+                },
+                "flyPrices": null,
+                "flyTime": null,
+                "busPrices": 56,
+                "busTime": 612,
+                "trainPrices": 98,
+                "trainTime": 320
+            }
+        }
+        """
+
 
         When I send a "GET" request to "/voyages/1.jsonld"
         Then the response status code should be 200
@@ -281,27 +340,27 @@ Feature: Stages
                     "@id": "\/stages\/1",
                     "@type": "Stage",
                     "id": 1,
-                    "nbDays": 3,
+                    "nbDays": 1,
                     "destination": {
-                        "@id": "\/destinations\/2",
+                        "@id": "\/destinations\/4",
                         "@type": "Destination",
-                        "id": 2,
-                        "name": "Lyon",
-                        "slug": "lyon"
+                        "id": 4,
+                        "name": "Sens",
+                        "slug": "sens"
                     },
                     "country": null,
                     "position": 1,
                     "transportType": "BUS",
                     "availableJourney": {
-                        "@id": "\/available_journeys\/2",
+                        "@id": "\/available_journeys\/4",
                         "@type": "AvailableJourney",
-                        "id": 2,
+                        "id": 4,
                         "fromDestination": {
-                            "@id": "\/destinations\/2",
+                            "@id": "\/destinations\/4",
                             "@type": "Destination",
-                            "id": 2,
-                            "name": "Lyon",
-                            "slug": "lyon"
+                            "id": 4,
+                            "name": "Sens",
+                            "slug": "sens"
                         },
                         "toDestination": {
                             "@id": "\/destinations\/3",
@@ -310,12 +369,12 @@ Feature: Stages
                             "name": "Marseille",
                             "slug": "marseille"
                         },
-                        "flyPrices": 207,
-                        "flyTime": 211,
-                        "busPrices": 24,
-                        "busTime": 280,
-                        "trainPrices": 66,
-                        "trainTime": 212
+                        "flyPrices": null,
+                        "flyTime": null,
+                        "busPrices": 56,
+                        "busTime": 612,
+                        "trainPrices": 98,
+                        "trainTime": 320
                     }
                 },
                 {
@@ -338,9 +397,9 @@ Feature: Stages
             ],
             "transportType": "BUS",
             "availableJourney": {
-                "@id": "\/available_journeys\/1",
+                "@id": "\/available_journeys\/3",
                 "@type": "AvailableJourney",
-                "id": 1,
+                "id": 3,
                 "fromDestination": {
                     "@id": "\/destinations\/1",
                     "@type": "Destination",
@@ -349,61 +408,21 @@ Feature: Stages
                     "slug": "paris"
                 },
                 "toDestination": {
-                    "@id": "\/destinations\/2",
+                    "@id": "\/destinations\/4",
                     "@type": "Destination",
-                    "id": 2,
-                    "name": "Lyon",
-                    "slug": "lyon"
+                    "id": 4,
+                    "name": "Sens",
+                    "slug": "sens"
                 },
-                "flyPrices": 52,
-                "flyTime": 56,
+                "flyPrices": null,
+                "flyTime": null,
                 "busPrices": 5,
-                "busTime": 390,
-                "trainPrices": 50,
-                "trainTime": 120
+                "busTime": 120,
+                "trainPrices": 20,
+                "trainTime": 56
             }
         }
         """
-
-
-#########################################
-#        PUT OK -> change destination
-#########################################
-
-        When I send a "PUT" request to "/stages/1.jsonld" with body:
-        """
-        {
-            "voyage": "/voyages/1",
-            "nbDays":1,
-            "destination": "/destinations/4",
-            "position": 1
-        }
-        """
-        Then the response status code should be 201
-        And the response should be in JSON
-        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
-        And the JSON should be equal to:
-        """
-        {
-            "@context": "\/contexts\/Stage",
-            "@id": "\/stages\/1",
-            "@type": "Stage",
-            "id": 1,
-            "nbDays": 1,
-            "destination": {
-                "@id": "\/destinations\/4",
-                "@type": "Destination",
-                "id": 4,
-                "name": "Sens",
-                "slug": "sens"
-            },
-            "country": null,
-            "position": 1,
-            "transportType": null,
-            "availableJourney": null
-        }
-        """
-
 
 
     @skip

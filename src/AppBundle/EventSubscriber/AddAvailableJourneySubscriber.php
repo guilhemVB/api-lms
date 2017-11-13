@@ -52,7 +52,7 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
         } elseif($method === 'PUT') {
             $object = $event->getControllerResult();
             if ($object instanceof Stage) {
-                // TODO
+                $this->stageManager->updateStage($object);
             } elseif ($object instanceof Voyage) {
                 $object = $this->voyageManager->update($object);
             }
