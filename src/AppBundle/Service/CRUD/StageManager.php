@@ -45,11 +45,10 @@ class StageManager
     public function checkAvailableJourneyAfterNewStage(Stage $stage)
     {
         $voyage = $stage->getVoyage();
-        $nbStages = count($voyage->getStages());
-        if ($nbStages === 0) {
+        if ($stage->getPosition() === 0) {
             $this->journeyService->updateJourneyByVoyage($voyage, $stage);
         } else {
-            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $nbStages);
+            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $stage->getPosition() - 1);
             $this->journeyService->updateJourneyByStage($stageBefore, $stage);
         }
 
@@ -65,11 +64,11 @@ class StageManager
     {
         $position = $stage->getPosition();
         $voyage = $stage->getVoyage();
-        if ($position > 1) {
+        if ($position === 0) {
+            $this->journeyService->updateJourneyByVoyage($voyage, $stage);
+        } else {
             $stageBefore = $this->stageRepository->findStageByPosition($voyage, $position-1);
             $this->journeyService->updateJourneyByStage($stageBefore, $stage);
-        } else {
-            $this->journeyService->updateJourneyByVoyage($voyage, $stage);
         }
 
         $stageAfter = $this->stageRepository->findStageByPosition($voyage, $position+1);
@@ -83,27 +82,18 @@ class StageManager
     /**
      * @param Stage $stage
      */
-    public function remove(Stage $stage)
+    public function afterRemovedStage(Stage $stage)
     {
         $voyage = $stage->getVoyage();
         $position = $stage->getPosition();
 
-        $originalPosition = $position;
-
-        /** @var Stage $stageToChange */
-        $stageToChange = $this->stageRepository->findOneBy(['voyage' => $voyage, 'position' => $position + 1]);
-        while (!is_null($stageToChange)) {
-            $stageToChange->setPosition($position);
-            $this->em->persist($stageToChange);
-            $this->em->flush();
-            $position++;
-            $stageToChange = $this->stageRepository->findOneBy(['voyage' => $voyage, 'position' => $position + 1]);
+        if ($position === 0) {
+            $this->journeyService->updateJourneyByVoyage($voyage);
+        } else {
+            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $position);
+            dump($stageBefore->getDestination()->getName());
+            $this->journeyService->updateJourneyByStage($stageBefore);
         }
-
-        $this->em->remove($stage);
-        $this->em->flush();
-
-        $this->updateJourney($voyage, $originalPosition - 1);
     }
 
 

@@ -79,7 +79,7 @@ class JourneyService
     public function updateJourneyByVoyage(Voyage $voyage, Stage $stageAfter = null)
     {
         if (is_null($stageAfter)) {
-            $stageAfter = $this->stageRepository->findStageByPosition($voyage, 1);
+            $stageAfter = $this->stageRepository->findStageByPosition($voyage, 0);
         }
 
         if (is_null($stageAfter)) {

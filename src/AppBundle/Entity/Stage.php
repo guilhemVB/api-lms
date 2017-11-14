@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ApiResource(
@@ -18,11 +19,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Table(name="stage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StageRepository")
- * @UniqueEntity(
- *     fields={"voyage", "position"},
- *     errorPath="position",
- *     message="This position is already in use on this Voyage."
- * )
  */
 class Stage implements JourneyInterface
 {
@@ -42,6 +38,7 @@ class Stage implements JourneyInterface
     /**
      * @var Voyage
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Voyage", inversedBy="stages")
+     * @Gedmo\SortableGroup
      * @Groups({"write-stage"})
      * @Assert\NotNull()
      */
@@ -80,7 +77,8 @@ class Stage implements JourneyInterface
      * @var int
      * @ORM\Column(type="integer", nullable=false)
      * @Groups({"read-stage", "write-stage"})
-     * @Assert\Range(min=1)
+     * @Gedmo\SortablePosition
+     * @Assert\Range(min=0)
      * @Assert\NotNull()
      */
     private $position;

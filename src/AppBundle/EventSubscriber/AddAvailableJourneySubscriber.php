@@ -58,6 +58,14 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
             }
         }
 
+//        elseif($method === 'DELETE') {
+//            $object = $event->getControllerResult();
+//            if ($object instanceof Stage) {
+//                $this->stageManager->afterRemovedStage($object);
+//            }
+//
+//        }
+
         $event->setControllerResult($object);
     }
 }

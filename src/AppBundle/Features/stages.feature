@@ -55,7 +55,7 @@ Feature: Stages
         {
             "voyage": "/voyages/1",
             "destination": "/destinations/1",
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 400
@@ -85,7 +85,7 @@ Feature: Stages
         {
             "nbDays":3,
             "destination": "/destinations/1",
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 400
@@ -102,7 +102,7 @@ Feature: Stages
             "nbDays":3,
             "destination": "/destinations/1",
             "country": "/countries/1",
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 400
@@ -118,7 +118,7 @@ Feature: Stages
             "voyage": "/voyages/2",
             "nbDays":3,
             "destination": "/destinations/1"
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 400
@@ -134,7 +134,7 @@ Feature: Stages
             "voyage": "/voyages/1",
             "nbDays":3,
             "destination": "/destinations/2",
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 201
@@ -156,7 +156,7 @@ Feature: Stages
                 "slug": "lyon"
             },
             "country": null,
-            "position": 1,
+            "position": 0,
             "transportType": null,
             "availableJourney": null
         }
@@ -187,27 +187,11 @@ Feature: Stages
                 "slug": "lyon"
             },
             "country": null,
-            "position": 1,
+            "position": 0,
             "transportType": null,
             "availableJourney": null
         }
         """
-
-
-############################################
-#        POST error position already exist
-############################################
-
-        When I send a "POST" request to "/stages.jsonld" with body:
-        """
-        {
-            "voyage": "/voyages/1",
-            "nbDays":3,
-            "destination": "/destinations/2",
-            "position": 1
-        }
-        """
-        Then the response status code should be 400
 
 
 ############################################
@@ -220,7 +204,7 @@ Feature: Stages
             "voyage": "/voyages/1",
             "nbDays":2,
             "destination": "/destinations/3",
-            "position": 2
+            "position": 1
         }
         """
         Then the response status code should be 201
@@ -242,7 +226,7 @@ Feature: Stages
                 "slug": "marseille"
             },
             "country": null,
-            "position": 2,
+            "position": 1,
             "transportType": null,
             "availableJourney": null
         }
@@ -259,7 +243,7 @@ Feature: Stages
             "voyage": "/voyages/1",
             "nbDays":1,
             "destination": "/destinations/4",
-            "position": 1
+            "position": 0
         }
         """
         Then the response status code should be 200
@@ -281,7 +265,7 @@ Feature: Stages
                 "slug": "sens"
             },
             "country": null,
-            "position": 1,
+            "position": 0,
             "transportType": "BUS",
             "availableJourney": {
                 "@id": "\/available_journeys\/4",
@@ -349,7 +333,7 @@ Feature: Stages
                         "slug": "sens"
                     },
                     "country": null,
-                    "position": 1,
+                    "position": 0,
                     "transportType": "BUS",
                     "availableJourney": {
                         "@id": "\/available_journeys\/4",
@@ -390,7 +374,7 @@ Feature: Stages
                         "slug": "marseille"
                     },
                     "country": null,
-                    "position": 2,
+                    "position": 1,
                     "transportType": null,
                     "availableJourney": null
                 }
@@ -425,63 +409,90 @@ Feature: Stages
         """
 
 
-    @skip
-    Scenario: Supprimer une étapes
+    @emptyDatabase
+    Scenario: DELETE Stage
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
-            | Dollard Américain | USD  |
         Given entities "AppBundle\Entity\Country" :
-            | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration |
-            | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |
-            | Belgique  | Bruxelles   | BEL        | EUR                            | Visa gratuit    | 90 jours     |
-            | Etat-Unis | Washington  | USA        | USD                            | ESTA            | 30 jours     |
+            | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration | priceAccommodation | priceLifeCost |
+            | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |                    |               |
         Given entities "AppBundle\Entity\Destination" :
-            | name      | AppBundle\Entity\Country:name | latitude   | longitude  |
-            | Paris     | France                        | 48.864592  | 2.336492   |
-            | Lyon      | France                        | 45.756573  | 4.818846   |
-            | Marseille | France                        | 43.288654  | 5.354511   |
-            | New-York  | Etat-Unis                     | 40.732977  | -73.993414 |
-            | Boston    | Etat-Unis                     | 42.359370  | -71.059168 |
-            | Bruxelles | Belgique                      | 50.8439026 | 4.3469415  |
+            | name      | AppBundle\Entity\Country:name | latitude   | longitude  | priceAccommodation | priceLifeCost |
+            | Paris     | France                        | 48.864592  | 2.336492   | 30                 | 20            |
+            | Lyon      | France                        | 45.756573  | 4.818846   | 15                 | 10            |
+            | Marseille | France                        | 43.288654  | 5.354511   | 20                 | 20            |
+            | Sens      | France                        | 42.288654  | 5.654511   | 12                 | 15            |
+        Given les destinations par défaut :
+            | pays      | destination |
+            | France    | Paris       |
         Given entities "AppBundle\Entity\AvailableJourney" :
             | fromDestination:AppBundle\Entity\Destination:name | toDestination:AppBundle\Entity\Destination:name | flyPrices | flyTime | trainPrices | trainTime | busPrices | busTime |
-            | Marseille                                         | New-York                                        | 599       | 859     |             |           |           |         |
-            | New-York                                          | Lyon                                            | 710       | 529     |             |           |           |         |
-            | Marseille                                         | Lyon                                            | 207       | 211     | 66          | 212       | 24        | 280     |
+            | Paris                                             | Lyon                                            | 52        | 56      | 50          | 120       | 5         | 390     |
+            | Lyon                                              | Marseille                                       | 207       | 211     | 66          | 212       | 24        | 280     |
+            | Marseille                                         | Sens                                            |           |         | 20          | 56        | 5         | 120     |
+            | Lyon                                              | Sens                                            |           |         | 98          | 320       | 56        | 612     |
         Given les utilisateurs :
-            | nom     |
-            | guilhem |
-        When l'utilisateur "guilhem" crée les voyages suivants :
-            | nom | date de départ | destination de départ |
-            | TDM | 01/01/2015     | Paris                 |
-        When j'ajoute les étapes suivantes au voyage "TDM" :
-            | destination | pays     | nombre de jour |
-            | Boston      |          | 1              |
-            | Paris       |          | 2              |
-            | Boston      |          | 3              |
-            | Lyon        |          | 4              |
-            | Marseille   |          | 5              |
-            | New-York    |          | 6              |
-            | Lyon        |          | 7              |
-            |             | Belgique | 8              |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis    | jusqu'à  | type de transport |
-            | Marseille | New-York | FLY               |
-            | New-York  | Lyon     | FLY               |
-        When je supprime l'étape "New-York" à la position 6 du voyage "TDM"
-        Then la voyage "TDM" à les étapes suivantes :
-            | destination | pays     | nombre de jour | position |
-            | Boston      |          | 1              | 1        |
-            | Paris       |          | 2              | 2        |
-            | Boston      |          | 3              | 3        |
-            | Lyon        |          | 4              | 4        |
-            | Marseille   |          | 5              | 5        |
-            | Lyon        |          | 7              | 6        |
-            |             | Belgique | 8              | 7        |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis    | jusqu'à | type de transport |
-            | Marseille | Lyon    | BUS               |
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        Given entities "AppBundle\Entity\Voyage" :
+            | name | startDate(\DateTime) | startDestination:AppBundle\Entity\Destination:name | AppBundle\Entity\User:username | token  |
+            | TDM  | 2017-01-20           | Paris                                              | gui                            | TOKEN1 |
+
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":1,
+            "destination": "/destinations/2",
+            "position": 0
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":2,
+            "destination": "/destinations/3",
+            "position": 1
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":3,
+            "destination": "/destinations/4",
+            "position": 2
+        }
+        """
+        Then the response status code should be 201
+
+#        TODO
+        When I send a "DELETE" request to "/stages/2.jsonld"
+        Then the response status code should be 204
+
+
+#        When je supprime l'étape "New-York" à la position 6 du voyage "TDM"
+#        Then la voyage "TDM" à les étapes suivantes :
+#            | destination | pays     | nombre de jour | position |
+#            | Boston      |          | 1              | 1        |
+#            | Paris       |          | 2              | 2        |
+#            | Boston      |          | 3              | 3        |
+#            | Lyon        |          | 4              | 4        |
+#            | Marseille   |          | 5              | 5        |
+#            | Lyon        |          | 7              | 6        |
+#            |             | Belgique | 8              | 7        |
+#        Then il existe les transports suivants au voyage "TDM" :
+#            | depuis    | jusqu'à | type de transport |
+#            | Marseille | Lyon    | BUS               |
 
 
     @skip

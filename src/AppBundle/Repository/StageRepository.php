@@ -5,13 +5,14 @@ namespace AppBundle\Repository;
 use AppBundle\Entity\Destination;
 use AppBundle\Entity\Stage;
 use AppBundle\Entity\Voyage;
-use Doctrine\ORM\EntityRepository;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Sortable\Entity\Repository\SortableRepository;
 
 /**
  * @package AppBundle\Repository
  * @method Stage find($id)
  */
-class StageRepository extends EntityRepository
+class StageRepository extends SortableRepository
 {
 
     /**
