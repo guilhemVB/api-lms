@@ -113,7 +113,7 @@ Feature: CRUD Voyages
 
         Given entities "AppBundle\Entity\Stage" :
             | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position |
-            | TDM                          | Marseille                         |                               | 4      | 1        |
+            | TDM                          | Marseille                         |                               | 4      | 0        |
 
         When I send a "PUT" request to "/voyages/1.jsonld" with body:
         """
@@ -160,7 +160,7 @@ Feature: CRUD Voyages
                         "slug": "marseille"
                     },
                     "country": null,
-                    "position": 1,
+                    "position": 0,
                     "transportType": null,
                    "availableJourney": null
                 }
@@ -231,7 +231,7 @@ Feature: CRUD Voyages
                         "slug": "marseille"
                     },
                     "country": null,
-                    "position": 1,
+                    "position": 0,
                     "transportType": null,
                    "availableJourney": null
                 }
