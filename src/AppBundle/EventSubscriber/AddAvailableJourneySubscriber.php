@@ -36,7 +36,7 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            KernelEvents::VIEW => ['calculateAvailableJourneys', EventPriorities::POST_VALIDATE],
+            KernelEvents::VIEW => ['calculateAvailableJourneys', EventPriorities::POST_WRITE],
         ];
     }
 
@@ -56,15 +56,12 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
             } elseif ($object instanceof Voyage) {
                 $object = $this->voyageManager->update($object);
             }
+        } elseif ($method === 'DELETE') {
+            $objectReq = $event->getRequest()->get('data');
+            if ($objectReq instanceof Stage) {
+                $this->stageManager->afterRemovedStage($objectReq);
+            }
         }
-
-//        elseif($method === 'DELETE') {
-//            $object = $event->getControllerResult();
-//            if ($object instanceof Stage) {
-//                $this->stageManager->afterRemovedStage($object);
-//            }
-//
-//        }
 
         $event->setControllerResult($object);
     }

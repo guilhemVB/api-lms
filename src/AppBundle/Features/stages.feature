@@ -475,24 +475,121 @@ Feature: Stages
         """
         Then the response status code should be 201
 
-#        TODO
         When I send a "DELETE" request to "/stages/2.jsonld"
         Then the response status code should be 204
 
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
+            "@context": "\/contexts\/Voyage",
+            "@id": "\/voyages\/1",
+            "@type": "Voyage",
+            "id": 1,
+            "name": "TDM",
+            "token": "TOKEN1",
+            "urlMinified": null,
+            "showPricesInPublic": true,
+            "startDate": "2017-01-20",
+            "startDestination": {
+                "@id": "\/destinations\/1",
+                "@type": "Destination",
+                "id": 1,
+                "name": "Paris",
+                "slug": "paris"
+            },
+            "stages": [
+                {
+                    "@id": "\/stages\/1",
+                    "@type": "Stage",
+                    "id": 1,
+                    "nbDays": 1,
+                    "destination": {
+                        "@id": "\/destinations\/2",
+                        "@type": "Destination",
+                        "id": 2,
+                        "name": "Lyon",
+                        "slug": "lyon"
+                    },
+                    "country": null,
+                    "position": 0,
+                    "transportType": "BUS",
+                    "availableJourney": {
+                        "@id": "\/available_journeys\/4",
+                        "@type": "AvailableJourney",
+                        "id": 4,
+                        "fromDestination": {
+                            "@id": "\/destinations\/2",
+                            "@type": "Destination",
+                            "id": 2,
+                            "name": "Lyon",
+                            "slug": "lyon"
+                        },
+                        "toDestination": {
+                            "@id": "\/destinations\/4",
+                            "@type": "Destination",
+                            "id": 4,
+                            "name": "Sens",
+                            "slug": "sens"
+                        },
+                        "flyPrices": null,
+                        "flyTime": null,
+                        "busPrices": 56,
+                        "busTime": 612,
+                        "trainPrices": 98,
+                        "trainTime": 320
+                    }
+                },
+                {
+                    "@id": "\/stages\/3",
+                    "@type": "Stage",
+                    "id": 3,
+                    "nbDays": 3,
+                    "destination": {
+                        "@id": "\/destinations\/4",
+                        "@type": "Destination",
+                        "id": 4,
+                        "name": "Sens",
+                        "slug": "sens"
+                    },
+                    "country": null,
+                    "position": 1,
+                    "transportType": null,
+                    "availableJourney": null
+                }
+            ],
+            "transportType": "BUS",
+            "availableJourney": {
+                "@id": "\/available_journeys\/1",
+                "@type": "AvailableJourney",
+                "id": 1,
+                "fromDestination": {
+                    "@id": "\/destinations\/1",
+                    "@type": "Destination",
+                    "id": 1,
+                    "name": "Paris",
+                    "slug": "paris"
+                },
+                "toDestination": {
+                    "@id": "\/destinations\/2",
+                    "@type": "Destination",
+                    "id": 2,
+                    "name": "Lyon",
+                    "slug": "lyon"
+                },
+                "flyPrices": 52,
+                "flyTime": 56,
+                "busPrices": 5,
+                "busTime": 390,
+                "trainPrices": 50,
+                "trainTime": 120
+            }
 
-#        When je supprime l'étape "New-York" à la position 6 du voyage "TDM"
-#        Then la voyage "TDM" à les étapes suivantes :
-#            | destination | pays     | nombre de jour | position |
-#            | Boston      |          | 1              | 1        |
-#            | Paris       |          | 2              | 2        |
-#            | Boston      |          | 3              | 3        |
-#            | Lyon        |          | 4              | 4        |
-#            | Marseille   |          | 5              | 5        |
-#            | Lyon        |          | 7              | 6        |
-#            |             | Belgique | 8              | 7        |
-#        Then il existe les transports suivants au voyage "TDM" :
-#            | depuis    | jusqu'à | type de transport |
-#            | Marseille | Lyon    | BUS               |
+        }
+        """
 
 
     @skip

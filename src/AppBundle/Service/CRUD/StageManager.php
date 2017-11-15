@@ -64,6 +64,7 @@ class StageManager
     {
         $position = $stage->getPosition();
         $voyage = $stage->getVoyage();
+        dump($position);
         if ($position === 0) {
             $this->journeyService->updateJourneyByVoyage($voyage, $stage);
         } else {
@@ -90,8 +91,7 @@ class StageManager
         if ($position === 0) {
             $this->journeyService->updateJourneyByVoyage($voyage);
         } else {
-            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $position);
-            dump($stageBefore->getDestination()->getName());
+            $stageBefore = $this->stageRepository->findStageByPosition($voyage, $position-1);
             $this->journeyService->updateJourneyByStage($stageBefore);
         }
     }
