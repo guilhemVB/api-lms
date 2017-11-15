@@ -45,21 +45,16 @@ class AddAvailableJourneySubscriber implements EventSubscriberInterface
         $method = $event->getRequest()->getMethod();
 
         $object = $event->getControllerResult();
-        if ($method === 'POST') {
+        if ($method === 'POST' || $method === 'PUT') {
             if ($object instanceof Stage) {
-                $object = $this->stageManager->checkAvailableJourneyAfterNewStage($object);
-            }
-        } elseif($method === 'PUT') {
-            $object = $event->getControllerResult();
-            if ($object instanceof Stage) {
-                $this->stageManager->updateStage($object);
+                $this->stageManager->updateAvailableJourneys($object->getVoyage());
             } elseif ($object instanceof Voyage) {
-                $object = $this->voyageManager->update($object);
+                $this->stageManager->updateAvailableJourneys($object);
             }
         } elseif ($method === 'DELETE') {
             $objectReq = $event->getRequest()->get('data');
             if ($objectReq instanceof Stage) {
-                $this->stageManager->afterRemovedStage($objectReq);
+                $this->stageManager->updateAvailableJourneys($objectReq->getVoyage());
             }
         }
 
