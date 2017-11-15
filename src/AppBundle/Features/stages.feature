@@ -592,52 +592,216 @@ Feature: Stages
         """
 
 
-    @skip
-    Scenario: Changer l'ordre des étapes -> de 2 à 3
+    @emptyDatabase
+    Scenario: Changer l'ordre des étapes -> de 1 à 0
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
             | Euro              | EUR  |
-            | Dollard Américain | USD  |
         Given entities "AppBundle\Entity\Country" :
-            | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration |
-            | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |
-            | Etat-Unis | Washington  | USA        | USD                            | ESTA            | 30 jours     |
+            | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration | priceAccommodation | priceLifeCost |
+            | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |                    |               |
         Given entities "AppBundle\Entity\Destination" :
-            | name      | AppBundle\Entity\Country:name | latitude  | longitude  |
-            | Paris     | France                        | 48.864592 | 2.336492   |
-            | Lyon      | France                        | 45.756573 | 4.818846   |
-            | Marseille | France                        | 43.288654 | 5.354511   |
-            | New-York  | Etat-Unis                     | 40.732977 | -73.993414 |
-            | Boston    | Etat-Unis                     | 42.359370 | -71.059168 |
+            | name      | AppBundle\Entity\Country:name | latitude   | longitude  | priceAccommodation | priceLifeCost |
+            | Paris     | France                        | 48.864592  | 2.336492   | 30                 | 20            |
+            | Lyon      | France                        | 45.756573  | 4.818846   | 15                 | 10            |
+            | Marseille | France                        | 43.288654  | 5.354511   | 20                 | 20            |
+            | Sens      | France                        | 42.288654  | 5.654511   | 12                 | 15            |
+        Given les destinations par défaut :
+            | pays      | destination |
+            | France    | Paris       |
         Given entities "AppBundle\Entity\AvailableJourney" :
             | fromDestination:AppBundle\Entity\Destination:name | toDestination:AppBundle\Entity\Destination:name | flyPrices | flyTime | trainPrices | trainTime | busPrices | busTime |
-            | Paris                                             | Lyon                                            | 1         | 10      |             |           |           |         |
-            | Lyon                                              | Marseille                                       | 1         | 10      |             |           |           |         |
-            | New-York                                          | Marseille                                       |           |         |             |           | 1         | 10      |
-            | New-York                                          | Boston                                          | 1         | 10      |             |           |           |         |
+            | Paris                                             | Lyon                                            | 52        | 56      | 50          | 120       | 5         | 390     |
+            | Lyon                                              | Marseille                                       | 207       | 211     | 66          | 212       | 24        | 280     |
+            | Marseille                                         | Sens                                            |           |         | 20          | 56        | 5         | 120     |
+            | Lyon                                              | Sens                                            |           |         | 98          | 320       | 56        | 612     |
+            | Marseille                                         | Lyon                                            |           |         | 65          | 120       | 15        | 415     |
+            | Paris                                             | Marseille                                       | 1         | 2       | 3           | 4         | 5         | 6       |
         Given les utilisateurs :
-            | nom     |
-            | guilhem |
-        When l'utilisateur "guilhem" crée les voyages suivants :
-            | nom | date de départ | destination de départ |
-            | TDM | 01/01/2015     | Paris                 |
-        When j'ajoute les étapes suivantes au voyage "TDM" :
-            | destination | nombre de jour |
-            | Lyon        | 7              |
-            | Marseille   | 3              |
-            | New-York    | 8              |
-            | Boston      | 2              |
-        When je change l'étape "Marseille" du voyage "TDM" de la position 2 à la position 3
-        Then la voyage "TDM" à les étapes suivantes :
-            | destination | nombre de jour | position |
-            | Lyon        | 7              | 1        |
-            | New-York    | 8              | 2        |
-            | Marseille   | 3              | 3        |
-            | Boston      | 2              | 4        |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis   | jusqu'à   | type de transport |
-            | Paris    | Lyon      | FLY               |
-            | New-York | Marseille | BUS               |
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        Given entities "AppBundle\Entity\Voyage" :
+            | name | startDate(\DateTime) | startDestination:AppBundle\Entity\Destination:name | AppBundle\Entity\User:username | token  |
+            | TDM  | 2017-01-20           | Paris                                              | gui                            | TOKEN1 |
+
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":1,
+            "destination": "/destinations/2",
+            "position": 0
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":2,
+            "destination": "/destinations/3",
+            "position": 1
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":3,
+            "destination": "/destinations/4",
+            "position": 2
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "PUT" request to "/stages/2.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":2,
+            "destination": "/destinations/3",
+            "position": 0
+        }
+        """
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+#        When I send a "GET" request to "/voyages/1.jsonld"
+#        Then the response status code should be 200
+#        And the response should be in JSON
+#        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+#        And the JSON should be equal to:
+#        """
+#        {
+#            "@context": "\/contexts\/Voyage",
+#            "@id": "\/voyages\/1",
+#            "@type": "Voyage",
+#            "id": 1,
+#            "name": "TDM",
+#            "token": "TOKEN1",
+#            "urlMinified": null,
+#            "showPricesInPublic": true,
+#            "startDate": "2017-01-20",
+#            "startDestination": {
+#                "@id": "\/destinations\/1",
+#                "@type": "Destination",
+#                "id": 1,
+#                "name": "Paris",
+#                "slug": "paris"
+#            },
+#            "stages": [
+#                {
+#                    "@id": "\/stages\/2",
+#                    "@type": "Stage",
+#                    "id": 2,
+#                    "nbDays": 2,
+#                    "destination": {
+#                        "@id": "\/destinations\/3",
+#                        "@type": "Destination",
+#                        "id": 3,
+#                        "name": "Marseille",
+#                        "slug": "marseille"
+#                    },
+#                    "country": null,
+#                    "position": 0,
+#                    "transportType": "BUS",
+#                    "availableJourney": {
+#                        "@id": "\/available_journeys\/5",
+#                        "@type": "AvailableJourney",
+#                        "id": 5,
+#                        "fromDestination": {
+#                            "@id": "\/destinations\/3",
+#                            "@type": "Destination",
+#                            "id": 3,
+#                            "name": "Marseille",
+#                            "slug": "marseille"
+#                        },
+#                        "toDestination": {
+#                            "@id": "\/destinations\/2",
+#                            "@type": "Destination",
+#                            "id": 2,
+#                            "name": "Lyon",
+#                            "slug": "lyon"
+#                        },
+#                        "flyPrices": null,
+#                        "flyTime": null,
+#                        "busPrices": 15,
+#                        "busTime": 415,
+#                        "trainPrices": 65,
+#                        "trainTime": 120
+#                    }
+#                },
+#                {
+#                    "@id": "\/stages\/1",
+#                    "@type": "Stage",
+#                    "id": 1,
+#                    "nbDays": 1,
+#                    "destination": {
+#                        "@id": "\/destinations\/2",
+#                        "@type": "Destination",
+#                        "id": 2,
+#                        "name": "Lyon",
+#                        "slug": "lyon"
+#                    },
+#                    "country": null,
+#                    "position": 1,
+#                    "transportType": null,
+#                    "availableJourney": null
+#                },
+#                {
+#                    "@id": "\/stages\/3",
+#                    "@type": "Stage",
+#                    "id": 3,
+#                    "nbDays": 3,
+#                    "destination": {
+#                        "@id": "\/destinations\/4",
+#                        "@type": "Destination",
+#                        "id": 4,
+#                        "name": "Sens",
+#                        "slug": "sens"
+#                    },
+#                    "country": null,
+#                    "position": 2,
+#                    "transportType": null,
+#                    "availableJourney": null
+#                }
+#            ],
+#            "transportType": "FLY",
+#            "availableJourney": {
+#                "@id": "\/available_journeys\/6",
+#                "@type": "AvailableJourney",
+#                "id": 6,
+#                "fromDestination": {
+#                    "@id": "\/destinations\/1",
+#                    "@type": "Destination",
+#                    "id": 1,
+#                    "name": "Paris",
+#                    "slug": "paris"
+#                },
+#                "toDestination": {
+#                    "@id": "\/destinations\/3",
+#                    "@type": "Destination",
+#                    "id": 3,
+#                    "name": "Marseille",
+#                    "slug": "marseille"
+#                },
+#                "flyPrices": 1,
+#                "flyTime": 2,
+#                "busPrices": 5,
+#                "busTime": 6,
+#                "trainPrices": 3,
+#                "trainTime": 4
+#            }
+#        }
+#        """
+
 
     @skip
     Scenario: Changer l'ordre des étapes -> de 4 à 1

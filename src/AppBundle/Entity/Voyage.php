@@ -98,6 +98,7 @@ class Voyage implements JourneyInterface
      * @var ArrayCollection|Stage[]
      * @ORM\OneToMany(targetEntity="Stage", mappedBy="voyage", cascade={"remove"})
      * @Groups({"read-voyage"})
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     private $stages;
 

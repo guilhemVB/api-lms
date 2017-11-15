@@ -64,7 +64,7 @@ class StageManager
     {
         $position = $stage->getPosition();
         $voyage = $stage->getVoyage();
-        dump($position);
+
         if ($position === 0) {
             $this->journeyService->updateJourneyByVoyage($voyage, $stage);
         } else {
