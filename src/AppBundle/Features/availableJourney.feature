@@ -73,20 +73,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/1",
                   "@type": "AvailableJourney",
                   "id": 1,
-                  "fromDestination": {
-                      "@id": "\/destinations\/4",
-                      "@type": "Destination",
-                      "id": 4,
-                      "name": "Londres",
-                      "slug": "londres"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/3",
-                      "@type": "Destination",
-                      "id": 3,
-                      "name": "New-York",
-                      "slug": "new-york"
-                  },
+                  "fromDestination": "\/destinations\/4",
+                  "toDestination": "\/destinations\/3",
                   "flyPrices": 496,
                   "flyTime": 681,
                   "busPrices": null,
@@ -98,20 +86,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/3",
                   "@type": "AvailableJourney",
                   "id": 3,
-                  "fromDestination": {
-                      "@id": "\/destinations\/4",
-                      "@type": "Destination",
-                      "id": 4,
-                      "name": "Londres",
-                      "slug": "londres"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/1",
-                      "@type": "Destination",
-                      "id": 1,
-                      "name": "Paris",
-                      "slug": "paris"
-                  },
+                  "fromDestination": "\/destinations\/4",
+                  "toDestination": "\/destinations\/1",
                   "flyPrices": 114,
                   "flyTime": 311,
                   "busPrices": 52,
@@ -123,20 +99,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/4",
                   "@type": "AvailableJourney",
                   "id": 4,
-                  "fromDestination": {
-                      "@id": "\/destinations\/3",
-                      "@type": "Destination",
-                      "id": 3,
-                      "name": "New-York",
-                      "slug": "new-york"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/4",
-                      "@type": "Destination",
-                      "id": 4,
-                      "name": "Londres",
-                      "slug": "londres"
-                  },
+                  "fromDestination": "\/destinations\/3",
+                  "toDestination": "\/destinations\/4",
                   "flyPrices": 493,
                   "flyTime": 638,
                   "busPrices": null,
@@ -148,20 +112,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/6",
                   "@type": "AvailableJourney",
                   "id": 6,
-                  "fromDestination": {
-                      "@id": "\/destinations\/3",
-                      "@type": "Destination",
-                      "id": 3,
-                      "name": "New-York",
-                      "slug": "new-york"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/1",
-                      "@type": "Destination",
-                      "id": 1,
-                      "name": "Paris",
-                      "slug": "paris"
-                  },
+                  "fromDestination": "\/destinations\/3",
+                  "toDestination": "\/destinations\/1",
                   "flyPrices": 469,
                   "flyTime": 622,
                   "busPrices": null,
@@ -173,20 +125,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/10",
                   "@type": "AvailableJourney",
                   "id": 10,
-                  "fromDestination": {
-                      "@id": "\/destinations\/1",
-                      "@type": "Destination",
-                      "id": 1,
-                      "name": "Paris",
-                      "slug": "paris"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/4",
-                      "@type": "Destination",
-                      "id": 4,
-                      "name": "Londres",
-                      "slug": "londres"
-                  },
+                  "fromDestination": "\/destinations\/1",
+                  "toDestination": "\/destinations\/4",
                   "flyPrices": 111,
                   "flyTime": 319,
                   "busPrices": 47,
@@ -198,20 +138,8 @@ Feature: Available Journey calculator
                   "@id": "\/available_journeys\/11",
                   "@type": "AvailableJourney",
                   "id": 11,
-                  "fromDestination": {
-                      "@id": "\/destinations\/1",
-                      "@type": "Destination",
-                      "id": 1,
-                      "name": "Paris",
-                      "slug": "paris"
-                  },
-                  "toDestination": {
-                      "@id": "\/destinations\/3",
-                      "@type": "Destination",
-                      "id": 3,
-                      "name": "New-York",
-                      "slug": "new-york"
-                  },
+                  "fromDestination": "\/destinations\/1",
+                  "toDestination": "\/destinations\/3",
                   "flyPrices": 469,
                   "flyTime": 725,
                   "busPrices": null,
@@ -271,20 +199,8 @@ Feature: Available Journey calculator
                     "@id": "\/available_journeys\/3",
                     "@type": "AvailableJourney",
                     "id": 3,
-                    "fromDestination": {
-                        "@id": "\/destinations\/4",
-                        "@type": "Destination",
-                        "id": 4,
-                        "name": "Londres",
-                        "slug": "londres"
-                    },
-                    "toDestination": {
-                        "@id": "\/destinations\/1",
-                        "@type": "Destination",
-                        "id": 1,
-                        "name": "Paris",
-                        "slug": "paris"
-                    },
+                    "fromDestination": "\/destinations\/4",
+                    "toDestination": "\/destinations\/1",
                     "flyPrices": 114,
                     "flyTime": 311,
                     "busPrices": 52,
@@ -333,58 +249,73 @@ Feature: Available Journey calculator
         """
 
 
-
-    @skip
+    @emptyDatabase
     Scenario: Mettre à jour les voyages après l'ajout d'un trajets
-        Given entity "AppBundle\Entity\Currency" :
-            | name | code |
-            | Euro | EUR  |
-        Given entity "AppBundle\Entity\Country" :
-            | name   | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration |
-            | France | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |
+        Given entities "AppBundle\Entity\Currency" :
+            | name              | code |
+            | Euro              | EUR  |
+        Given entities "AppBundle\Entity\Country" :
+            | name      | capitalName | codeAlpha3 | AppBundle\Entity\Currency:code | visaInformation | visaDuration | priceAccommodation | priceLifeCost |
+            | France    | Paris       | FRA        | EUR                            | Visa gratuit    | 90 jours     |                    |               |
         Given entities "AppBundle\Entity\Destination" :
-            | name      | AppBundle\Entity\Country:name | latitude    | longitude  |
-            | Paris     | France                        | 2.2946583   | 48.8580101 |
-            | Lyon      | France                        | 4.8492387   | 45.7635056 |
-            | Marseille | France                        | -73.9862683 | 40.7590453 |
-            | Dijon     | France                        | -0.0775694  | 51.5082493 |
+            | name      | AppBundle\Entity\Country:name | latitude   | longitude  | priceAccommodation | priceLifeCost |
+            | Paris     | France                        | 48.864592  | 2.336492   | 30                 | 20            |
+            | Lyon      | France                        | 45.756573  | 4.818846   | 15                 | 10            |
+            | Marseille | France                        | 43.288654  | 5.354511   | 20                 | 20            |
+            | Sens      | France                        | 42.288654  | 5.654511   | 12                 | 15            |
         Given entities "AppBundle\Entity\AvailableJourney" :
             | fromDestination:AppBundle\Entity\Destination:name | toDestination:AppBundle\Entity\Destination:name | flyPrices | flyTime | trainPrices | trainTime | busPrices | busTime |
-            | Lyon                                              | Marseille                                       | 207       | 211     | 66          | 212       | 24        | 280     |
+            | Lyon                                              | Marseille                                       | 1         | 2       | 3           | 4         | 5         | 6       |
         Given les utilisateurs :
-            | nom     |
-            | guilhem |
-        When l'utilisateur "guilhem" crée les voyages suivants :
-            | nom | date de départ | destination de départ |
-            | TDM | 01/01/2015     | Paris                 |
-        When j'ajoute les étapes suivantes au voyage "TDM" :
-            | destination | nombre de jour |
-            | Lyon        | 1              |
-            | Marseille   | 1              |
-            | Dijon       | 1              |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis | jusqu'à   | type de transport |
-            | Lyon   | Marseille | BUS               |
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
+        Given entities "AppBundle\Entity\Voyage" :
+            | name | startDate(\DateTime) | startDestination:AppBundle\Entity\Destination:name | AppBundle\Entity\User:username | token  |
+            | TDM  | 2017-01-20           | Paris                                              | gui                            | TOKEN1 |
+        Given entities "AppBundle\Entity\Stage" :
+            | AppBundle\Entity\Voyage:name | AppBundle\Entity\Destination:name | AppBundle\Entity\Country:name | nbDays | position | AppBundle\Entity\AvailableJourney:id | transportType |
+            | TDM                          | Lyon                              |                               | 1      | 0        | 1                                    | TRAIN         |
+            | TDM                          | Marseille                         |                               | 2      | 1        |                                      |               |
+            | TDM                          | Sens                              |                               | 3      | 2        |                                      |               |
+
         Given entities "AppBundle\Entity\AvailableJourney" :
             | fromDestination:AppBundle\Entity\Destination:name | toDestination:AppBundle\Entity\Destination:name | flyPrices | flyTime | trainPrices | trainTime | busPrices | busTime |
-            | Paris                                             | Lyon                                            | 52        | 56      | 50          | 120       | 5         | 630     |
-            | Marseille                                         | Dijon                                           | 52        | 56      | 50          | 120       | 5         | 630     |
-        When je met à jour les voyages avec les trajets disponibles
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis    | jusqu'à   | type de transport |
-            | Paris     | Lyon      | BUS               |
-            | Lyon      | Marseille | BUS               |
-            | Marseille | Dijon     | BUS               |
-        When je supprime les transports liés à la destination "Dijon"
-        Then les possibilitées de transports sont :
-            | depuis | jusqu'à   | prix avion | temps avion | prix train | temps train | prix bus | temps bus |
-            | Paris  | Lyon      | 52         | 56          | 50         | 120         | 5        | 630       |
-            | Lyon   | Marseille | 207        | 211         | 66         | 212         | 24       | 280       |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis | jusqu'à   | type de transport |
-            | Paris  | Lyon      | BUS               |
-            | Lyon   | Marseille | BUS               |
+            | Marseille                                         | Sens                                            | 11        | 12      | 13          | 14        | 15        | 16      |
+            | Paris                                             | Lyon                                            | 21        | 22      | 23          | 24        | 25        | 26      |
 
-    @skip
-    Scenario: debug calcul trajet disponible
-        When j'affiche le trajet trouvé entre "san-francisco" et "yosemite-park"
+        When je met à jour les voyages avec les trajets disponibles
+
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
+
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON node "@id" should be equal to "/voyages/1"
+        And the JSON node "transportType" should be equal to "FLY"
+        And the JSON node "availableJourney->@id" should be equal to "/available_journeys/3"
+        And the JSON node "stages[0]->transportType" should be equal to "TRAIN"
+        And the JSON node "stages[0]->availableJourney->@id" should be equal to "/available_journeys/1"
+        And the JSON node "stages[1]->transportType" should be equal to "FLY"
+        And the JSON node "stages[1]->availableJourney->@id" should be equal to "/available_journeys/2"
+        And the JSON node "stages[2]->transportType" should be null
+        And the JSON node "stages[2]->availableJourney" should be null
+
+        When je supprime les transports liés à la destination "Lyon"
+
+        When I send a "GET" request to "/voyages/1.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON node "@id" should be equal to "/voyages/1"
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
+        And the JSON node "stages[0]->transportType" should be null
+        And the JSON node "stages[0]->availableJourney" should be null
+        And the JSON node "stages[1]->transportType" should be equal to "FLY"
+        And the JSON node "stages[1]->availableJourney->@id" should be equal to "/available_journeys/2"
+        And the JSON node "stages[2]->transportType" should be null
+        And the JSON node "stages[2]->availableJourney" should be null
+
+

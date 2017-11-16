@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *      attributes={
  *          "force_eager"=false,
  *          "filters"={"availableJourney.group_filter", "availableJourney.search_filter"},
- *          "normalization_context"={"groups"={"availableJourney", "read-destination-light"}}
+ *          "normalization_context"={"groups"={"availableJourney"}}
  *      },
  * )
  * @ORM\Table(name="available_journey")

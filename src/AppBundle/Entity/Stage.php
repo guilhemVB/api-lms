@@ -100,6 +100,7 @@ class Stage implements JourneyInterface
     public function setVoyage(Voyage $voyage = null)
     {
         $this->voyage = $voyage;
+        $this->voyage->addStage($this);
 
         return $this;
     }

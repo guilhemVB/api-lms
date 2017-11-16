@@ -5,8 +5,10 @@ namespace AppBundle\Service\CRUD;
 use AppBundle\Entity\Destination;
 use AppBundle\Entity\AvailableJourney;
 use AppBundle\Entity\Stage;
+use AppBundle\Entity\Voyage;
 use AppBundle\Repository\AvailableJourneyRepository;
 use AppBundle\Repository\StageRepository;
+use AppBundle\Repository\VoyageRepository;
 use Doctrine\ORM\EntityManager;
 
 class CRUDAvailableJourney
@@ -23,12 +25,15 @@ class CRUDAvailableJourney
     /** @var StageRepository */
     private $stageRepository;
 
+    /** @var VoyageRepository */
+    private $voyageRepository;
 
     public function __construct(EntityManager $em)
     {
         $this->em = $em;
         $this->availableJourneyRepository = $em->getRepository('AppBundle:AvailableJourney');
         $this->stageRepository = $em->getRepository('AppBundle:Stage');
+        $this->voyageRepository = $em->getRepository('AppBundle:Voyage');
     }
 
     /**
@@ -69,6 +74,15 @@ class CRUDAvailableJourney
             $stageWithThisAvailableJourney->setAvailableJourney(null);
             $stageWithThisAvailableJourney->setTransportType(null);
             $this->em->persist($stageWithThisAvailableJourney);
+        }
+        $this->em->flush();
+
+        /** @var Voyage[] $voyagesWithThisAvailableJourney */
+        $voyagesWithThisAvailableJourney = $this->voyageRepository->findBy(['availableJourney' => $availableJourney]);
+        foreach ($voyagesWithThisAvailableJourney as $voyageWithThisAvailableJourney) {
+            $voyageWithThisAvailableJourney->setAvailableJourney(null);
+            $voyageWithThisAvailableJourney->setTransportType(null);
+            $this->em->persist($voyageWithThisAvailableJourney);
         }
         $this->em->flush();
 
