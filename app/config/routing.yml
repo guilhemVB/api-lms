@@ -4,3 +4,15 @@ api:
 
 api_login_check:
     path: /login_check
+
+voyage_statistics:
+    path: '/voyages/{id}/statistics.{_format}'
+    methods:  ['GET']
+    requirements:
+        page: '\d+'
+        _format:  json|jsonld
+    defaults:
+        _controller: 'AppBundle:Voyage:statistics'
+        _api_resource_class: 'AppBundle\Entity\Voyage'
+        _api_item_operation_name: 'special'
+        _format: 'json'

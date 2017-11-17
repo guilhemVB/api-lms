@@ -17,16 +17,6 @@ class VoyageStats
 {
 
     /**
-     * @var \Twig_Environment
-     */
-    private $twig;
-
-    public function __construct(\Twig_Environment $twig)
-    {
-        $this->twig = $twig;
-    }
-
-    /**
      * @param Voyage $voyage
      * @param Stage[] $stagesSorted
      * @param StatCalculatorInterface[] $statCalculators
@@ -65,7 +55,7 @@ class VoyageStats
             new StatCalculatorDates(),
             new StatCalculatorNumberDays(),
             new StatCalculatorPrices(),
-            new StatCalculatorStageStats($this->twig),
+            new StatCalculatorStageStats(),
             new StatCalculatorDestinations(),
         ];
 

@@ -1,6 +1,6 @@
-@skip
 Feature: Stats voyage
 
+    @emptyDatabase
     Scenario: Calculer les stats
         Given entities "AppBundle\Entity\Currency" :
             | name              | code |
@@ -32,40 +32,118 @@ Feature: Stats voyage
             | New-York                                          | Boston                                          |           |         | 195         | 279       |           |         |
             | Boston                                            | Paris                                           |           |         |             |           | 612       | 876     |
         Given les utilisateurs :
-            | nom     |
-            | guilhem |
-        When l'utilisateur "guilhem" crée les voyages suivants :
-            | nom | date de départ | destination de départ |
-            | TDM | 01/01/2015     | Paris                 |
-        When j'ajoute les étapes suivantes au voyage "TDM" :
-            | destination | pays     | nombre de jour |
-            | Lyon        |          | 7              |
-            | Marseille   |          | 3              |
-            | New-York    |          | 8              |
-            | Boston      |          | 2              |
-            | Paris       |          | 1              |
-            |             | Belgique | 2              |
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis    | jusqu'à   | type de transport |
-            | Paris     | Lyon      | BUS               |
-            | Lyon      | Marseille | BUS               |
-            | Marseille | New-York  | FLY               |
-            | New-York  | Boston    | TRAIN             |
-            | Boston    | Paris     | BUS               |
-        Then les statistiques du voyage "TDM" sont :
-            | nb étapes | cout total | durée | date départ | date retour | nb de pays | distance | étape principale |
-            | 6         | 2820       | 23    | 01/01/2015  | 24/01/2015  | 3          | 13069    | New-York         |
-        When je change le mode de transport à "FLY" pour le trajet de "Lyon" à "Marseille" du voyage "TDM"
-        Then il existe les transports suivants au voyage "TDM" :
-            | depuis    | jusqu'à   | type de transport |
-            | Paris     | Lyon      | BUS               |
-            | Lyon      | Marseille | FLY               |
-            | Marseille | New-York  | FLY               |
-            | New-York  | Boston    | TRAIN             |
-            | Boston    | Paris     | BUS               |
-        Then les statistiques du voyage "TDM" sont :
-            | nb étapes | cout total | durée | date départ | date retour | nb de pays | distance | étape principale |
-            | 6         | 3003       | 23    | 01/01/2015  | 24/01/2015  | 3          | 13069    | New-York         |
+            | nom | mot de passe | email       | role      |
+            | gui | gui          | gui@gui.gui | ROLE_USER |
 
+        Given entities "AppBundle\Entity\Voyage" :
+            | name | startDate(\DateTime) | startDestination:AppBundle\Entity\Destination:name | AppBundle\Entity\User:username | token  |
+            | TDM  | 2015-01-01           | Paris                                              | gui                            | TOKEN1 |
 
+        Given I add "Content-Type" header equal to "application/json"
+        Given I authenticate the user "gui"
 
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":7,
+            "destination": "/destinations/2",
+            "position": 0
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":3,
+            "destination": "/destinations/3",
+            "position": 1
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":8,
+            "destination": "/destinations/4",
+            "position": 2
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":2,
+            "destination": "/destinations/5",
+            "position": 3
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":1,
+            "destination": "/destinations/1",
+            "position": 4
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "POST" request to "/stages.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":2,
+            "country": "/countries/2",
+            "position": 5
+        }
+        """
+        Then the response status code should be 201
+
+        When I send a "GET" request to "/voyages/1/statistics.json"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/json"
+
+        And the JSON node "nbStages" should be equal to "6"
+        And the JSON node "totalCost" should be equal to "2820"
+        And the JSON node "nbDays" should be equal to "23"
+        And the JSON node "startDate" should be equal to "2015-01-01"
+        And the JSON node "endDate" should be equal to "2015-01-24"
+        And the JSON node "nbCountries" should be equal to "3"
+        And the JSON node "crowFliesDistance" should be equal to "13068.820923585"
+        And the JSON node "mainDestination->name" should be equal to "New-York"
+
+        When I send a "PUT" request to "/stages/1.jsonld" with body:
+        """
+        {
+            "voyage": "/voyages/1",
+            "nbDays":7,
+            "destination": "/destinations/2",
+            "position": 0,
+            "transportType": "FLY"
+        }
+        """
+        Then the response status code should be 200
+
+        When I send a "GET" request to "/voyages/1/statistics.json"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/json"
+
+        And the JSON node "nbStages" should be equal to "6"
+        And the JSON node "totalCost" should be equal to "3003"
+        And the JSON node "nbDays" should be equal to "23"
+        And the JSON node "startDate" should be equal to "2015-01-01"
+        And the JSON node "endDate" should be equal to "2015-01-24"
+        And the JSON node "nbCountries" should be equal to "3"
+        And the JSON node "crowFliesDistance" should be equal to "13068.820923585"
+        And the JSON node "mainDestination->name" should be equal to "New-York"

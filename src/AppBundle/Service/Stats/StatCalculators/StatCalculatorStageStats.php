@@ -13,18 +13,14 @@ class StatCalculatorStageStats implements StatCalculatorInterface
     /** @var  array */
     private $stagesStats = [];
 
-    /** @var \Twig_Environment */
-    private $twig;
-
     /** @var \DateTime|null */
     private $dateFrom;
 
     /** @var \DateTime */
     private $dateTo;
 
-    public function __construct(\Twig_Environment $twig)
+    public function __construct()
     {
-        $this->twig = $twig;
         $this->dateFrom = null;
         $this->dateTo = null;
     }
@@ -44,11 +40,10 @@ class StatCalculatorStageStats implements StatCalculatorInterface
 
         $nbStars = $this->extractNbStart($this->dateFrom, $this->dateTo, $destination);
         $this->stagesStats[$stage->getId()] = [
+            'stage' => ['id' => $stage->getId(), 'nbDays' => $stage->getNbDays(), 'position' => $stage->getPosition()],
             'dateFrom'         => $this->dateFrom,
-            'dateFromFormated' => $this->twig->render('AppBundle:Common:date.html.twig', ['date' => $this->dateFrom]),
             'dateTo'           => $this->dateTo,
             'nbStars'          => $nbStars,
-            'starsView'        => $this->twig->render('AppBundle:Destination:stars.html.twig', ['nbStars' => $nbStars]),
         ];
     }
 

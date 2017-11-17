@@ -37,8 +37,8 @@ class StatCalculatorDates implements StatCalculatorInterface
         }
 
         return [
-            'startDate' => $this->startDate,
-            'endDate'   => $endDate,
+            'startDate' => $this->startDate->format('Y-m-d'),
+            'endDate'   => $endDate->format('Y-m-d'),
         ];
     }
 }

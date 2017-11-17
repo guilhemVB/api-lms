@@ -56,7 +56,7 @@ class JourneyService
             if (is_null($availableJourney)) {
                 $stage->setAvailableJourney(null);
                 $stage->setTransportType(null);
-            } else {
+            } elseif ($availableJourney !== $stage->getAvailableJourney()) {
                 $transportType = $this->bestJourneyFinder->chooseBestTransportType($availableJourney);
 
                 $stage->setAvailableJourney($availableJourney);
@@ -92,7 +92,7 @@ class JourneyService
             if (is_null($availableJourney)) {
                 $voyage->setAvailableJourney(null);
                 $voyage->setTransportType(null);
-            } else {
+            } elseif ($availableJourney !== $voyage->getAvailableJourney()) {
                 $transportType = $this->bestJourneyFinder->chooseBestTransportType($availableJourney);
 
                 $voyage->setAvailableJourney($availableJourney);
