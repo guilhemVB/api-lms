@@ -16,6 +16,15 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}},
  *          "denormalization_context"={"groups"={"write-stage", "journey"}}
  *      },
+ *     collectionOperations={
+ *          "api_voyages_stages_get_subresource"={"method"="GET", "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}}},
+ *          "api_voyages_stages_post_subresource"={"method"="POST", "path"="/voyages/{id}/stages.{_format}", "denormalization_context"={"groups"={"write-stage", "journey"}}}
+ *     },
+ *     itemOperations={
+ *          "get"={"method"="GET", "path"="/voyages/{id}/stages/{id_s}.{_format}", "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}}},
+ *          "put"={"method"="PUT", "path"="/voyages/{id}/stages/{id_s}.{_format}"},
+ *          "delete"={"method"="DELETE", "path"="/voyages/{id}/stages/{id_s}.{_format}"}
+ *     }
  * )
  * @ORM\Table(name="stage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\StageRepository")

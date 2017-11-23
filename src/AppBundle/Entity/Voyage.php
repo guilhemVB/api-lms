@@ -9,6 +9,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 
 /**
  * @ApiResource(
@@ -97,6 +98,8 @@ class Voyage implements JourneyInterface
     /**
      * @var ArrayCollection|Stage[]
      * @ORM\OneToMany(targetEntity="Stage", mappedBy="voyage", cascade={"remove"})
+     * @ApiSubresource
+     *
      * @Groups({"read-voyage"})
      * @ORM\OrderBy({"position" = "ASC"})
      */

@@ -1,7 +1,7 @@
 Feature: Stages
 
     Scenario: Check authentication
-        When I send a "GET" request to "/stages.jsonld"
+        When I send a "GET" request to "/voyages/1/stages.jsonld"
         Then the response status code should be 401
         When I send a "POST" request to "/stages.jsonld"
         Then the response status code should be 401
@@ -50,7 +50,7 @@ Feature: Stages
 #        POST error nbDays
 ##################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -65,7 +65,7 @@ Feature: Stages
 #        POST error position
 ##################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -80,7 +80,7 @@ Feature: Stages
 #        POST error voyage
 ##################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "nbDays":3,
@@ -95,7 +95,7 @@ Feature: Stages
 #        POST error country AND destination
 #############################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -112,7 +112,7 @@ Feature: Stages
 #        POST error voyage other user
 #######################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/2/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/2",
@@ -128,7 +128,7 @@ Feature: Stages
 #        POST OK
 ##############################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -167,7 +167,7 @@ Feature: Stages
 #        GET OK
 ##############################
 
-        When I send a "GET" request to "/stages/1.jsonld"
+        When I send a "GET" request to "/voyages/1/stages/1.jsonld"
         Then the response status code should be 200
         And the response should be in JSON
         And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
@@ -198,7 +198,7 @@ Feature: Stages
 #        POST OK
 ############################################
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -237,7 +237,7 @@ Feature: Stages
 #        PUT OK -> change destination
 #########################################
 
-        When I send a "PUT" request to "/stages/1.jsonld" with body:
+        When I send a "PUT" request to "/voyages/1/stages/1.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
