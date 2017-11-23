@@ -16,3 +16,33 @@ voyage_statistics:
         _api_resource_class: 'AppBundle\Entity\Voyage'
         _api_item_operation_name: 'special'
         _format: 'json'
+
+admin_command_importCurrencies:
+    path: '/admin/command/importCurrencies'
+    methods:  ['GET']
+    defaults:
+        _controller: 'AppBundle:Admin:commandImportCurrencies'
+
+admin_command_importCountries:
+    path: '/admin/command/importCountries'
+    methods:  ['GET']
+    defaults:
+        _controller: 'AppBundle:Admin:commandImportCountries'
+
+admin_command_importDestinations:
+    path: '/admin/command/importDestinations'
+    methods:  ['GET']
+    defaults:
+        _controller: 'AppBundle:Admin:commandImportDestinations'
+
+admin_command_updateRates:
+    path: '/admin/command/commandUpdateRates'
+    methods:  ['GET']
+    defaults:
+        _controller: 'AppBundle:Admin:commandUpdateRates'
+
+admin_command_calculateJourney:
+    path: '/admin/command/commandCalculateJourney'
+    methods:  ['GET']
+    defaults:
+        _controller: 'AppBundle:Admin:commandCalculateJourney'
