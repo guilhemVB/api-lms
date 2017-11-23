@@ -3,9 +3,15 @@ imports:
 
 doctrine:
     orm:
-        metadata_cache_driver: apcu
-        result_cache_driver: apcu
-        query_cache_driver: apcu
+        auto_mapping: true
+        # the standard distribution overrides this to be true in debug, false otherwise
+        auto_generate_proxy_classes: false
+        proxy_namespace: Proxies
+        proxy_dir: '%kernel.cache_dir%/doctrine/orm/Proxies'
+        default_entity_manager: default
+        metadata_cache_driver: array
+        query_cache_driver: array
+        result_cache_driver: array
 
 monolog:
     handlers:
