@@ -23,7 +23,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     itemOperations={
  *          "get"={"method"="GET", "normalization_context"={"groups"={"read-stage", "read-destination-light", "read-country-light"}}},
  *          "put"={"method"="PUT"},
- *          "delete"={"method"="DELETE", "path"="/voyages/{voyage.id}/stages/{id}.{_format}"}
+ *          "delete"={"method"="DELETE"}
  *     }
  * )
  * @ORM\Table(name="stage")
