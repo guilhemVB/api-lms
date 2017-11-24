@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiProperty;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
@@ -15,7 +16,7 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
  * @ApiResource(
  *      attributes={
  *          "force_eager"=false,
- *          "normalization_context"={"groups"={"read-voyage", "journey", "read-destination-light", "read-country-light", "read-stage", "availableJourney"}, "datetime_format" = "Y-m-d"},
+ *          "normalization_context"={"groups"={"read-voyage", "read-destination-light", "read-country-light"}, "datetime_format" = "Y-m-d"},
  *          "denormalization_context"={"groups"={"write-voyage", "journey"}}
  *      },
  * )
@@ -25,6 +26,21 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
  */
 class Voyage implements JourneyInterface
 {
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"read-voyage", "write-voyage"})
+     * @Assert\Choice({"TRAIN", "BUS", "FLY", "NONE", null})
+     */
+    private $transportType;
+
+    /**
+     * @var AvailableJourney
+     * @ORM\ManyToOne(targetEntity="AvailableJourney")
+     * @Groups({"read-voyage", "write-voyage"})
+     */
+    private $availableJourney;
 
     use JourneyTrait;
 
@@ -99,7 +115,7 @@ class Voyage implements JourneyInterface
      * @var ArrayCollection|Stage[]
      * @ORM\OneToMany(targetEntity="Stage", mappedBy="voyage", cascade={"remove"})
      * @ApiSubresource
-     *
+     * @ApiProperty(iri="/test/")
      * @Groups({"read-voyage"})
      * @ORM\OrderBy({"position" = "ASC"})
      */

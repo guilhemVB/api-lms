@@ -22,8 +22,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *     },
  *     itemOperations={
  *          "get"={"method"="GET", "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}}},
- *          "put"={"method"="PUT", "path"="/voyages/{id}/stages/{id_s}.{_format}"},
- *          "delete"={"method"="DELETE", "path"="/voyages/{id}/stages/{id_s}.{_format}"}
+ *          "put"={"method"="PUT", "path"="/voyages/{voyage.id}/stages/{id}.{_format}"},
+ *          "delete"={"method"="DELETE", "path"="/voyages/{voyage.id}/stages/{id}.{_format}"}
  *     }
  * )
  * @ORM\Table(name="stage")
@@ -31,6 +31,21 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Stage implements JourneyInterface
 {
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"journey"})
+     * @Assert\Choice({"TRAIN", "BUS", "FLY", "NONE", null})
+     */
+    private $transportType;
+
+    /**
+     * @var AvailableJourney
+     * @ORM\ManyToOne(targetEntity="AvailableJourney")
+     * @Groups({"journey"})
+     */
+    private $availableJourney;
 
     use JourneyTrait;
 

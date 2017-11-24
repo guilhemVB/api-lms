@@ -9,20 +9,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 trait JourneyTrait
 {
-    /**
-     * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"journey"})
-     * @Assert\Choice({"TRAIN", "BUS", "FLY", "NONE", null})
-     */
-    private $transportType;
-
-    /**
-     * @var AvailableJourney
-     * @ORM\ManyToOne(targetEntity="AvailableJourney")
-     * @Groups({"journey"})
-     */
-    private $availableJourney;
 
     /**
      * @return AvailableJourney
