@@ -13,16 +13,16 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ApiResource(
  *      attributes={
  *          "force_eager"=false,
- *          "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}},
- *          "denormalization_context"={"groups"={"write-stage", "journey"}}
+ *          "normalization_context"={"groups"={"read-stage", "read-destination-light", "read-country-light"}},
+ *          "denormalization_context"={"groups"={"write-stage"}}
  *      },
  *     collectionOperations={
- *          "api_voyages_stages_get_subresource"={"method"="GET", "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}}},
- *          "api_voyages_stages_post_subresource"={"method"="POST", "path"="/voyages/{id}/stages.{_format}", "denormalization_context"={"groups"={"write-stage", "journey"}}}
+ *          "api_voyages_stages_get_subresource"={"method"="GET", "normalization_context"={"groups"={"read-stage", "read-destination-light", "read-country-light"}}},
+ *          "api_voyages_stages_post_subresource"={"method"="POST", "path"="/voyages/{id}/stages.{_format}", "denormalization_context"={"groups"={"write-stage"}}}
  *     },
  *     itemOperations={
- *          "get"={"method"="GET", "normalization_context"={"groups"={"read-stage", "journey", "read-destination-light", "read-country-light", "availableJourney"}}},
- *          "put"={"method"="PUT", "path"="/voyages/{voyage.id}/stages/{id}.{_format}"},
+ *          "get"={"method"="GET", "normalization_context"={"groups"={"read-stage", "read-destination-light", "read-country-light"}}},
+ *          "put"={"method"="PUT"},
  *          "delete"={"method"="DELETE", "path"="/voyages/{voyage.id}/stages/{id}.{_format}"}
  *     }
  * )
@@ -35,7 +35,7 @@ class Stage implements JourneyInterface
     /**
      * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"journey"})
+     * @Groups({"read-stage", "write-stage"})
      * @Assert\Choice({"TRAIN", "BUS", "FLY", "NONE", null})
      */
     private $transportType;
@@ -43,7 +43,7 @@ class Stage implements JourneyInterface
     /**
      * @var AvailableJourney
      * @ORM\ManyToOne(targetEntity="AvailableJourney")
-     * @Groups({"journey"})
+     * @Groups({"read-stage", "write-stage"})
      */
     private $availableJourney;
 

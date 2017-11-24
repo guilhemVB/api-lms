@@ -92,6 +92,8 @@ Feature: CRUD Voyages
             "@context": "\/contexts\/Voyage",
             "@id": "\/voyages\/1",
             "@type": "Voyage",
+            "transportType": null,
+            "availableJourney": null,
             "id": 1,
             "name": "TDM",
             "token": "TOKEN_MOCK",
@@ -105,9 +107,7 @@ Feature: CRUD Voyages
                 "name": "Paris",
                 "slug": "paris"
             },
-            "stages": [],
-            "transportType": null,
-            "availableJourney": null
+            "stages": []
         }
         """
 
@@ -133,6 +133,8 @@ Feature: CRUD Voyages
             "@context": "\/contexts\/Voyage",
             "@id": "\/voyages\/1",
             "@type": "Voyage",
+            "transportType": "BUS",
+            "availableJourney": "\/available_journeys\/2",
             "id": 1,
             "name": "TDM 222",
             "token": "TOKEN_MOCK",
@@ -147,50 +149,8 @@ Feature: CRUD Voyages
                 "slug": "lyon"
             },
             "stages": [
-                {
-                    "@id": "\/stages\/1",
-                    "@type": "Stage",
-                    "id": 1,
-                    "nbDays": 4,
-                    "destination": {
-                        "@id": "\/destinations\/3",
-                        "@type": "Destination",
-                        "id": 3,
-                        "name": "Marseille",
-                        "slug": "marseille"
-                    },
-                    "country": null,
-                    "position": 0,
-                    "transportType": null,
-                   "availableJourney": null
-                }
-            ],
-            "transportType": "BUS",
-            "availableJourney": {
-                "@id": "\/available_journeys\/2",
-                "@type": "AvailableJourney",
-                "id": 2,
-                "fromDestination": {
-                    "@id": "\/destinations\/2",
-                    "@type": "Destination",
-                    "id": 2,
-                    "name": "Lyon",
-                    "slug": "lyon"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/3",
-                    "@type": "Destination",
-                    "id": 3,
-                    "name": "Marseille",
-                    "slug": "marseille"
-                },
-                "flyPrices": 207,
-                "flyTime": 211,
-                "busPrices": 24,
-                "busTime": 280,
-                "trainPrices": 66,
-                "trainTime": 212
-            }
+                "\/stages\/1"
+            ]
         }
         """
 
@@ -204,6 +164,8 @@ Feature: CRUD Voyages
             "@context": "\/contexts\/Voyage",
             "@id": "\/voyages\/1",
             "@type": "Voyage",
+            "transportType": "BUS",
+            "availableJourney": "\/available_journeys\/2",
             "id": 1,
             "name": "TDM 222",
             "token": "TOKEN_MOCK",
@@ -218,50 +180,8 @@ Feature: CRUD Voyages
                 "slug": "lyon"
             },
             "stages": [
-                {
-                    "@id": "\/stages\/1",
-                    "@type": "Stage",
-                    "id": 1,
-                    "nbDays": 4,
-                    "destination": {
-                        "@id": "\/destinations\/3",
-                        "@type": "Destination",
-                        "id": 3,
-                        "name": "Marseille",
-                        "slug": "marseille"
-                    },
-                    "country": null,
-                    "position": 0,
-                    "transportType": null,
-                   "availableJourney": null
-                }
-            ],
-            "transportType": "BUS",
-            "availableJourney": {
-                "@id": "\/available_journeys\/2",
-                "@type": "AvailableJourney",
-                "id": 2,
-                "fromDestination": {
-                    "@id": "\/destinations\/2",
-                    "@type": "Destination",
-                    "id": 2,
-                    "name": "Lyon",
-                    "slug": "lyon"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/3",
-                    "@type": "Destination",
-                    "id": 3,
-                    "name": "Marseille",
-                    "slug": "marseille"
-                },
-                "flyPrices": 207,
-                "flyTime": 211,
-                "busPrices": 24,
-                "busTime": 280,
-                "trainPrices": 66,
-                "trainTime": 212
-            }
+                "\/stages\/1"
+            ]
         }
         """
 

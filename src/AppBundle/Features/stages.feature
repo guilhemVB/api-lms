@@ -146,6 +146,8 @@ Feature: Stages
             "@context": "\/contexts\/Stage",
             "@id": "\/stages\/1",
             "@type": "Stage",
+            "transportType": null,
+            "availableJourney": null,
             "id": 1,
             "nbDays": 3,
             "destination": {
@@ -156,9 +158,7 @@ Feature: Stages
                 "slug": "lyon"
             },
             "country": null,
-            "position": 0,
-            "transportType": null,
-            "availableJourney": null
+            "position": 0
         }
         """
 
@@ -167,7 +167,7 @@ Feature: Stages
 #        GET OK
 ##############################
 
-        When I send a "GET" request to "/voyages/1/stages/1.jsonld"
+        When I send a "GET" request to "/stages/1.jsonld"
         Then the response status code should be 200
         And the response should be in JSON
         And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
@@ -177,6 +177,8 @@ Feature: Stages
             "@context": "\/contexts\/Stage",
             "@id": "\/stages\/1",
             "@type": "Stage",
+            "transportType": null,
+            "availableJourney": null,
             "id": 1,
             "nbDays": 3,
             "destination": {
@@ -187,9 +189,7 @@ Feature: Stages
                 "slug": "lyon"
             },
             "country": null,
-            "position": 0,
-            "transportType": null,
-            "availableJourney": null
+            "position": 0
         }
         """
 
@@ -216,6 +216,8 @@ Feature: Stages
             "@context": "\/contexts\/Stage",
             "@id": "\/stages\/2",
             "@type": "Stage",
+            "transportType": null,
+            "availableJourney": null,
             "id": 2,
             "nbDays": 2,
             "destination": {
@@ -226,9 +228,7 @@ Feature: Stages
                 "slug": "marseille"
             },
             "country": null,
-            "position": 1,
-            "transportType": null,
-            "availableJourney": null
+            "position": 1
         }
         """
 
@@ -237,7 +237,7 @@ Feature: Stages
 #        PUT OK -> change destination
 #########################################
 
-        When I send a "PUT" request to "/voyages/1/stages/1.jsonld" with body:
+        When I send a "PUT" request to "/stages/1.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -255,6 +255,8 @@ Feature: Stages
             "@context": "\/contexts\/Stage",
             "@id": "\/stages\/1",
             "@type": "Stage",
+            "transportType": "BUS",
+            "availableJourney": "\/available_journeys\/4",
             "id": 1,
             "nbDays": 1,
             "destination": {
@@ -265,36 +267,14 @@ Feature: Stages
                 "slug": "sens"
             },
             "country": null,
-            "position": 0,
-            "transportType": "BUS",
-            "availableJourney": {
-                "@id": "\/available_journeys\/4",
-                "@type": "AvailableJourney",
-                "id": 4,
-                "fromDestination": {
-                    "@id": "\/destinations\/4",
-                    "@type": "Destination",
-                    "id": 4,
-                    "name": "Sens",
-                    "slug": "sens"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/3",
-                    "@type": "Destination",
-                    "id": 3,
-                    "name": "Marseille",
-                    "slug": "marseille"
-                },
-                "flyPrices": null,
-                "flyTime": null,
-                "busPrices": 56,
-                "busTime": 612,
-                "trainPrices": 98,
-                "trainTime": 320
-            }
+            "position": 0
         }
         """
 
+
+#########################################
+#        GET OK
+#########################################
 
         When I send a "GET" request to "/voyages/1.jsonld"
         Then the response status code should be 200
@@ -306,6 +286,8 @@ Feature: Stages
             "@context": "\/contexts\/Voyage",
             "@id": "\/voyages\/1",
             "@type": "Voyage",
+            "transportType": "BUS",
+            "availableJourney": "\/available_journeys\/3",
             "id": 1,
             "name": "TDM",
             "token": "TOKEN1",
@@ -320,91 +302,24 @@ Feature: Stages
                 "slug": "paris"
             },
             "stages": [
-                {
-                    "@id": "\/stages\/1",
-                    "@type": "Stage",
-                    "id": 1,
-                    "nbDays": 1,
-                    "destination": {
-                        "@id": "\/destinations\/4",
-                        "@type": "Destination",
-                        "id": 4,
-                        "name": "Sens",
-                        "slug": "sens"
-                    },
-                    "country": null,
-                    "position": 0,
-                    "transportType": "BUS",
-                    "availableJourney": {
-                        "@id": "\/available_journeys\/4",
-                        "@type": "AvailableJourney",
-                        "id": 4,
-                        "fromDestination": {
-                            "@id": "\/destinations\/4",
-                            "@type": "Destination",
-                            "id": 4,
-                            "name": "Sens",
-                            "slug": "sens"
-                        },
-                        "toDestination": {
-                            "@id": "\/destinations\/3",
-                            "@type": "Destination",
-                            "id": 3,
-                            "name": "Marseille",
-                            "slug": "marseille"
-                        },
-                        "flyPrices": null,
-                        "flyTime": null,
-                        "busPrices": 56,
-                        "busTime": 612,
-                        "trainPrices": 98,
-                        "trainTime": 320
-                    }
-                },
-                {
-                    "@id": "\/stages\/2",
-                    "@type": "Stage",
-                    "id": 2,
-                    "nbDays": 2,
-                    "destination": {
-                        "@id": "\/destinations\/3",
-                        "@type": "Destination",
-                        "id": 3,
-                        "name": "Marseille",
-                        "slug": "marseille"
-                    },
-                    "country": null,
-                    "position": 1,
-                    "transportType": null,
-                    "availableJourney": null
-                }
-            ],
-            "transportType": "BUS",
-            "availableJourney": {
-                "@id": "\/available_journeys\/3",
-                "@type": "AvailableJourney",
-                "id": 3,
-                "fromDestination": {
-                    "@id": "\/destinations\/1",
-                    "@type": "Destination",
-                    "id": 1,
-                    "name": "Paris",
-                    "slug": "paris"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/4",
-                    "@type": "Destination",
-                    "id": 4,
-                    "name": "Sens",
-                    "slug": "sens"
-                },
-                "flyPrices": null,
-                "flyTime": null,
-                "busPrices": 5,
-                "busTime": 120,
-                "trainPrices": 20,
-                "trainTime": 56
-            }
+                "\/stages\/1",
+                "\/stages\/2"
+            ]
+        }
+        """
+
+
+#########################################
+#        GET Stages by voyage OK
+#########################################
+
+        When I send a "GET" request to "/voyages/1/stages.jsonld"
+        Then the response status code should be 200
+        And the response should be in JSON
+        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+        And the JSON should be equal to:
+        """
+        {
         }
         """
 

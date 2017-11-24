@@ -294,13 +294,23 @@ Feature: Available Journey calculator
         And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
         And the JSON node "@id" should be equal to "/voyages/1"
         And the JSON node "transportType" should be equal to "FLY"
-        And the JSON node "availableJourney->@id" should be equal to "/available_journeys/3"
-        And the JSON node "stages[0]->transportType" should be equal to "TRAIN"
-        And the JSON node "stages[0]->availableJourney->@id" should be equal to "/available_journeys/1"
-        And the JSON node "stages[1]->transportType" should be equal to "FLY"
-        And the JSON node "stages[1]->availableJourney->@id" should be equal to "/available_journeys/2"
-        And the JSON node "stages[2]->transportType" should be null
-        And the JSON node "stages[2]->availableJourney" should be null
+        And the JSON node "availableJourney" should be equal to "/available_journeys/3"
+
+        When I send a "GET" request to "/stages/1.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be equal to "TRAIN"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/1"
+
+        When I send a "GET" request to "/stages/2.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be equal to "FLY"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/2"
+
+        When I send a "GET" request to "/stages/3.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
+
 
         When je supprime les transports liés à la destination "Lyon"
 
@@ -311,11 +321,21 @@ Feature: Available Journey calculator
         And the JSON node "@id" should be equal to "/voyages/1"
         And the JSON node "transportType" should be null
         And the JSON node "availableJourney" should be null
-        And the JSON node "stages[0]->transportType" should be null
-        And the JSON node "stages[0]->availableJourney" should be null
-        And the JSON node "stages[1]->transportType" should be equal to "FLY"
-        And the JSON node "stages[1]->availableJourney->@id" should be equal to "/available_journeys/2"
-        And the JSON node "stages[2]->transportType" should be null
-        And the JSON node "stages[2]->availableJourney" should be null
+
+        When I send a "GET" request to "/stages/1.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
+
+        When I send a "GET" request to "/stages/2.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be equal to "FLY"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/2"
+
+        When I send a "GET" request to "/stages/3.jsonld"
+        Then the response status code should be 200
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
+
 
 
