@@ -320,6 +320,46 @@ Feature: Stages
         And the JSON should be equal to:
         """
         {
+            "@context": "\/contexts\/Stage",
+            "@id": "\/voyages\/1\/stages",
+            "@type": "hydra:Collection",
+            "hydra:member": [
+                {
+                    "@id": "\/stages\/1",
+                    "@type": "Stage",
+                    "transportType": "BUS",
+                    "availableJourney": "\/available_journeys\/4",
+                    "id": 1,
+                    "nbDays": 1,
+                    "destination": {
+                        "@id": "\/destinations\/4",
+                        "@type": "Destination",
+                        "id": 4,
+                        "name": "Sens",
+                        "slug": "sens"
+                    },
+                    "country": null,
+                    "position": 0
+                },
+                {
+                    "@id": "\/stages\/2",
+                    "@type": "Stage",
+                    "transportType": null,
+                    "availableJourney": null,
+                    "id": 2,
+                    "nbDays": 2,
+                    "destination": {
+                        "@id": "\/destinations\/3",
+                        "@type": "Destination",
+                        "id": 3,
+                        "name": "Marseille",
+                        "slug": "marseille"
+                    },
+                    "country": null,
+                    "position": 1
+                }
+            ],
+            "hydra:totalItems": 2
         }
         """
 
@@ -357,7 +397,7 @@ Feature: Stages
         Given I add "Content-Type" header equal to "application/json"
         Given I authenticate the user "gui"
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -368,7 +408,7 @@ Feature: Stages
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -379,7 +419,7 @@ Feature: Stages
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
