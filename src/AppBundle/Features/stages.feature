@@ -4,6 +4,8 @@ Feature: Stages
         When I send a "GET" request to "/voyages/1/stages.jsonld"
         Then the response status code should be 401
         When I send a "POST" request to "/stages.jsonld"
+        Then the response status code should be 405
+        When I send a "POST" request to "voyages/1/stages.jsonld"
         Then the response status code should be 401
         When I send a "PUT" request to "/stages/1.jsonld"
         Then the response status code should be 401
