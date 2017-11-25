@@ -435,118 +435,20 @@ Feature: Stages
         When I send a "DELETE" request to "/stages/2.jsonld"
         Then the response status code should be 204
 
-        When I send a "GET" request to "/voyages/1.jsonld"
-        Then the response status code should be 200
-        And the response should be in JSON
-        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
-        And the JSON should be equal to:
-        """
-        {
-            "@context": "\/contexts\/Voyage",
-            "@id": "\/voyages\/1",
-            "@type": "Voyage",
-            "id": 1,
-            "name": "TDM",
-            "token": "TOKEN1",
-            "urlMinified": null,
-            "showPricesInPublic": true,
-            "startDate": "2017-01-20",
-            "startDestination": {
-                "@id": "\/destinations\/1",
-                "@type": "Destination",
-                "id": 1,
-                "name": "Paris",
-                "slug": "paris"
-            },
-            "stages": [
-                {
-                    "@id": "\/stages\/1",
-                    "@type": "Stage",
-                    "id": 1,
-                    "nbDays": 1,
-                    "destination": {
-                        "@id": "\/destinations\/2",
-                        "@type": "Destination",
-                        "id": 2,
-                        "name": "Lyon",
-                        "slug": "lyon"
-                    },
-                    "country": null,
-                    "position": 0,
-                    "transportType": "BUS",
-                    "availableJourney": {
-                        "@id": "\/available_journeys\/4",
-                        "@type": "AvailableJourney",
-                        "id": 4,
-                        "fromDestination": {
-                            "@id": "\/destinations\/2",
-                            "@type": "Destination",
-                            "id": 2,
-                            "name": "Lyon",
-                            "slug": "lyon"
-                        },
-                        "toDestination": {
-                            "@id": "\/destinations\/4",
-                            "@type": "Destination",
-                            "id": 4,
-                            "name": "Sens",
-                            "slug": "sens"
-                        },
-                        "flyPrices": null,
-                        "flyTime": null,
-                        "busPrices": 56,
-                        "busTime": 612,
-                        "trainPrices": 98,
-                        "trainTime": 320
-                    }
-                },
-                {
-                    "@id": "\/stages\/3",
-                    "@type": "Stage",
-                    "id": 3,
-                    "nbDays": 3,
-                    "destination": {
-                        "@id": "\/destinations\/4",
-                        "@type": "Destination",
-                        "id": 4,
-                        "name": "Sens",
-                        "slug": "sens"
-                    },
-                    "country": null,
-                    "position": 1,
-                    "transportType": null,
-                    "availableJourney": null
-                }
-            ],
-            "transportType": "BUS",
-            "availableJourney": {
-                "@id": "\/available_journeys\/1",
-                "@type": "AvailableJourney",
-                "id": 1,
-                "fromDestination": {
-                    "@id": "\/destinations\/1",
-                    "@type": "Destination",
-                    "id": 1,
-                    "name": "Paris",
-                    "slug": "paris"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/2",
-                    "@type": "Destination",
-                    "id": 2,
-                    "name": "Lyon",
-                    "slug": "lyon"
-                },
-                "flyPrices": 52,
-                "flyTime": 56,
-                "busPrices": 5,
-                "busTime": 390,
-                "trainPrices": 50,
-                "trainTime": 120
-            }
+        When I send a "GET" request to "/stages/2.jsonld"
+        Then the response status code should be 404
 
-        }
-        """
+        When I send a "GET" request to "/stages/1.jsonld"
+        Then the response status code should be 200
+        And the JSON node "position" should be equal to "0"
+        And the JSON node "transportType" should be equal to "BUS"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/4"
+
+        When I send a "GET" request to "/stages/3.jsonld"
+        Then the response status code should be 200
+        And the JSON node "position" should be equal to "1"
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
 
 
     @emptyDatabase
@@ -584,7 +486,7 @@ Feature: Stages
         Given I add "Content-Type" header equal to "application/json"
         Given I authenticate the user "gui"
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -595,7 +497,7 @@ Feature: Stages
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -606,7 +508,7 @@ Feature: Stages
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -632,154 +534,24 @@ Feature: Stages
 
         When I send a "GET" request to "/voyages/1.jsonld"
         Then the response status code should be 200
-        And the response should be in JSON
-        And the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
-        And the JSON should be equal to:
-        """
-        {
-            "@context": "\/contexts\/Voyage",
-            "@id": "\/voyages\/1",
-            "@type": "Voyage",
-            "id": 1,
-            "name": "TDM",
-            "token": "TOKEN1",
-            "urlMinified": null,
-            "showPricesInPublic": true,
-            "startDate": "2017-01-20",
-            "startDestination": {
-                "@id": "\/destinations\/1",
-                "@type": "Destination",
-                "id": 1,
-                "name": "Paris",
-                "slug": "paris"
-            },
-            "stages": [
-                {
-                    "@id": "\/stages\/2",
-                    "@type": "Stage",
-                    "id": 2,
-                    "nbDays": 2,
-                    "destination": {
-                        "@id": "\/destinations\/3",
-                        "@type": "Destination",
-                        "id": 3,
-                        "name": "Marseille",
-                        "slug": "marseille"
-                    },
-                    "country": null,
-                    "position": 0,
-                    "transportType": "BUS",
-                    "availableJourney": {
-                        "@id": "\/available_journeys\/5",
-                        "@type": "AvailableJourney",
-                        "id": 5,
-                        "fromDestination": {
-                            "@id": "\/destinations\/3",
-                            "@type": "Destination",
-                            "id": 3,
-                            "name": "Marseille",
-                            "slug": "marseille"
-                        },
-                        "toDestination": {
-                            "@id": "\/destinations\/2",
-                            "@type": "Destination",
-                            "id": 2,
-                            "name": "Lyon",
-                            "slug": "lyon"
-                        },
-                        "flyPrices": null,
-                        "flyTime": null,
-                        "busPrices": 15,
-                        "busTime": 415,
-                        "trainPrices": 65,
-                        "trainTime": 120
-                    }
-                },
-                {
-                    "@id": "\/stages\/1",
-                    "@type": "Stage",
-                    "id": 1,
-                    "nbDays": 1,
-                    "destination": {
-                        "@id": "\/destinations\/2",
-                        "@type": "Destination",
-                        "id": 2,
-                        "name": "Lyon",
-                        "slug": "lyon"
-                    },
-                    "country": null,
-                    "position": 1,
-                    "transportType": "BUS",
-                    "availableJourney": {
-                        "@id": "\/available_journeys\/4",
-                        "@type": "AvailableJourney",
-                        "id": 4,
-                        "fromDestination": {
-                            "@id": "\/destinations\/2",
-                            "@type": "Destination",
-                            "id": 2,
-                            "name": "Lyon",
-                            "slug": "lyon"
-                        },
-                        "toDestination": {
-                            "@id": "\/destinations\/4",
-                            "@type": "Destination",
-                            "id": 4,
-                            "name": "Sens",
-                            "slug": "sens"
-                        },
-                        "flyPrices": null,
-                        "flyTime": null,
-                        "busPrices": 56,
-                        "busTime": 612,
-                        "trainPrices": 98,
-                        "trainTime": 320
-                    }
-                },
-                {
-                    "@id": "\/stages\/3",
-                    "@type": "Stage",
-                    "id": 3,
-                    "nbDays": 3,
-                    "destination": {
-                        "@id": "\/destinations\/4",
-                        "@type": "Destination",
-                        "id": 4,
-                        "name": "Sens",
-                        "slug": "sens"
-                    },
-                    "country": null,
-                    "position": 2,
-                    "transportType": null,
-                    "availableJourney": null
-                }
-            ],
-            "transportType": "FLY",
-            "availableJourney": {
-                "@id": "\/available_journeys\/6",
-                "@type": "AvailableJourney",
-                "id": 6,
-                "fromDestination": {
-                    "@id": "\/destinations\/1",
-                    "@type": "Destination",
-                    "id": 1,
-                    "name": "Paris",
-                    "slug": "paris"
-                },
-                "toDestination": {
-                    "@id": "\/destinations\/3",
-                    "@type": "Destination",
-                    "id": 3,
-                    "name": "Marseille",
-                    "slug": "marseille"
-                },
-                "flyPrices": 1,
-                "flyTime": 2,
-                "busPrices": 5,
-                "busTime": 6,
-                "trainPrices": 3,
-                "trainTime": 4
-            }
-        }
-        """
+        And the JSON node "transportType" should be equal to "FLY"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/6"
+
+        When I send a "GET" request to "/stages/2.jsonld"
+        Then the response status code should be 200
+        And the JSON node "position" should be equal to "0"
+        And the JSON node "transportType" should be equal to "BUS"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/5"
+
+        When I send a "GET" request to "/stages/1.jsonld"
+        Then the response status code should be 200
+        And the JSON node "position" should be equal to "1"
+        And the JSON node "transportType" should be equal to "BUS"
+        And the JSON node "availableJourney" should be equal to "/available_journeys/4"
+
+        When I send a "GET" request to "/stages/3.jsonld"
+        Then the response status code should be 200
+        And the JSON node "position" should be equal to "2"
+        And the JSON node "transportType" should be null
+        And the JSON node "availableJourney" should be null
 

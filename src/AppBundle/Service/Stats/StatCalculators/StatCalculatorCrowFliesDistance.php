@@ -52,6 +52,6 @@ class StatCalculatorCrowFliesDistance implements StatCalculatorInterface
      */
     public function getStats()
     {
-        return ['crowFliesDistance' => $this->crowFliesDistance];
+        return ['crowFliesDistance' => round($this->crowFliesDistance)];
     }
 }

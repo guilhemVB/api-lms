@@ -42,7 +42,7 @@ Feature: Stats voyage
         Given I add "Content-Type" header equal to "application/json"
         Given I authenticate the user "gui"
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -53,7 +53,7 @@ Feature: Stats voyage
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -64,7 +64,7 @@ Feature: Stats voyage
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -75,7 +75,7 @@ Feature: Stats voyage
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -86,7 +86,7 @@ Feature: Stats voyage
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -97,7 +97,7 @@ Feature: Stats voyage
         """
         Then the response status code should be 201
 
-        When I send a "POST" request to "/stages.jsonld" with body:
+        When I send a "POST" request to "/voyages/1/stages.jsonld" with body:
         """
         {
             "voyage": "/voyages/1",
@@ -119,7 +119,7 @@ Feature: Stats voyage
         And the JSON node "startDate" should be equal to "2015-01-01"
         And the JSON node "endDate" should be equal to "2015-01-24"
         And the JSON node "nbCountries" should be equal to "3"
-        And the JSON node "crowFliesDistance" should be equal to "13068.820923585"
+        And the JSON node "crowFliesDistance" should be equal to "13069"
         And the JSON node "mainDestination->name" should be equal to "New-York"
 
         When I send a "PUT" request to "/stages/1.jsonld" with body:
@@ -145,5 +145,5 @@ Feature: Stats voyage
         And the JSON node "startDate" should be equal to "2015-01-01"
         And the JSON node "endDate" should be equal to "2015-01-24"
         And the JSON node "nbCountries" should be equal to "3"
-        And the JSON node "crowFliesDistance" should be equal to "13068.820923585"
+        And the JSON node "crowFliesDistance" should be equal to "13069"
         And the JSON node "mainDestination->name" should be equal to "New-York"
