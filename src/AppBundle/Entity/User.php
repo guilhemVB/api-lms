@@ -36,7 +36,6 @@ class User extends BaseUser
     /**
      * @var ArrayCollection|Voyage[]
      * @ORM\OneToMany(targetEntity="Voyage", mappedBy="user", cascade={"remove"})
-     * @Groups({"user-read"})
      */
     private $voyages;
 
