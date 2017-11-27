@@ -43,8 +43,6 @@ security:
     access_control:
 #        - { path: ^/, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/users, role: IS_AUTHENTICATED_ANONYMOUSLY, methods: [POST] }
-        - { path: ^/users, role: ROLE_USER, methods: [PUT, DELETE, GET] }
         - { path: ^/destinations, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/countries, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/voyages, roles: [ ROLE_USER ] }

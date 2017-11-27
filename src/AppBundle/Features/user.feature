@@ -132,6 +132,14 @@ Feature: User CRUD
         """
 
 
+############################################
+#        GET LIST KO
+############################################
+
+        When I send a "GET" request to "/users.jsonld"
+        Then the response status code should be 401
+
+
 
     @emptyDatabase
     Scenario: Delete user with voyage

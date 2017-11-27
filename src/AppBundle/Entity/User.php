@@ -14,10 +14,21 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Table(name="user_travel")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
- * @ApiResource(attributes={
- *     "normalization_context"={"groups"={"user", "user-read"}},
- *     "denormalization_context"={"groups"={"user", "user-write"}}
- * })
+ * @ApiResource(
+ *      attributes={
+ *          "normalization_context"={"groups"={"user", "user-read"}},
+ *          "denormalization_context"={"groups"={"user", "user-write"}}
+ *      },
+ *      collectionOperations={
+ *          "post"={"method"="POST"},
+ *          "get"={"method"="GET", "access_control"="is_granted('ROLE_SUPER_ADMIN')"}
+ *      },
+ *      itemOperations={
+ *          "get"={"method"="GET", "access_control"="is_granted('ROLE_USER') and object == user"},
+ *          "put"={"method"="PUT", "access_control"="is_granted('ROLE_USER') and object == user"},
+ *          "delete"={"method"="DELETE", "access_control"="is_granted('ROLE_USER') and object == user"}
+ *     }
+ * )
  * @UniqueEntity("email")
  * @UniqueEntity("username")
  */

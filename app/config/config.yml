@@ -102,6 +102,7 @@ api_platform:
             varnish_urls: []
     eager_loading:
         max_joins: 1
+    version: '1.0.0'
 #    collection:
 #        pagination:
 #            enabled: true
