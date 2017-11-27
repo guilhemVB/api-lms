@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Table(name="user_travel")
@@ -16,6 +18,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     "normalization_context"={"groups"={"user", "user-read"}},
  *     "denormalization_context"={"groups"={"user", "user-write"}}
  * })
+ * @UniqueEntity("email")
+ * @UniqueEntity("username")
  */
 class User extends BaseUser
 {
@@ -31,20 +35,23 @@ class User extends BaseUser
 
     /**
      * @var ArrayCollection|Voyage[]
-     * @ORM\OneToMany(targetEntity="Voyage", mappedBy="user")
-     * @Groups({"user-write"})
+     * @ORM\OneToMany(targetEntity="Voyage", mappedBy="user", cascade={"remove"})
+     * @Groups({"user-read"})
      */
     private $voyages;
 
     /**
      * @var string
-     * @Groups({"user"})
+     * @Assert\NotBlank()
+     * @Groups({"user-read", "user-write"})
      */
     protected $email;
 
     /**
      * @var string
-     * @Groups({"user"})
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3, max=125)
+     * @Groups({"user-read", "user-write"})
      */
     protected $username;
 
@@ -52,13 +59,17 @@ class User extends BaseUser
      * Plain password. Used for model validation. Must not be persisted.
      *
      * @Groups({"user-write"})
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=125)
      * @var string
      */
     protected $plainPassword;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"user"})
+     * @Groups({"user-read", "user-write"})
+     * @Assert\NotBlank()
+     * @Assert\Length(min=2, max=125)
      */
     protected $fullname;
 
